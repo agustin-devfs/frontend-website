@@ -1,28 +1,32 @@
 import { AppBar, Box, Container, IconButton, Link, Stack, Toolbar, Typography } from '@mui/material'
 import { Facebook, Instagram, LinkedIn, YouTube } from '@mui/icons-material'
+import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <AppBar position="fixed" sx={{ bgcolor: '#996515', boxShadow: 'none' }}>
+    <AppBar position="static" sx={{ bgcolor: '#141519', boxShadow: 'none', marginTop: 'auto' }}>
       <Container maxWidth="lg">
         <Toolbar sx={{ justifyContent: 'space-between', py: 2 }}>
-          <Link href="#" underline="none" sx={{ display: 'flex', alignItems: 'center' }}>
-            <Typography variant="h6" component="div" sx={{ color: 'white', fontWeight: 'bold' }}>
-              together<span style={{ opacity: 0.9 }}>Devs</span>
-            </Typography>
-          </Link>
+        <Link href="https://togetherdevs.com/" underline="none" sx={{ display: 'flex', alignItems: 'center' }}>
+         
+         <Image src="/TogetherDevs.svg" alt="TogetherDevs"
+    loading="lazy"width={150} height={50} style={{borderRadius:"10%"}} />
+
+   </Link>
 
           <Stack direction="row" spacing={3}>
             <Link href="#" underline="none" sx={{ color: 'white', display: 'flex', alignItems: 'center', gap: 0.5 }}>
-              <Box component="span" sx={{ fontSize: '1.2rem' }}>⚡</Box>
-              App development
+            <Image src="/appIcon.svg" alt="AppIcon"
+          loading="lazy"width={24} height={24} style={{borderRadius:"10%"}} />              App development
             </Link>
             <Link href="#" underline="none" sx={{ color: 'white', display: 'flex', alignItems: 'center', gap: 0.5 }}>
-              <Box component="span" sx={{ fontSize: '1.2rem' }}>⚙️</Box>
+            <Image src="/webIcon.svg" alt="AppIcon"
+          loading="lazy"width={24} height={24} style={{borderRadius:"10%"}} />
               Web platform
             </Link>
             <Link href="#" underline="none" sx={{ color: 'white', display: 'flex', alignItems: 'center', gap: 0.5 }}>
-              <Box component="span" sx={{ fontSize: '1.2rem' }}>✨</Box>
+            <Image src="/hire.png" alt="AppIcon"
+          loading="lazy"width={24} height={24} style={{borderRadius:"10%"}} />
               Hire our people
             </Link>
           </Stack>
@@ -40,7 +44,6 @@ export default function Footer() {
               <IconButton size="small" sx={{ color: 'white' }}>
                 <Instagram />
               </IconButton>
-
             </Stack>
             
             <Stack direction="row" spacing={2} sx={{ color: 'white', fontSize: '0.875rem' }}>
