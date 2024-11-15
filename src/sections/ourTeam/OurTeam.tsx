@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import { Typography, Card, CardContent, Grid, Divider } from '@mui/material';
+import Image from 'next/image';
 
 const teamMembers = [
           { name: "Mateo Levy", role: "Chief Technology Officer" },

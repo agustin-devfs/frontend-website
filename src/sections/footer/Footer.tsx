@@ -16,16 +16,16 @@ export default function Footer() {
 
           <Stack direction="row" spacing={3}>
             <Link href="#" underline="none" sx={{ color: 'white', display: 'flex', alignItems: 'center', gap: 0.5 }}>
-            <Image src="/appIcon.svg" alt="AppIcon"
+            <Image src="/appIconB.svg" alt="AppIcon"
           loading="lazy"width={24} height={24} style={{borderRadius:"10%"}} />              App development
             </Link>
             <Link href="#" underline="none" sx={{ color: 'white', display: 'flex', alignItems: 'center', gap: 0.5 }}>
-            <Image src="/webIcon.svg" alt="AppIcon"
+            <Image src="/webIconB.svg" alt="AppIcon"
           loading="lazy"width={24} height={24} style={{borderRadius:"10%"}} />
               Web platform
             </Link>
             <Link href="#" underline="none" sx={{ color: 'white', display: 'flex', alignItems: 'center', gap: 0.5 }}>
-            <Image src="/hire.png" alt="AppIcon"
+            <Image src="/hireIconB.svg" alt="AppIcon"
           loading="lazy"width={24} height={24} style={{borderRadius:"10%"}} />
               Hire our people
             </Link>

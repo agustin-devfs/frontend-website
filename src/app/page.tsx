@@ -5,8 +5,11 @@ import Testimonials from "@/sections/testimonials/Testimonials";
 import Appbar from "@/components/appbar/Appbar";
 import OurServices from "@/sections/ourServices/OurServices";
 import Navbar from "@/components/navbar/Navbar";
-import Industries from "@/sections/industries/Industries";
-
+import Banner from '@/components/banner/Banner';
+import SuccessCases from '@/components/successCases/SuccessCases';
+import ParalaxText from "@/components/Text/ParalaxText/ParalaxText";
+import MarqueeIcons from "@/components/marquee/MarqueeIcons";
+import Hero from "@/sections/hero/Hero";
 
 export default function Home() {
   return (
@@ -14,9 +17,15 @@ export default function Home() {
       <main >
         <Navbar/>
         <Appbar />
-       <OurServices/>
-      {/*      <Industries/> */}
-         <Testimonials/> 
+        <Hero/>
+        <OurServices/>
+        {/*  Industries  */}
+         <MarqueeIcons/>
+        <Banner/>
+        <ParalaxText phrase1={""} phrase2={"Industries"}/>
+        <SuccessCases/>
+        {/*  Industries  */}
+          <Testimonials/> 
          <OurTeam/>
          <ContactForm/>
         <Footer/>
