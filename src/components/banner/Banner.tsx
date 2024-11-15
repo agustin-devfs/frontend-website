@@ -2,7 +2,7 @@
 
 import { useTheme } from '@mui/material/styles'
 import Box from '@mui/material/Box'
-import { Divider, Grid, Typography } from '@mui/material'
+import { Grid, Typography } from '@mui/material'
 import Image from 'next/image'
 
 export default function Component() {
@@ -11,9 +11,9 @@ export default function Component() {
   return (
     <Box
       sx={{
-        bgcolor: '#353535', // Fondo gris oscuro
+        bgcolor: '#353535',
         color: 'white',
-        padding: '140px 140px 40px 20px', // Espaciado interior
+        padding: '140px 40px 80px 220px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -26,7 +26,7 @@ export default function Component() {
               fontFamily: 'Raleway, sans-serif',
               fontSize: '64px',
               fontWeight: 600,
-              color: '#E8FE74', // Color amarillo claro
+              color: '#E8FE74',
               lineHeight: 1.1,
             }}
           >
@@ -40,7 +40,7 @@ export default function Component() {
               fontFamily: 'Raleway, sans-serif',
               fontSize: '64px',
               fontWeight: 600,
-              color: '#FFFFFF', // Color blanco
+              color: '#FFFFFF', 
               lineHeight: 1.1,
               display: 'inline',
               textDecoration: 'underline',
@@ -50,7 +50,7 @@ export default function Component() {
               textDecorationSkipInk: 'none',
             }}
           >
-            together?
+            {'together?'}
           </Typography>
         </Grid>
 

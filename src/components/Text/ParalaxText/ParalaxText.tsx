@@ -66,14 +66,12 @@ function ParallaxText({ children, baseVelocity = 2 }: ParallaxProps) {
 		<Box
 			sx={{
 				overflow: 'hidden',
-				letterSpacing: '-2px',
+				letterSpacing: '2px',
 				lineHeight: '63px',
 				fontWeight: 400,
-				fontSize: '53px',
+				fontSize: '20px',
 				fontFamily: 'Raleway',
 				background: '#494949 ',
-				mb: 1,
-
 			}}
 		>
 			<motion.div style={{ x, whiteSpace: 'nowrap', width: '100%' }}>

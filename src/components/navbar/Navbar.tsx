@@ -11,7 +11,7 @@ export default function Component() {
         sx={{
           backgroundColor: '#353535',  
           position: 'fixed',            
-          bottom: '16%',               
+          bottom: '18%',               
           left: '50%',                 
           transform: 'translateX(-50%)', 
           zIndex: 1000, 

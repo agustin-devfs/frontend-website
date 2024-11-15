@@ -10,6 +10,7 @@ import SuccessCases from '@/components/successCases/SuccessCases';
 import ParalaxText from "@/components/Text/ParalaxText/ParalaxText";
 import MarqueeIcons from "@/components/marquee/MarqueeIcons";
 import Hero from "@/sections/hero/Hero";
+import AboutUs from "@/sections/aboutUs/AboutUs";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <Appbar />
         <Hero/>
         <OurServices/>
+        <AboutUs/>
         {/*  Industries  */}
          <MarqueeIcons/>
         <Banner/>

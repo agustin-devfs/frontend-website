@@ -26,7 +26,7 @@ function renderIcons() {
 						alt={icon.alt} 
 						style={{ width: '40px', height: '40px', marginRight: '8px' }} 
 					/>
-					<span style={{ fontSize: '18px', color: '#000' }}>{icon.alt}</span>
+					<span style={{ fontSize: '30px', color: '#000' }}>{icon.alt}</span>
 				</div>
 			))}
 		</div>

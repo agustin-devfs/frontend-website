@@ -64,7 +64,7 @@ const ServicesSection = () => (
 
    <Box py={8} px={4} mt={55}>
    <Container maxWidth="md">
-    <Typography variant="h2" component="h1" gutterBottom style={{ color: '#06050F', fontWeight: 400, fontSize: '96px', lineHeight: '96px' }}>
+    <Typography variant="h2" component="h1" gutterBottom style={{ color: '#06050F', fontWeight: 400, fontSize: '96px', lineHeight: '96px', textAlign:'center' }}>
       Our Services
     </Typography>
     
