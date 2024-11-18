@@ -1,7 +1,7 @@
 "use client";
 import { Button, TextField, Typography, Divider, Grid } from '@mui/material';
 import { useState } from 'react';
-import { toast, ToastContainer } from 'react-toastify';
+import {ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Image from 'next/image';
 import { contact } from '@/app/core/utils/contants';
@@ -14,7 +14,8 @@ export default function Component() {
     message: ''
   });
 
-  const handleSubmit = (e:any) => {
+  const handleSubmit = undefined
+  /* (e:) => {
     e.preventDefault();
     toast.success('Message sent successfully!');
     setFormData({
@@ -23,7 +24,7 @@ export default function Component() {
       phone: '',
       message: ''
     });
-  };
+  }; */
 
   return (
     <Grid 

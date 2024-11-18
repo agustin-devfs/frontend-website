@@ -1,6 +1,6 @@
 'use client';
 import { Box, Typography } from '@mui/material';
-import { motion, useTransform, useSpring, useMotionValue } from 'framer-motion';
+import { motion, /* useTransform, */ /* useSpring,  */useMotionValue } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import {about} from '@/app/core/utils/contants'
@@ -8,8 +8,8 @@ import {about} from '@/app/core/utils/contants'
 export default function AboutUsSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const scrollProgress = useMotionValue(0);
-  const smoothScroll = useSpring(scrollProgress, { stiffness: 50, damping: 20 });
-
+/*   const smoothScroll = useSpring(scrollProgress, { stiffness: 50, damping: 20 });
+ */
   useEffect(() => {
     const handleScroll = () => {
       const section = sectionRef.current;
@@ -84,8 +84,8 @@ export default function AboutUsSection() {
           <motion.div
             key={index}
             style={{
-              opacity: useTransform(smoothScroll, [index - 0.5, index, index + 0.5], [0, 1, 0]),
-              y: useTransform(smoothScroll, [index - 0.5, index, index + 0.5], [50, 0, -50]),
+ /*              opacity: useTransform(smoothScroll, [index - 0.5, index, index + 0.5], [0, 1, 0]),
+              y: useTransform(smoothScroll, [index - 0.5, index, index + 0.5], [50, 0, -50]), */
               position: 'absolute',
               width:'70%'
             }}

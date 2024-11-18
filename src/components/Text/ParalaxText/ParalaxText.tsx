@@ -33,7 +33,7 @@ function ParallaxText({ children, baseVelocity = 2 }: ParallaxProps) {
 
 	const directionFactor = useRef<number>(1);
 
-	// @ts-ignore
+	
 	useAnimationFrame((t, delta) => {
 		const currentVelocityFactor = velocityFactor.get();
 		let moveBy = directionFactor.current * baseVelocity * (delta / 2000);
@@ -86,11 +86,11 @@ function ParallaxText({ children, baseVelocity = 2 }: ParallaxProps) {
 }
 
 interface ParallaxTextProps {
-	phrase1: string;
+	/* phrase1: string; */
 	phrase2: string;
 }
 
-export default function ParalaxText({ phrase1, phrase2 }: ParallaxTextProps) {
+export default function ParalaxText({ /* phrase1, */ phrase2 }: ParallaxTextProps) {
 	return (
 		<>
 {/* 			<ParallaxText baseVelocity={-2}>{phrase1}</ParallaxText>
