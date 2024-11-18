@@ -1,12 +1,11 @@
 'use client';
-import { Box, Typography, useTheme } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { motion, useTransform, useSpring, useMotionValue } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import {about} from '@/app/core/utils/contants'
 
 export default function AboutUsSection() {
-  const theme = useTheme();
   const sectionRef = useRef<HTMLDivElement>(null);
   const scrollProgress = useMotionValue(0);
   const smoothScroll = useSpring(scrollProgress, { stiffness: 50, damping: 20 });

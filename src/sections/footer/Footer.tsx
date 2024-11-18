@@ -1,5 +1,5 @@
 import { AppBar, Box, Container, IconButton, Link, Stack, Toolbar, Typography } from '@mui/material'
-import { Facebook, Instagram, LinkedIn, YouTube } from '@mui/icons-material'
+import { Facebook, Instagram, LinkedIn} from '@mui/icons-material'
 import Image from 'next/image';
 import { bars, footer } from '@/app/core/utils/contants';
 

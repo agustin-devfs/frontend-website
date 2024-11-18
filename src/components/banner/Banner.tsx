@@ -1,12 +1,10 @@
 'use client'
 
-import { useTheme } from '@mui/material/styles'
 import Box from '@mui/material/Box'
 import { Grid, Typography } from '@mui/material'
 import Image from 'next/image'
 
 export default function Component() {
-  const theme = useTheme()
 
   return (
     <Box

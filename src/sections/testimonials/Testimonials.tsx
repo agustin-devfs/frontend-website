@@ -1,6 +1,5 @@
 'use client'
 
-import { useTheme } from '@mui/material/styles'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
@@ -13,7 +12,6 @@ import {testimonials} from "@/app/core/utils/contants/index"
 import Image from 'next/image';
 
 export default function Component() {
-  const theme = useTheme()
   
   return (
     <Box sx={{ 
