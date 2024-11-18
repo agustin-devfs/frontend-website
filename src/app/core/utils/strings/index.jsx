@@ -201,11 +201,7 @@ export const strings = {
     MESSAGE: "Message",
     SEND: "Send",
   },
-  FOOTER: {
-    ADDRESS: "+44 7488 360321 | Dallas,TX, US",
-    ALL_RIGHTS_RESERVED: "© 2024 TogetherDevs. All Rights Reserved.",
-    FOLLOW_US: "Follow us",
-  },
+ 
   PORTFOLIO: {
     VOD_PLATFORM: "Media Entertainment",
     ECOMMERCE: "E-Commerce",

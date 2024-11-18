@@ -19,17 +19,27 @@ export default function Home() {
         <Navbar/>
         <Appbar />
         <Hero/>
+        <section id="services">
         <OurServices/>
-        <AboutUs/>
-        {/*  Industries  */}
+        </section>
+        <section id="aboutus">
+          <AboutUs />
+        </section>
          <MarqueeIcons/>
         <Banner/>
         <ParalaxText phrase1={""} phrase2={"Industries"}/>
+        <section id="industries">
         <SuccessCases/>
-        {/*  Industries  */}
+        </section>
+        <section id="testimonials">
           <Testimonials/> 
+        </section>
+        <section id="ourteam">
          <OurTeam/>
+        </section>
+        <section id="contactForm">
          <ContactForm/>
+        </section>
         <Footer/>
       </main>
     </div>

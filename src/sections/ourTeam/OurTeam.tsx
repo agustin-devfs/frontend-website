@@ -1,22 +1,7 @@
 import { Typography, Card, CardContent, Grid, Divider } from '@mui/material';
 import Image from 'next/image';
+import {ceo, teamMembers} from '@/app/core/utils/contants'
 
-const teamMembers = [
-          { name: "Mateo Levy", role: "Chief Technology Officer" },
-          { name: "Carlos Martin", role: "Full Stack Developer" },
-          { name: "Fernando Gamba", role: "PHP Developer" },
-          { name: "Eugenia Galleguillo", role: "Marketing & Communication" },
-          { name: "Ethan Harris", role: "Business Partner" },
-          { name: "Augusto Romero", role: "Full Stack Developer" },
-          { name: "Miguel Maidana", role: "Full Stack Developer" },
-          { name: "Martina Fraga", role: "Marketing & Communication" },
-          { name: "Agustin Rodriguez", role: "Software Developer & PM" },
-          { name: "Facundo Varela", role: "Full Stack Developer" },
-          { name: "Cesar Casas", role: " Cloud Architect" },
-          { name: "Milagros Caruso", role: "Sales Development Representative" },
-          { name: "Carlos Actis", role: "Full Stack Developer" },
-          { name: "Santiago Martinez", role: "Backend Developer" },
-          ];
 
 function TeamSection() {
   return (
@@ -34,20 +19,19 @@ function TeamSection() {
         <div> 
             <CardContent style={{ width: "100%", padding: "1.5rem" }}>
               <Typography variant="h5" component="h2" style={{ fontWeight: 500 }}>
-                David Levy
+                {ceo.owner}
               </Typography>
               <Typography variant="subtitle1" style={{ color: "#A0730C", fontWeight: 500, marginBottom: "1rem" }}>
-                Founder & CEO
+                {ceo.title}
               </Typography>
               <div style={{ display: "flex", gap: "4rem", marginRight:"4rem"}}>
                 <div style={{ flex: 1 }}>
                   <Typography variant="body2" color="textSecondary">
-                    With more than 20 years of experience in Technology at Together Devs, we embark on a journey of technological evolution.
+                    {ceo.text1}
                   </Typography>
                 </div>
                 <div style={{ flex: 1 }}>
                   <Typography variant="body2" color="textSecondary">
-                    Innovation is more than just a concept—it's a transformative force reshaping industries and unlocking endless possibilities.
                   </Typography>
                 </div>
               </div>
@@ -60,20 +44,27 @@ function TeamSection() {
         <CardContent style={{ width: "100%", padding: "1.5rem"}}>
 
          {/* Team Grid */}
-      <Grid container spacing={1}>
-      {teamMembers.map((member, index) => (
-        <Grid item key={index} xs={10} sm={6} md={3}>
-          <div style={{ textAlign: 'left' }}>
-            <Typography variant="body1" style={{ fontWeight: 400 }}>
-              {member.name}
-            </Typography>
-            <Typography variant="body2" style={{ color: "#A0730C" }}>
-              {member.role}
-            </Typography>
-          </div>
-        </Grid>
-      ))}
+         <Grid container spacing={1}>
+  {Array.from({ length: Math.ceil(teamMembers.length / 4) }).map((_, colIndex) => (
+    <Grid item key={colIndex} xs={12} sm={6} md={3}>
+      <div style={{ textAlign: 'left' }}>
+        {teamMembers
+          .slice(colIndex * 4, colIndex * 4 + 4)
+          .map((member, index) => (
+            <div key={index} style={{ marginBottom: '16px' }}>
+              <Typography variant="body1" style={{ fontWeight: 400 }}>
+                {member.name}
+              </Typography>
+              <Typography variant="body2" style={{ color: "#A0730C" }}>
+                {member.role}
+              </Typography>
+            </div>
+          ))}
+      </div>
     </Grid>
+  ))}
+</Grid>
+
     </CardContent>
     </div>
       </Card>

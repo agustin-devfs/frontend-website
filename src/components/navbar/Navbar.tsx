@@ -1,9 +1,10 @@
 'use client'
 
+import { bars } from "@/app/core/utils/contants";
 import { ButtonGroup, Button, Link } from "@mui/material"
 import Image from 'next/image';
 
-export default function Component() {
+export default function NavBar() {
   return (
     <div>
       <ButtonGroup 
@@ -40,17 +41,16 @@ export default function Component() {
         }}
       >
         <div style={{ padding: "20px", marginTop:"10px" }}>
-        <Link href="https://togetherdevs.com/" underline="none" sx={{ display: 'flex', alignItems: 'center' }}>
-         
-         <Image src="/TogetherDevs.svg" alt="TogetherDevs"
-    loading="lazy"width={120} height={30} style={{borderRadius:"10%"}} />
-
-   </Link>
+            <Link href="/" underline="none" sx={{ display: 'flex', alignItems: 'center' }}>
+              <Image src="logos/TogetherDevs.svg" alt="TogetherDevs"
+              loading="lazy"width={120} height={30} style={{borderRadius:"10%"}} />
+            </Link>
         </div>
-        <Button>OUR SERVICE</Button>
-        <Button>ABOUT US</Button>
-        <Button>OUR WORK</Button>
-        <Button>GET STARDED</Button>
+
+        <Button href="#services">{bars.ButtonService}</Button>
+        <Button href="#aboutus">{bars.ButtonAbout}</Button>
+        <Button href="#industries">{bars.ButtonWork}</Button>
+        <Button href="#contactForm">{bars.ButtonCall}</Button>
       </ButtonGroup>
     </div>
   )

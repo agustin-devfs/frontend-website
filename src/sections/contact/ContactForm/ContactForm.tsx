@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Image from 'next/image';
+import { contact } from '@/app/core/utils/contants';
 
 export default function Component() {
   const [formData, setFormData] = useState({
@@ -77,7 +78,7 @@ export default function Component() {
                   },
                 }}
               >
-                SCHEDULE A MEETING
+                {contact.buttonMeet}
               </Button>
 
               <Button
@@ -99,9 +100,8 @@ export default function Component() {
                   },
                 }}
               >
-                LET&apos;S CHAT
+                {contact.buttonChat}
               </Button>
-             {/*  <Grid item> */}
             <Typography
               variant="body2"
               style={{
@@ -111,10 +111,9 @@ export default function Component() {
                 marginTop: '10%'
               }}
             >
-              OR SIMPLY MESSAGE US
+              {contact.text}
             </Typography>
               <Divider sx={{ maxWidth: { xs: '100%', sm: '300px' }}} style={ { backgroundColor: '#f3ff73', marginTop: "5px", padding:"2px", minWidth: '300px',  borderBottomWidth: "inherit" }} />
-          {/* </Grid> */}
           </Grid>
 
           {/* Divider with Text */}
@@ -184,7 +183,7 @@ export default function Component() {
                       e.currentTarget.style.color = 'black';
                     }}
                   >
-                    Submit
+                    {contact.buttonSubmit}
                   </Button>
                 </Grid>
               </Grid>

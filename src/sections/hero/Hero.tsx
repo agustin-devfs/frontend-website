@@ -1,12 +1,13 @@
 import { Typography, Grid, Box } from '@mui/material';
 import Image from 'next/image';
+import { hero } from '@/app/core/utils/contants';
 
 function HeroSection() {
   return (
     <Box sx={{
       color: "black",
       margin: "0 auto",
-      padding: { xs: "1rem 1rem", md: "2rem 2rem" },
+      padding: { xs: "1rem 1rem", md: "0.5rem 2rem" },
       position: "relative",
     }}>
       {/* Texto principal */}
@@ -20,7 +21,7 @@ function HeroSection() {
             textUnderlinePosition: 'from-font',
             textDecorationSkipInk: 'none',
           }}>
-            {"We Develop Ideas into"}
+            {hero.prhaseRow1}
           </Typography>
           <Typography variant="h2" component="h1" gutterBottom sx={{
             fontFamily: 'Raleway',
@@ -30,7 +31,7 @@ function HeroSection() {
             textUnderlinePosition: 'from-font',
             textDecorationSkipInk: 'none',
           }}>
-            {"Thriving Digital Experiences"}
+          {hero.prhaseRow2}
           </Typography>
         </Grid>
 
@@ -45,7 +46,7 @@ function HeroSection() {
             borderRadius: '6px',
             display: 'inline-block',
           }}>
-            {"READY TO BUILD TOGETHER?"}
+            {hero.question}
           </Typography>
         </Grid>
 
@@ -58,7 +59,7 @@ function HeroSection() {
           overflow: "hidden",
         }}>
           <Image
-            src="/Vector lucinda sonsrisa gigante.png"
+            src={hero.imageBacground}
             alt="SmileIcon"
             loading="lazy"
             width={1400}

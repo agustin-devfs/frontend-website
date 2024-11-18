@@ -1,6 +1,10 @@
 :root {
+  /* color */
   --background: #ededed  ;
   --foreground: #ededed;
+  /* fonts */
+  --font-raleway: "Raleway", sans-serif;
+  --font-podkova: "Podkova", serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,6 +23,7 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
+  font-family: var(--font-raleway);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

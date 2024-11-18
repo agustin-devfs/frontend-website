@@ -1,17 +1,5 @@
-import { Typography } from "@mui/material";
 import Marquee from "./Marquee";
-
-const icons = [
-/*   { src: "/icons/netcore.svg", alt: ".NET Core" },
- *//*   { src: "/icons/js.svg", alt: "JavaScript" },
- */  { src: "/icons/js.svg", alt: "Node.js" },
-  { src: "/icons/react.svg", alt: "React" },
-  { src: "/icons/sql.svg", alt: "SQL" },
-  { src: "/icons/mongo.svg", alt: "MongoDB" },
-/*   { src: "/icons/aws.svg", alt: "AWS" },
- */  { src: "/icons/reactnative.svg", alt: "React Native" },
-/*   { src: "/icons/azure.svg", alt: "Azure" },
- */];
+import {icons} from "@/app/core/utils/contants"
 
 function renderIcons() {
 	return (

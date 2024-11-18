@@ -1,102 +1,107 @@
-'use client'
+'use client';
 import { Box, Typography, useTheme } from '@mui/material';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useTransform, useSpring, useMotionValue } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 import Image from 'next/image';
+import {about} from '@/app/core/utils/contants'
 
-const about = [
-  {
-    title: 'About Us',
-    content: "TogetherDevs is an innovative software development company specialising in custom mobile Apps and web platforms. Our goal is to help businesses across various industries turn their ideas into effective, high-impact digital solutions. Our mission is to embrace our client’s ideas and take them to the next level by delivering technological products that exceed industry standards.",
-  },
-  {
-    title: 'How We Make It Happen',
-    content: "Teaming up with clients to bring ideas to life. • Personalised approach to every project. • Commitment to quality and innovation • Ensuring tangible and measurable results",
-  },
-  {
-    title: 'Our Values',
-    content: "Commitment: Dedicated to client success and project excellence. Curiosity: Constantly learning and innovating to improve. Passion: Driven by enthusiasm and purpose. Transparency: Open and honest in all communications. Customer Orientation: Focused on delivering client-centered solutions.",
-  },
-];
-
-export default function AboutSection() {
+export default function AboutUsSection() {
   const theme = useTheme();
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const scrollProgress = useMotionValue(0);
+  const smoothScroll = useSpring(scrollProgress, { stiffness: 50, damping: 20 });
 
-  // Scroll synchronization
-  const { scrollY } = useScroll();
-  const sectionHeight = 400; // Height allocated for each section
-  const scrollRange = sectionHeight * about.length;
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = sectionRef.current;
+      if (!section) return;
 
-  // Calculate the visible index
-  const visibleIndex = useTransform(scrollY, [0, scrollRange], [0, about.length - 1]);
+      const rect = section.getBoundingClientRect();
+      const start = window.innerHeight * 0.7255; // Ajustar el comienzo del efecto
+      const end = window.innerHeight * 0.7266; // Ajustar el final del efecto
+
+   if (rect.top <= start && rect.bottom >= end) {
+        // Bloqueamos el body cuando la sección es visible
+        document.body.style.overflow = 'hidden';
+        const scrollableHeight = section.scrollHeight - section.offsetHeight;
+        const progress = Math.min(
+          Math.max((start - rect.top) / scrollableHeight, 0),
+          1
+        );
+        scrollProgress.set(progress);
+      } else {
+        document.body.style.overflow = '';
+      } 
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <Box sx={{ position: 'relative', height: '400vh', overflow: 'hidden' }}>
-
-      <Box
-        component="img"
-        src="/about.jpeg"
+    <Box
+      ref={sectionRef}
+      id="aboutus"
+      sx={{
+        position: 'relative',
+        height: '100vh',
+        overflow: 'hidden',
+      }}
+    >
+      {/* Static Background */}
+      <Image
+        src="/assets/about.png"
         alt="Background"
-        sx={{
-          position: 'fixed',
+        width= {1800}
+        height= {1200}
+        style={{
           top: 0,
           left: 0,
-          width: '100%',
-          height: '100%',
           objectFit: 'cover',
           zIndex: 1,
         }}
       />
 
+      {/* Scrollable Content */}
       <Box
         sx={{
-          position: 'fixed',
+          position: 'absolute',
           top: 0,
           left: '60%',
           width: '40%',
           height: '100%',
           zIndex: 2,
           display: 'flex',
-          alignItems: 'center',
+          flexDirection: 'column',
           justifyContent: 'center',
+          alignItems: 'center',
+          overflowY: 'scroll',
           backgroundColor: 'white',
           borderTopLeftRadius: '25%',
           borderBottomLeftRadius: '25%',
         }}
       >
-        {about.map((item, index) => (
+        {about.about.map((item, index) => (
           <motion.div
             key={index}
             style={{
-              opacity: useTransform(visibleIndex, [index - 0.5, index, index + 0.5], [0, 1, 0]),
-              y: useTransform(visibleIndex, [index - 0.5, index, index + 0.5], [100, 0, -100]),
+              opacity: useTransform(smoothScroll, [index - 0.5, index, index + 0.5], [0, 1, 0]),
+              y: useTransform(smoothScroll, [index - 0.5, index, index + 0.5], [50, 0, -50]),
               position: 'absolute',
+              width:'70%'
             }}
           >
-            <Typography
-              variant="h4"
-              sx={{
-                fontFamily: 'Raleway',
-                fontWeight: 400,
-                fontSize: { xs: '32px', md: '48px' },
-                color: 'black',
-              }}
-            >
+            <Typography variant="h4" sx={{ fontFamily: 'Raleway', fontWeight: 400, fontSize: { xs: '32px', md: '48px' }, color: 'black' }}>
               {item.title}
             </Typography>
-            <Image
-              src="/assets/sonrisa pequeña.png"
-              alt="Sonrisa"
-              width={90}
-              height={30}
-              style={{ margin: '10px 0' }}
-            />
+            <Image src={"/assets/sonrisa pequeña.png"} alt="Sonrisa" width={90} height={30} style={{ margin: '10px 0' }} />
             <Typography
               variant="body1"
               sx={{
                 fontFamily: 'Raleway',
                 fontWeight: 400,
-                fontSize: { xs: '16px', md: '20px' },
-                lineHeight: { xs: '24px', md: '32px' },
+                fontSize: { xs: '16px', md: '30px' },
+                lineHeight: { xs: '24px', md: '50px' },
                 color: 'black',
               }}
             >
