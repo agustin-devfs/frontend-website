@@ -52,7 +52,6 @@ function ParallaxText({ children, baseVelocity = 2 }: ParallaxProps) {
 	const spanCount = 30;
 	const spanStyles = {
 		x,
-		marginLeft: '50px',
 	/* 	background: 'linear-gradient(0deg, #A0730C 0%, #E2C98F 50%,  #FFFFFF 100%)',
 		WebkitBackgroundClip: 'text',
 		backgroundClip: 'text', */
@@ -69,7 +68,8 @@ function ParallaxText({ children, baseVelocity = 2 }: ParallaxProps) {
 				fontWeight: 400,
 				fontSize: '53px',
 				fontFamily: 'Raleway',
-        background: '#A0730C'
+        background: '#A0730C',
+		padding: '18px',
 			}}
 		>
 			<motion.div style={{ x, whiteSpace: 'nowrap', width: '100%' }}>
@@ -91,7 +91,7 @@ interface ParallaxTextProps {
 export default function ParalaxText({ phrase1 }: ParallaxTextProps) {
 	return (
 		<>
-			<ParallaxText baseVelocity={-2}>{phrase1}</ParallaxText>
+			<ParallaxText baseVelocity={-1}>{phrase1}</ParallaxText>
 		</>
 	);
 }

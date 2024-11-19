@@ -1,4 +1,4 @@
-import { AppBar,Container, Link, Stack, Toolbar } from '@mui/material'
+import { AppBar,Container, Link, Stack, Toolbar, Typography } from '@mui/material'
 import Image from 'next/image';
 import {bars} from '@/app/core/utils/contants'
 
@@ -7,28 +7,60 @@ export default function Header() {
     <AppBar position="static" sx={{ bgcolor: '#EDEDED', boxShadow: 'none' }}>
       <Container maxWidth="lg">
         <Toolbar sx={{ justifyContent: 'space-between', py:0 }}>
-        <Stack direction="row">
+        <Stack direction="row" >
           <Link href={bars.togetherLink} underline="none" sx={{ display: 'flex', alignItems: 'center' }}>
                 <Image src={bars.togetherDevsIcon} alt="TogetherDevs"
                   loading="lazy"width={150} height={150} style={{borderRadius:"10%"}} />
           </Link>
           </Stack>
 
-          <Stack direction="row" spacing={6}>
+          <Stack direction="row" spacing={6} marginLeft={"20%"} >
               <Link href="#" underline="none" sx={{ color: 'Black', display: 'flex', alignItems: 'center', gap: 0.5 }}>
             <Image src={bars.appIcon} alt="AppIcon"
                 loading="lazy"width={24} height={24} style={{borderRadius:"10%"}} />
-                {bars.app}
+                  <Typography sx={{
+                    fontFamily: 'Raleway',
+                    fontWeight: 600,
+                    fontSize: { xs: '14px', md: '22px' },
+                    lineHeight: { xs: '14px', md: '25px' },
+                    letterSpacing:'1%',
+                    color:'#353535'
+         
+                  }}>
+                  {bars.app}
+                 </Typography>
               </Link>
               <Link href="#" underline="none" sx={{ color: 'Black', display: 'flex', alignItems: 'center', gap: 0.5 }}>
               <Image src={bars.webIcon} alt="AppIcon"
                 loading="lazy"width={24} height={24} style={{borderRadius:"10%"}} />
-                {bars.web}
+                
+                <Typography sx={{
+                    fontFamily: 'Raleway',
+                    fontWeight: 600,
+                    fontSize: { xs: '14px', md: '22px' },
+                    lineHeight: { xs: '14px', md: '25px' },
+                    letterSpacing:'1%',
+                    color:'#353535'
+         
+                  }}>
+                  {bars.web}
+                 </Typography>
+
               </Link>
               <Link href="#" underline="none" sx={{ color: 'Black', display: 'flex', alignItems: 'center', gap: 0.5 }}>
               <Image src={bars.hireIcon} alt="AppIcon"
                 loading="lazy"width={24} height={24} style={{borderRadius:"10%"}} />
-                {bars.hire}
+                <Typography sx={{
+                    fontFamily: 'Raleway',
+                    fontWeight: 600,
+                    fontSize: { xs: '14px', md: '22px' },
+                    lineHeight: { xs: '14px', md: '25px' },
+                    letterSpacing:'1%',
+                    color:'#353535'
+         
+                  }}>
+                  {bars.hire}
+                 </Typography>
               </Link>
           </Stack>
 

@@ -76,16 +76,16 @@ export const about = {
 ]};
 
 export const icons = [
-  /*   { src: "/technologies/netcore.svg", alt: ".NET Core" },
-   *//*   { src: "/technologies/js.svg", alt: "JavaScript" },
-   */  { src: "/technologies/node.svg", alt: "Node.js" },
-    { src: "/technologies/react.svg", alt: "React" },
-    { src: "/technologies/sql.svg", alt: "SQL" },
-    { src: "/technologies/mongo.svg", alt: "MongoDB" },
-  /*   { src: "/technologies/aws.svg", alt: "AWS" },
-   */  { src: "/technologies/reactnative.svg", alt: "React Native" },
-  /*   { src: "/technologies/azure.svg", alt: "Azure" },
-   */];
+      { src: "/technologies/netcore.svg", alt: ".NET Core" },
+      { src: "/technologies/js.svg", alt: "JavaScript" },
+      { src: "/technologies/node.svg", alt: "Node.js" },
+      { src: "/technologies/react.svg", alt: "React" },
+      { src: "/technologies/sql.svg", alt: "SQL" },
+      { src: "/technologies/mongo.svg", alt: "MongoDB" },
+      { src: "/technologies/aws.svg", alt: "AWS" },
+      { src: "/technologies/reactnative.svg", alt: "React Native" },
+      { src: "/technologies/azure.svg", alt: "Azure" },
+   ];
    
    export const projects = [
     {

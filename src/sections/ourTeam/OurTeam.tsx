@@ -14,10 +14,10 @@ function TeamSection() {
       {/* CEO Section */}
       <Card variant="outlined" sx={{color:'black', backgroundColor:"#ededed", border:"#ededed"}} style={{ marginBottom: "3rem", display: "flex"}}>
         <div style={{ width: "30%", padding: "1.5rem" }}>
-        <Image src="/assets/CEO.png" alt="CEO" width={150} height={150} style={{borderRadius:"10%"}} />
+        <Image src="/assets/CEO.png" alt="CEO" width={200} height={200} style={{borderRadius:"10%"}} />
         </div>
         <div> 
-            <CardContent style={{ width: "100%", padding: "1.5rem" }}>
+            <CardContent style={{ width: "100%", padding: "3.5rem" }}>
               <Typography variant="h5" component="h2" style={{ fontWeight: 500 }}>
                 {ceo.owner}
               </Typography>
@@ -32,6 +32,7 @@ function TeamSection() {
                 </div>
                 <div style={{ flex: 1 }}>
                   <Typography variant="body2" color="textSecondary">
+                    {ceo.text2}
                   </Typography>
                 </div>
               </div>

@@ -8,20 +8,28 @@ import { Autoplay, Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import { ChevronLeft, ChevronRight } from '@mui/icons-material'
-import {testimonials} from "@/app/core/utils/contants/index"
-import Image from 'next/image';
+import { testimonials } from "@/app/core/utils/contants/index"
+import Image from 'next/image'
+import { SetStateAction, useState } from 'react'
 
 export default function Component() {
-  
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Cambia el índice actual basado en el SwiperSlide activo
+  const handleSlideChange = (swiper: { realIndex: SetStateAction<number> }) => {
+    setCurrentIndex(swiper.realIndex); // swiper.realIndex obtiene el índice del slide actual
+  };
+
   return (
     <Box sx={{ 
-      bgcolor: '#353535',
       color: 'white',
       position: 'relative',
       py: 8,
-      px: 4
+      px: 4,
+      // Cambia el color de fondo basado en el índice actual
+      bgcolor: currentIndex % 2 === 0 ? '#353535' : '#A0730C' 
     }}>
-  <Swiper
+      <Swiper
         modules={[Navigation, Autoplay]}
         navigation={{
           prevEl: '.swiper-button-prev',
@@ -33,19 +41,37 @@ export default function Component() {
         }}
         loop={true}
         spaceBetween={50}
+        onSlideChange={handleSlideChange} // Maneja el cambio de slide
       >
         {testimonials.map((testimonial, index) => (
           <SwiperSlide key={index}>
             <Box sx={{ 
               maxWidth: '800px',
               mx: 'auto',
-              px: { xs: 2, md: 4 }
+              px: { xs: 2, md: 4 },
             }}>
               <Box sx={{ mb: 4 }}>
-              
-                <Image src="/quote.png" alt="quote"
-          loading="lazy"width={110} height={40} style={{borderRadius:"10%"}} />
+                {index % 2 === 0 ? (
+                  <Image 
+                    src="/quote.png" 
+                    alt="quote"
+                    loading="lazy" 
+                    width={110} 
+                    height={40} 
+                    style={{ borderRadius: "10%" }} 
+                  />
+                ) : (
+                  <Image 
+                    src="/assets/quoteblue.png"
+                    alt="quote"
+                    loading="lazy" 
+                    width={110} 
+                    height={40} 
+                    style={{ borderRadius: "10%" }} 
+                  />
+                )}
               </Box>
+
               <Typography 
                 variant="h6" 
                 sx={{ 
@@ -59,7 +85,7 @@ export default function Component() {
               <Typography 
                 variant="subtitle1" 
                 sx={{ 
-                  color: '#D1BB8A',
+                  color: index % 2 === 0 ? '#D1BB8A': '#E8FE74',
                   fontWeight: 'bold',
                   mb: 0.5
                 }}
@@ -69,7 +95,7 @@ export default function Component() {
               <Typography 
                 variant="body2" 
                 sx={{ 
-                    color: '#D1BB8A',
+                  color: index % 2 === 0 ? '#D1BB8A': '#E8FE74',
                 }}
               >
                 {testimonial.position}
@@ -91,9 +117,10 @@ export default function Component() {
           backgroundColor: 'grey',
           width: '50px', 
           height: '50px', 
+          display: { xs: 'none', sm: 'initial' }
         }}
       >
-        <ChevronLeft  sx={{color: "#E8FE74",marginLeft:"20px"}}/>
+        <ChevronLeft  sx={{color: "#E8FE74"}}/>
       </IconButton>
       
       <IconButton 
@@ -108,12 +135,11 @@ export default function Component() {
           backgroundColor: 'grey',
           width: '50px', 
           height: '50px', 
-          
+          display: { xs: 'none', sm: 'initial' }
         }}
       >
-  <ChevronRight sx={{ color: "#E8FE74",marginLeft:"25px"}} /> 
-  </IconButton>
+        <ChevronRight sx={{ color: "#E8FE74"}} /> 
+      </IconButton>
     </Box>
-  )
+  );
 }
-
