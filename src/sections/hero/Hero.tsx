@@ -7,8 +7,8 @@ function HeroSection() {
   const theme = useTheme();
   const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
 
-  const widthImg = isMdUp ? 1400 : 200;
-  const heightImg = isMdUp ? 500 : 100;
+  const widthImg = isMdUp ? 1600 : 200;
+  const heightImg = isMdUp ? 625 : 100;
 
   return (
     <Box sx={{
