@@ -15,7 +15,7 @@ export default function Component() {
 
   
   return (
-    <div>
+    <>
       <Grid container spacing={0}>
         {projects.map((project, index) => {
           const color = colores[index % colores.length];
@@ -87,6 +87,6 @@ export default function Component() {
           );
         })}
       </Grid>
-    </div>
+    </>
   );
 }

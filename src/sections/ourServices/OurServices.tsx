@@ -6,7 +6,7 @@ import {servicesData, service } from '@/app/core/utils/contants'
 const ServicesSection = () => (
 
    <Box py={6} px={1} mt={65} mb={30}>
-   <Container maxWidth="xl">
+   <Container maxWidth='xl'>
 
     <Typography variant="h2" component="h1" gutterBottom style={{ color: '#06050F', fontWeight: 400, fontSize: '96px', lineHeight: '96px', textAlign:'center' }}>
       {service.title}

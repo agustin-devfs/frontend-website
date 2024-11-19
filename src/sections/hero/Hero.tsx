@@ -1,8 +1,15 @@
-import { Typography, Grid, Box } from '@mui/material';
+'use client'
+import { Typography, Grid, Box, useMediaQuery, useTheme } from '@mui/material';
 import Image from 'next/image';
 import { hero } from '@/app/core/utils/contants';
 
 function HeroSection() {
+  const theme = useTheme();
+  const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
+
+  const widthImg = isMdUp ? 1400 : 200;
+  const heightImg = isMdUp ? 500 : 100;
+
   return (
     <Box sx={{
       color: "black",
@@ -36,7 +43,8 @@ function HeroSection() {
         </Grid>
 
         {/* Botón de llamado a la acción */}
-        <Grid item xs={12} sx={{ textAlign: 'center', mt: 2 ,ml:100 }}>
+        <Grid item xs={12} sx={{ textAlign: { xs: 'center', md: 'right' } , mt: 2, mx:10 }}>
+
           <Typography variant="h2" component="h1" gutterBottom sx={{
              fontFamily: 'Podkova',
             fontWeight: 500,
@@ -63,8 +71,8 @@ function HeroSection() {
             src={'/assets/Vector lucinda sonsrisa gigante.png'}
             alt="SmileIcon"
             loading="lazy"
-            width={1598}
-            height={624}
+            width={widthImg}
+            height={heightImg}
           />
         </Grid>
       </Grid>

@@ -14,7 +14,7 @@ import AboutUs from "@/sections/aboutUs/AboutUs";
 
 export default function Home() {
   return (
-    <div >
+    <>
       <main >
         <Navbar/>
         <Appbar />
@@ -42,6 +42,6 @@ export default function Home() {
         </section>
         <Footer/>
       </main>
-    </div>
+    </>
   );
 }
