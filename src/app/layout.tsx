@@ -6,7 +6,7 @@ import "./globals.css";
 const raleway = Raleway({
   subsets: ["latin"],
   variable: "--font-raleway",
-  weight: ["100", "400", "700", "900"], // Selecciona los pesos necesarios
+  weight: ["100", "400", "700", "900"],
 });
 
 const podkova = Podkova({
@@ -16,17 +16,17 @@ const podkova = Podkova({
 });
 
 export const metadata: Metadata = {
-  title: "Together Devs | Nearshore Software Development Company",
+  title: "Together Devs",
   description:
-    "Togetherdevs.com is a software company with experience in IT solutions, helping businesses scale up team quality and productivity.",
+    "Togetherdevsis a software company with experience in IT solutions, helping businesses scale up team quality and productivity.",
   icons: {
-    icon: "./../../public/logos/isologo.png",
-    apple: "./../../public/logos//logos/isologo.png",
+    icon: "@/logos/isologo.png",
+    apple: "@/logos//logos/isologo.png",
   },
   openGraph: {
-    title: "Home",
+    title: "Together Devs",
     description:
-      "Togetherdevs.com is a software company with experience in IT solutions, helping businesses scale up team quality and productivity.",
+      "Togetherdevs is a software company with experience in IT solutions, helping businesses scale up team quality and productivity.",
     url: "https://togetherdevs.com/",
     siteName: "Together Devs",
     locale: "es_ES",

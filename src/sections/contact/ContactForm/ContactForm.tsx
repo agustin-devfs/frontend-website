@@ -175,7 +175,8 @@ export default function Component() {
                       padding: "8px 80px",
                       backgroundColor: 'transparent',
                       color: 'black',
-                      border: '1px solid black'
+                      border: '1px solid black',
+                      marginTop:"10%"
                     }}
                     onMouseOver={(e) => {
                       e.currentTarget.style.backgroundColor = 'black';

@@ -53,7 +53,7 @@ export default function Component() {
               <Box sx={{ mb: 4 }}>
                 {index % 2 === 0 ? (
                   <Image 
-                    src="/quote.png" 
+                    src="/assets/quote.png" 
                     alt="quote"
                     loading="lazy" 
                     width={110} 
