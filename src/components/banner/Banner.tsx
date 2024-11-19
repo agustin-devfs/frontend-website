@@ -57,8 +57,8 @@ export default function Component() {
           <Image
             src="/assets/sonrisa pequeña.png"
             alt="Sonrisa"
-            width={90}
-            height={30}
+            width={96}
+            height={38}
             style={{ marginLeft: '10px' }}
           />
         </Grid>

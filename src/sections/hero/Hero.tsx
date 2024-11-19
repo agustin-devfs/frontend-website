@@ -63,8 +63,8 @@ function HeroSection() {
             src={'/assets/Vector lucinda sonsrisa gigante.png'}
             alt="SmileIcon"
             loading="lazy"
-            width={1400}
-            height={500}
+            width={1598}
+            height={624}
           />
         </Grid>
       </Grid>

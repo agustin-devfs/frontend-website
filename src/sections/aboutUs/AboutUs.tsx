@@ -93,7 +93,7 @@ export default function AboutUsSection() {
             <Typography variant="h4" sx={{ fontFamily: 'Raleway', fontWeight: 400, fontSize: { xs: '32px', md: '48px' }, color: 'black' }}>
               {item.title}
             </Typography>
-            <Image src={"/assets/sonrisa pequeña.png"} alt="Sonrisa" width={90} height={30} style={{ margin: '10px 0' }} />
+            <Image src={"/assets/sonrisa pequeña.png"} alt="Sonrisa" width={96} height={38} style={{ margin: '10px 0' }} />
             <Typography
               variant="body1"
               sx={{
