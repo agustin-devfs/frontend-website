@@ -60,7 +60,7 @@ function HeroSection() {
           overflow: "hidden",
         }}>
           <Image
-            src={hero.imageBacground}
+            src={'/assets/Vector lucinda sonsrisa gigante.png'}
             alt="SmileIcon"
             loading="lazy"
             width={1400}
