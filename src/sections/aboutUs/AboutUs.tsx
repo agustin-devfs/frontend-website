@@ -35,7 +35,7 @@ export default function AboutUsSection() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [scrollProgress]);
 
   return (
     <Box
@@ -51,7 +51,7 @@ export default function AboutUsSection() {
       <Image
         src="/assets/about.png"
         alt="Background"
-        width= {1800}
+        width= {2000}
         height= {1200}
         style={{
           top: 0,
@@ -65,10 +65,10 @@ export default function AboutUsSection() {
       <Box
         sx={{
           position: 'absolute',
-          top: 0,
-          left: '60%',
+          top: 50,
+          left: '65%',
           width: '40%',
-          height: '100%',
+          height: '90%',
           zIndex: 2,
           display: 'flex',
           flexDirection: 'column',

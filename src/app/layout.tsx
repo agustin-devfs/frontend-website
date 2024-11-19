@@ -19,7 +19,6 @@ export const metadata: Metadata = {
   title: "Together Devs | Nearshore Software Development Company",
   description:
     "Togetherdevs.com is a software company with experience in IT solutions, helping businesses scale up team quality and productivity.",
-  themeColor: "#000000",
   icons: {
     icon: "./../../public/logos/isologo.png",
     apple: "./../../public/logos//logos/isologo.png",

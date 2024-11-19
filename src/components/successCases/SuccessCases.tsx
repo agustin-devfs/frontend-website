@@ -32,8 +32,8 @@ export default function Component() {
                 >
                   <Grid item xs={6} sx={{ display: "flex", justifyContent: color.imageAlignment === "left" ? "left":"right" }}>
                     <Image
-                      width={500}
-                      height={500}
+                      width={480}
+                      height={420}
                       src={project.image}
                       alt={project.title}
                       style={{ objectFit: "cover", maxWidth: "100%" }}
@@ -41,16 +41,42 @@ export default function Component() {
                   </Grid>
                   <Grid item xs={6}>
                     <CardContent>
-                      <Typography variant="subtitle2" sx={{ color: color.text }}>
+                      <Typography variant="subtitle2" sx={{ color: color.text,
+                        fontFamily: 'Raleway',
+                        fontWeight: 700,
+                        fontSize: '18px',
+                        lineHeight: '1.5',
+                        textTransform: 'uppercase',
+                        marginBottom: '8px',
+                        letterSpacing: '0.1em',
+                      }}>
                         {project.category}
                       </Typography>
-                      <Typography variant="h6" component="div" sx={{ color: color.text }}>
+                      <Typography variant="h6" component="div" sx={{ color: color.text,
+                        fontFamily: 'Raleway',
+                        fontWeight: 500,
+                        fontSize: '32px',
+                        lineHeight: '1',
+                        textTransform: 'uppercase',
+                        marginBottom: '8px',
+                       }}>
                         {project.title}
                       </Typography>
-                      <Typography variant="body2" sx={{ color: color.text }}>
+                      <Typography variant="body2" sx={{ color: color.text,
+                           fontFamily: 'Raleway',
+                           fontWeight: 400,
+                           fontSize: '18px',
+                           lineHeight: '1.25',
+                           marginBottom: '8px',
+                       }}>
                         {project.description}
                       </Typography>
-                      <Typography variant="subtitle2" sx={{ color: color.text, marginTop: "8px" }}>
+                      <Typography variant="subtitle2" sx={{ color: color.text,  
+                         fontFamily: 'Raleway',
+                           fontWeight: 700,
+                           fontSize: '20px',
+                           lineHeight: '1.25',
+                           marginBottom: '8px',}}>
                         {project.client}
                       </Typography>
                     </CardContent>

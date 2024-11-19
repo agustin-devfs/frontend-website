@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Card, Box, Divider, CardHeader, CardContent, Typography } from '@mui/material';
+import { Card, Box, Divider, CardContent, Typography } from '@mui/material';
 import Image from 'next/image';
 
 interface ServiceCardProps {
@@ -10,14 +10,14 @@ interface ServiceCardProps {
   }
   
   const CardService: FC<ServiceCardProps> = ({ title, description, imageSrc, imageAlt }) => (
-    <Card elevation={0} style={{ textAlign: 'center', height:"400px", backgroundColor:"#EDEDED" }}>
+    <Card elevation={0} style={{textAlign: 'center', height:"36rem",width:"25rem", backgroundColor:"#EDEDED"}}>
       <Box
         display="flex"
         justifyContent="center"
         alignItems="center"
         flexGrow={1}
         sx={{ cursor: "pointer" }}
-        py={2}
+        pt={4}
       >
         <Image
           src={imageSrc}
@@ -27,10 +27,21 @@ interface ServiceCardProps {
           loading="lazy"
         />
       </Box>
-      <Divider style={{ backgroundColor: "#A0730C", marginTop: "5px", padding: "1px", margin: "25px", height: '2px', width: '80%' }} />
-      <CardHeader title={title} style={{ fontWeight: 'bold' }} />
+      <Divider style={{ backgroundColor: "#A0730C", marginTop: "5px", padding: "1px", margin: "25px", height: '2px', width: '90%' }} />
+    
+        <Typography sx={{
+            fontFamily: 'Raleway',
+            fontWeight: 700,
+            fontSize: { xs: '36px', md: '48px'},
+            lineHeight: { xs: '26px', md: '40px' },
+
+          }}>
+            {title}
+          </Typography>
+
       <CardContent>
-        <Typography variant="body2" color="textSecondary">
+        <Typography 
+        style={{ color: '#353535', fontWeight: 500, fontSize: '24px', lineHeight: '40px', textAlign:'center' }}>
           {description}
         </Typography>
       </CardContent>

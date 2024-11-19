@@ -7,8 +7,8 @@ import OurServices from "@/sections/ourServices/OurServices";
 import Navbar from "@/components/navbar/Navbar";
 import Banner from '@/components/banner/Banner';
 import SuccessCases from '@/components/successCases/SuccessCases';
-/* import ParalaxText from "@/components/Text/ParalaxText/ParalaxText";
-import MarqueeIcons from "@/components/marquee/MarqueeIcons"; */
+ import ParalaxText from "@/components/Text/ParalaxText/ParalaxText";
+import MarqueeIcons from "@/components/marquee/MarqueeIcons"; 
 import Hero from "@/sections/hero/Hero";
 import AboutUs from "@/sections/aboutUs/AboutUs";
 
@@ -25,9 +25,9 @@ export default function Home() {
         <section id="aboutus">
           <AboutUs />
         </section>
-{/*          <MarqueeIcons/>
- */}        <Banner/>
-{/*         <ParalaxText phrase1={""} phrase2={"Industries"}/> */}
+          <MarqueeIcons/>
+         <Banner/>
+         <ParalaxText phrase2={"Industries"}/> 
         <section id="industries">
         <SuccessCases/>
         </section>

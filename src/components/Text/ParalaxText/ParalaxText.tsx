@@ -94,7 +94,7 @@ export default function ParalaxText({ /* phrase1, */ phrase2 }: ParallaxTextProp
 	return (
 		<>
 {/* 			<ParallaxText baseVelocity={-2}>{phrase1}</ParallaxText>
- */}			<ParallaxText baseVelocity={2}>{phrase2}</ParallaxText>
+ */}			<ParallaxText baseVelocity={1}>{phrase2}</ParallaxText>
 		</>
 	);
 }

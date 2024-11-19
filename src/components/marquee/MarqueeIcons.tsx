@@ -1,5 +1,6 @@
 import Marquee from "./Marquee";
 import {icons} from "@/app/core/utils/contants"
+import Image from 'next/image';
 
 function renderIcons() {
 	return (
@@ -7,14 +8,14 @@ function renderIcons() {
 			{icons.map((icon, index) => (
 				<div 
 					key={index} 
-					style={{ display: 'flex', alignItems: 'center', margin: '0 20px' }}
+					style={{ display: 'flex', alignItems: 'center', margin: '0 10px' }}
 				>
-					<img 
+					<Image
 						src={icon.src} 
 						alt={icon.alt} 
-						style={{ width: '40px', height: '40px', marginRight: '8px' }} 
+						style={{ width: '40px', height: '40px', marginRight: '10px', marginLeft: '10px' }} 
 					/>
-					<span style={{ fontSize: '30px', color: '#000' }}>{icon.alt}</span>
+					<span style={{ fontFamily: 'podkova', fontWeight: '400', lineHeight: '40px', letterSpacing: '1px', fontSize: '30px', color: '#000' }}>{icon.alt}</span>
 				</div>
 			))}
 		</div>

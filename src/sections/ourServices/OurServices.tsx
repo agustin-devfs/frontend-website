@@ -5,15 +5,15 @@ import {servicesData, service } from '@/app/core/utils/contants'
 
 const ServicesSection = () => (
 
-   <Box py={10} px={4} mt={75} mb={30}>
-   <Container maxWidth="md">
+   <Box py={6} px={1} mt={65} mb={30}>
+   <Container maxWidth="xl">
 
     <Typography variant="h2" component="h1" gutterBottom style={{ color: '#06050F', fontWeight: 400, fontSize: '96px', lineHeight: '96px', textAlign:'center' }}>
       {service.title}
     </Typography>
     
-    <Grid container spacing={4}>
-      {servicesData.map((service, index) => (
+    <Grid container spacing={20}>
+    {servicesData.map((service, index) => (
         <Grid item xs={12} md={4} key={index}>
           <CardService
             title={service.title}
@@ -29,7 +29,7 @@ const ServicesSection = () => (
     <Box mt={4} textAlign="center">
           <Button           
                   href="https://meetings.hubspot.com/david3299"
-                  variant="contained" color="primary" style={{ backgroundColor: '#333', color: '#E8FE74', borderRadius:"25px", padding: "6px 110px" }}>
+                  variant="contained" color="primary" style={{ fontSize:"24px" ,backgroundColor: '#333', color: '#E8FE74', borderRadius:"25px", padding: "6px 100px" }}>
           {service.button}
           </Button>
         </Box>
