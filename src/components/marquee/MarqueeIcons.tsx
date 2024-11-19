@@ -13,7 +13,9 @@ function renderIcons() {
 					<Image
 						src={icon.src} 
 						alt={icon.alt} 
-						style={{ width: '40px', height: '40px', marginRight: '10px', marginLeft: '10px' }} 
+						width={40}
+						height={40}
+						style={{marginRight: '10px', marginLeft: '10px' }} 
 					/>
 					<span style={{ fontFamily: 'podkova', fontWeight: '400', lineHeight: '40px', letterSpacing: '1px', fontSize: '30px', color: '#000' }}>{icon.alt}</span>
 				</div>
