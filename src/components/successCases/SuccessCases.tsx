@@ -5,11 +5,11 @@ import {projects} from '@/app/core/utils/contants'
 export default function Component() {
 
   const colores = [
-    { back: '#A0730C', text: '#162D4F',imageAlignment:'left' }, 
-    { back: '#162D4F', text: '#A0730C',imageAlignment:'left'  },
+    { back: '#A0730C', text: '#000000',imageAlignment:'left' }, 
+    { back: '#162D4F', text: '#E8FE74',imageAlignment:'left'  },
     { back: '#494949', text: '#E8FE74',imageAlignment:'rigth' },
-    { back: '#E8FE74', text: '#364049',imageAlignment:'rigth'},
-    { back: '#162D4F', text: '#FEFEFE',imageAlignment:'left' },
+    { back: '#E8FE74', text: '#000000',imageAlignment:'rigth'},
+    { back: '#162D4F', text: '#E8FE74',imageAlignment:'left' },
     { back: '#353535', text: '#FEFEFE',imageAlignment:'left' }
   ];
 
@@ -64,7 +64,7 @@ export default function Component() {
                       </Typography>
                       <Typography variant="body2" sx={{ color: color.text,
                            fontFamily: 'Raleway',
-                           fontWeight: 400,
+                           fontWeight: 500,
                            fontSize: '18px',
                            lineHeight: '1.25',
                            marginBottom: '8px',
