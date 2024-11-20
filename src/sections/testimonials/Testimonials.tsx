@@ -62,7 +62,7 @@ export default function Component() {
                   />
                 ) : (
                   <Image 
-                    src="/assets/quoteblue.png"
+                    src="/assets/quotec.svg"
                     alt="quote"
                     loading="lazy" 
                     width={110} 
@@ -77,7 +77,9 @@ export default function Component() {
                 sx={{ 
                   mb: 3,
                   fontSize: { xs: '1.1rem', md: '1.25rem' },
-                  lineHeight: 1.6
+                  lineHeight: 1.6,
+                  color: index % 2 === 0 ? '#FFFFFF': '#FFFFFF',
+
                 }}
               >
                 {testimonial.quote}
@@ -85,7 +87,7 @@ export default function Component() {
               <Typography 
                 variant="subtitle1" 
                 sx={{ 
-                  color: index % 2 === 0 ? '#E8FE74': '#E8FE74',
+                  color: index % 2 === 0 ? '#E8FE74': '#000000',
                   fontWeight: 700,
                   mb: 0.5,
                   fontFamily: 'Raleway',
@@ -100,7 +102,7 @@ export default function Component() {
               <Typography 
                 variant="body2" 
                 sx={{ 
-                  color: index % 2 === 0 ? '#E8FE74': '#E8FE74',
+                  color: index % 2 === 0 ? '#E8FE74': '#000000',
                   fontWeight: 600,
                   mb: 0.5,
                   fontFamily: 'Raleway',
