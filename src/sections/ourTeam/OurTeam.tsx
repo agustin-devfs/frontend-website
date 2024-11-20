@@ -13,7 +13,7 @@ function TeamSection() {
       
 
       {/* CEO Section */}
-      <Card variant="outlined" sx={{color:'black', backgroundColor:"#ededed", border:"#ededed"}} style={{ marginBottom: "3rem", display: "flex"}}>
+      <Card variant="outlined" sx={{color:'black', backgroundColor:"#FEFEFE", border:"#ededed"}} style={{ marginBottom: "3rem", display: "flex"}}>
         <div style={{ width: "30%", padding: "1.5rem" }}>
         <Image src="/assets/CEO.png" alt="CEO" width={200} height={200} style={{borderRadius:"10%"}} />
         </div>
