@@ -67,7 +67,7 @@ function HeroSection() {
           overflow: "hidden",
         }}>
           <Image
-            src={'/assets/Vector lucinda sonsrisa gigante.png'}
+            src={'/public/assets/'}
             alt="SmileIcon"
             loading="lazy"
             width={widthImg}
