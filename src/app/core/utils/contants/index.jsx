@@ -27,7 +27,7 @@ export const hero =
   prhaseRow1: "We Develop Ideas into" ,
   prhaseRow2:"Thriving Digital Experiences",
   question: "READY TO BUILD TOGETHER?",
-  imageBacground: "/Vector lucinda sonsrisa gigante.png",
+  imageBacground: "/sonrisaHero.png",
 }
 //SERVICES
 export const service = 

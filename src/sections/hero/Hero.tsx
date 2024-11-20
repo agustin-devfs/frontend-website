@@ -67,7 +67,7 @@ function HeroSection() {
           overflow: "hidden",
         }}>
           <Image
-            src={'/public/assets/'}
+            src={'/assets/sonrisaHero.png'}
             alt="SmileIcon"
             loading="lazy"
             width={widthImg}
