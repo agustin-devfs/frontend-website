@@ -19,7 +19,7 @@ function TeamSection() {
         </div>
         <div> 
             <CardContent style={{ width: "100%", padding: "3.5rem" }}>
-              <Typography variant="h5" component="h2" style={{ fontWeight: 500 }}>
+              <Typography variant="h4" component="h2" style={{ fontWeight: 500 }}>
                 {ceo.owner}
               </Typography>
               <Typography variant="subtitle1" style={{ /* color: "#A0730C",  */ color:"000000", fontWeight: 500, marginBottom: "1rem" }}>
