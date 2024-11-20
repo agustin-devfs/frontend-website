@@ -85,9 +85,14 @@ export default function Component() {
               <Typography 
                 variant="subtitle1" 
                 sx={{ 
-                  color: index % 2 === 0 ? '#D1BB8A': '#E8FE74',
-                  fontWeight: 'bold',
-                  mb: 0.5
+                  color: index % 2 === 0 ? '#E8FE74': '#E8FE74',
+                  fontWeight: 700,
+                  mb: 0.5,
+                  fontFamily: 'Raleway',
+                /*   fontSize: '18px',
+                  lineHeight: '1.6',
+                  letterSpacing: '0.13em', */
+
                 }}
               >
                 {testimonial.author}
@@ -95,7 +100,13 @@ export default function Component() {
               <Typography 
                 variant="body2" 
                 sx={{ 
-                  color: index % 2 === 0 ? '#D1BB8A': '#E8FE74',
+                  color: index % 2 === 0 ? '#E8FE74': '#E8FE74',
+                  fontWeight: 600,
+                  mb: 0.5,
+                  fontFamily: 'Raleway',
+            /*       fontSize: '16px',
+                  lineHeight: '1.6',
+                  letterSpacing: '0.11em', */
                 }}
               >
                 {testimonial.position}
