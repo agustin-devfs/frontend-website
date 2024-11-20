@@ -20,9 +20,9 @@ export const metadata: Metadata = {
   description:
     "Togetherdevsis a software company with experience in IT solutions, helping businesses scale up team quality and productivity.",
   icons: {
-    icon: "@/logos/isologo.png",
-    apple: "@/logos//logos/isologo.png",
-  },
+    icon: "./../../../public/assets/logos/isologo.png",
+     apple: "./../../../public/assets/logos/isologo.png",
+   },
   openGraph: {
     title: "Together Devs",
     description:

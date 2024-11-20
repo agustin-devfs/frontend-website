@@ -7,15 +7,14 @@ function HeroSection() {
   const theme = useTheme();
   const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
 
-  const widthImg = isMdUp ? 1600 : 200;
-  const heightImg = isMdUp ? 625 : 100;
+  const widthImg = isMdUp ? 1400 : 200;
+  const heightImg = isMdUp ? 525 : 100;
 
   return (
     <Box sx={{
       color: "black",
-      margin: "0 auto",
-      padding: { xs: "1rem 1rem", md: "0.5rem 2rem" },
       position: "relative",
+      margin: "0 auto",
     }}>
       {/* Texto principal */}
       <Grid container spacing={0} justifyContent="center">
@@ -43,7 +42,7 @@ function HeroSection() {
         </Grid>
 
         {/* Botón de llamado a la acción */}
-        <Grid item xs={12} sx={{ textAlign: { xs: 'center', md: 'right' } , mt: 2, mx:10 }}>
+        <Grid item xs={12} sx={{ textAlign: { xs: 'center', md: 'right' } , mt: 2, mx:20 }}>
 
           <Typography variant="h2" component="h1" gutterBottom sx={{
              fontFamily: 'Podkova',

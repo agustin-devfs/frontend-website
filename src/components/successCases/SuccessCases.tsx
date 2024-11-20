@@ -5,8 +5,8 @@ import {projects} from '@/app/core/utils/contants'
 export default function Component() {
 
   const colores = [
-    { back: '#A0730C', text: '#FEFEFE',imageAlignment:'left' }, 
-    { back: '#162D4F', text: '#FEFEFE',imageAlignment:'left'  },
+    { back: '#A0730C', text: '#162D4F',imageAlignment:'left' }, 
+    { back: '#162D4F', text: '#A0730C',imageAlignment:'left'  },
     { back: '#494949', text: '#E8FE74',imageAlignment:'rigth' },
     { back: '#E8FE74', text: '#364049',imageAlignment:'rigth'},
     { back: '#162D4F', text: '#FEFEFE',imageAlignment:'left' },

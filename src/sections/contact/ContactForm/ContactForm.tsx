@@ -65,6 +65,8 @@ export default function Component() {
                 variant="outlined"
                 fullWidth
                 href={"https://meetings.hubspot.com/david3299"}
+                target="_blank" 
+                rel="noopener noreferrer"
                 sx={{
                   borderColor: '#f3ff73',
                   backgroundColor: 'transparent',
@@ -86,6 +88,8 @@ export default function Component() {
               <Button
                 variant="outlined"
 /*                 href={""}
+                   target="_blank" 
+                    rel="noopener noreferrer"
  */                fullWidth
                 sx={{
                   borderColor: '#f3ff73',

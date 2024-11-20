@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from "react";
 import { bars } from "@/app/core/utils/contants";
-import { ButtonGroup, Button, Link } from "@mui/material";
+import { ButtonGroup, Button, Link, Grid } from "@mui/material";
 import Image from 'next/image';
 
 export default function NavBar() {
@@ -17,7 +17,7 @@ export default function NavBar() {
       threshold: 0.1,
     });
 
-    const sectionIds = ["services", "aboutus", "industries", "testimonials", "contactForm"];
+    const sectionIds = ["services", "aboutus", "industries", "contactForm"];
     
     sectionIds.forEach(id => {
       const element = document.getElementById(id);
@@ -42,7 +42,7 @@ export default function NavBar() {
   };
 
   return (
-    <div style={navbarStyles}>
+    <Grid container md={4.5} style={navbarStyles}>
       <ButtonGroup
         variant="contained"
         sx={{
@@ -70,7 +70,7 @@ export default function NavBar() {
           },
         }}
       >
-        <div style={{ padding: "20px", marginTop: "10px" }}>
+        <Grid style={{ padding: "20px", marginTop: "10px" }}>
           <Link href="/" underline="none" sx={{ display: 'flex', alignItems: 'center' }}>
             <Image
               src="logos/TogetherDevs.svg"
@@ -81,13 +81,13 @@ export default function NavBar() {
               style={{ borderRadius: "10%" }}
             />
           </Link>
-        </div>
+        </Grid>
 
         <Button href="#services">{bars.ButtonService}</Button>
         <Button href="#aboutus">{bars.ButtonAbout}</Button>
         <Button href="#industries">{bars.ButtonWork}</Button>
         <Button href="#contactForm">{bars.ButtonCall}</Button>
       </ButtonGroup>
-    </div>
+    </Grid>
   );
 }

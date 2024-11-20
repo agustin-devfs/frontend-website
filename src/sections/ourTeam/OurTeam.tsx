@@ -1,11 +1,14 @@
-import { Typography, Card, CardContent, Grid, Divider } from '@mui/material';
+'use client'
+import { Typography, Card, CardContent, Grid, Divider, useTheme, useMediaQuery, Box } from '@mui/material';
 import Image from 'next/image';
 import {ceo, teamMembers} from '@/app/core/utils/contants'
 
 
 function TeamSection() {
+  const theme = useTheme();
+  const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
   return (
-    <div style={{ color: "black", maxWidth: "1200px", margin: "0 auto", padding: "5rem 1rem" }}>
+    <Box style={{ color: "black", maxWidth: "1200px", margin: "0 auto", padding: "5rem 1rem" }}>
       <Typography variant="h2" component="h1" gutterBottom style={{ fontWeight: 400, fontSize:'96px', lineHeight:'96px' }}>
         Our Team
       </Typography>
@@ -70,7 +73,7 @@ function TeamSection() {
     </div>
       </Card>
 
-         </div>
+         </Box>
   );
 }
 
