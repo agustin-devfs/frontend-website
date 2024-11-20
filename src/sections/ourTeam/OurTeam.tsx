@@ -13,18 +13,30 @@ function TeamSection() {
       
 
       {/* CEO Section */}
-      <Card variant="outlined" sx={{color:'black', backgroundColor:"#F9F9F9", border:"#ededed"}} style={{ marginBottom: "3rem", display: "flex"}}>
+      <Card variant="outlined" sx={{color:'black', backgroundColor:"#ededed", border:"#ededed"}} style={{ marginBottom: "3rem", display: "flex"}}>
         <div style={{ width: "30%", padding: "1.5rem" }}>
         <Image src="/assets/CEO.png" alt="CEO" width={200} height={200} style={{borderRadius:"10%"}} />
         </div>
         <div> 
-            <CardContent style={{ width: "100%", padding: "3.5rem" }}>
-              <Typography variant="h4" component="h2" style={{ fontWeight: 500 }}>
+            <CardContent style={{ width: "100%", padding: "3rem" }}>
+              
+              <Typography variant="h5" component="h2" sx={{ 
+                fontFamily: 'Raleway',
+                fontWeight: 700,
+                fontSize: { xs: '16px', md: '32px' },
+                lineHeight: { xs: '24px', md: '50px' },
+                color: 'black',}}>
                 {ceo.owner}
               </Typography>
-              <Typography variant="subtitle1" style={{ /* color: "#A0730C",  */ color:"000000", fontWeight: 500, marginBottom: "1rem" }}>
+              <Typography variant="subtitle1" sx={{ 
+                fontFamily: 'Raleway',
+                fontWeight: 600,
+                fontSize: { xs: '16px', md: '24px' },
+                lineHeight: { xs: '24px', md: '50px' },
+                color:'#162D4F',}}>
                 {ceo.title}
               </Typography>
+
               <div style={{ display: "flex", gap: "4rem", marginRight:"4rem"}}>
                 <div style={{ flex: 1 }}>
                   <Typography variant="body2" color="textSecondary">
@@ -57,7 +69,7 @@ function TeamSection() {
               <Typography variant="body1" style={{ fontWeight: 400 }}>
                 {member.name}
               </Typography>
-              <Typography variant="body2" style={{  /* color: "#A0730C",  */ color:"000000",  }}>
+              <Typography variant="body2" style={{ color: "#162D4F" }}>
                 {member.role}
               </Typography>
             </div>

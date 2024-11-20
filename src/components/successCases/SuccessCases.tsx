@@ -8,7 +8,7 @@ export default function Component() {
     { back: '#A0730C', text: '#000000',imageAlignment:'left' }, 
     { back: '#162D4F', text: '#E8FE74',imageAlignment:'left'  },
     { back: '#494949', text: '#E8FE74',imageAlignment:'rigth' },
-    { back: '#E8FE74', text: '#000000',imageAlignment:'rigth'},
+    { back: '#E8FE74', text: '#162D4F',imageAlignment:'rigth'},
     { back: '#162D4F', text: '#E8FE74',imageAlignment:'left' },
     { back: '#353535', text: '#FEFEFE',imageAlignment:'left' }
   ];
