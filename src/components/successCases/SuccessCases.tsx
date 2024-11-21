@@ -37,6 +37,10 @@ export default function SlideInCard() {
                   sx={{ position: "relative" }}
                 >
                   <Grid item xs={6} sx={{ display: "flex", justifyContent: color.imageAlignment === "left" ? "left" : "right" }}>
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: 'spring', stiffness: 300 }}
+                  >
                     <Image
                       width={480}
                       height={420}
@@ -44,6 +48,8 @@ export default function SlideInCard() {
                       alt={project.title}
                       style={{ objectFit: "cover", maxWidth: "100%" }}
                     />
+                </motion.div>
+
                   </Grid>
                   <Grid item xs={6}>
                   <motion.div

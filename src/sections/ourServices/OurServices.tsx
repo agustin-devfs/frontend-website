@@ -27,11 +27,26 @@ const ServicesSection = () => (
     </Grid>
 
     <Box mt={4} textAlign="center">
-          <Button           
-                  href="https://meetings.hubspot.com/david3299"
-                  variant="contained" color="primary" style={{ fontSize:"24px" ,backgroundColor: '#333', color: '#fff', borderRadius:"25px", padding: "18px 100px" }}>
-          {service.button}
-          </Button>
+          <Button
+        href="https://meetings.hubspot.com/david3299"
+        variant="contained"
+        color="primary"
+        sx={{
+          fontSize: '24px',
+          backgroundColor: '#333',
+          color: '#fff',
+          borderRadius: '25px',
+          padding: '18px 100px',
+          border: '1px solid black',
+          transition: 'background-color 0.3s, color 0.3s',
+          '&:hover': {
+            backgroundColor: '#eee', // Fondo claro en hover
+            color: '#333',            // Texto oscuro en hover
+          },
+        }}
+      >
+        {service.button}
+      </Button>
         </Box>
         </Box>
                     </Container>

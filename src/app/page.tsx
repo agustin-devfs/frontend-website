@@ -32,8 +32,7 @@ export default function Home() {
            <ParalaxText phrase2={"Industries"}/> 
           <section id="industries">
          <SuccessCases/>         
-{/*           <SuccessCases3/>
- */}          </section>
+          </section>
         <section id="testimonials">
            <Testimonials/> 
          </section>

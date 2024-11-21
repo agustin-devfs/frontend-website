@@ -4,7 +4,7 @@ import { useState } from 'react';
 import {ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Image from 'next/image';
-import { contact } from '@/app/core/utils/contants';
+import { contact, service } from '@/app/core/utils/contants';
 
 export default function Component() {
   const [formData, setFormData] = useState({
@@ -31,32 +31,14 @@ export default function Component() {
       container 
       justifyContent="center" 
       alignItems="center" 
-      style={{ minHeight: '100vh', padding: '16px', marginBottom:"5%" }}
+      style={{ minHeight: '100vh', marginBottom:"5%" }}
     >
       <ToastContainer />
 
       <Grid item xs={12} sm={8} md={6} lg={4}>
         <Grid container spacing={3} direction="column" alignItems="center">
-          {/* Header */}
-          <Grid item >
-            <Typography
-              variant="h6"
-              component="h2"
-              style={{
-                backgroundColor: '#f3ff73',
-                color: 'black',
-                padding: '8px 50px',
-                borderRadius: '6px',
-                fontWeight: 600,
-                textAlign: 'center'
-              }}
-            >
-              LET&apos;S BUILD TOGETHER!
-            </Typography>
-          </Grid>
-
             <Grid item xs={8}>
-            <Image src="/assets/sonrisa pequeña.png" alt="CEO" width={100} height={35} style={{borderRadius:"10%", marginTop:"2%"}} />
+            <Image src="/assets/sonrisa pequeña.png" alt="CEO" width={100} height={35} style={{borderRadius:"10%"}} />
             </Grid>
 
           {/* Action Buttons */}
@@ -68,7 +50,7 @@ export default function Component() {
                 target="_blank" 
                 rel="noopener noreferrer"
                 sx={{
-                  borderColor: '#f3ff73',
+                  borderColor: '#A0730C',
                   backgroundColor: 'transparent',
                   color: 'black',
                   borderWidth: 3, // Ancho del borde
@@ -78,7 +60,10 @@ export default function Component() {
                   height: { xs: '40px', sm: '50px' }, // Altura responsiva
                   mt: "5%",
                   '&:hover': {
-                    backgroundColor: '#f3ff73',
+                    backgroundColor: '#A0730C',
+                    color: 'black',
+                    fontWeight:'bold'
+
                   },
                 }}
               >
@@ -92,7 +77,7 @@ export default function Component() {
                     rel="noopener noreferrer"
  */                fullWidth
                 sx={{
-                  borderColor: '#f3ff73',
+                  borderColor: '#A0730C',
                   backgroundColor: 'transparent',
                   color: 'black',
                   borderWidth: 3, // Ancho del borde
@@ -103,7 +88,9 @@ export default function Component() {
                   mt: "5%",
 
                   '&:hover': {
-                    backgroundColor: '#f3ff73',
+                    backgroundColor: '#A0730C',
+                     color: 'black',
+                    fontWeight:'bold'
                   },
                 }}
               >
@@ -120,7 +107,7 @@ export default function Component() {
             >
               {contact.text}
             </Typography>
-              <Divider sx={{ maxWidth: { xs: '100%', sm: '300px' }}} style={ { backgroundColor: '#f3ff73', marginTop: "5px", padding:"2px", minWidth: '300px',  borderBottomWidth: "inherit" }} />
+              <Divider sx={{ maxWidth: { xs: '100%', sm: '300px' }}} style={ { backgroundColor: '#A0730C', marginTop: "5px", padding:"2px", minWidth: '300px',  borderBottomWidth: "inherit" }} />
           </Grid>
 
           {/* Divider with Text */}
@@ -170,29 +157,26 @@ export default function Component() {
                   />
                 </Grid>
                 <Grid item xs={12} style={{ textAlign: 'center' }}>
-                  <Button
-                    type="submit"
-                    variant="contained"
-                    style={{
-                      width: '100px',
-                      borderRadius: '50px',
-                      padding: "8px 80px",
-                      backgroundColor: 'transparent',
-                      color: 'black',
-                      border: '1px solid black',
-                      marginTop:"10%"
-                    }}
-                    onMouseOver={(e) => {
-                      e.currentTarget.style.backgroundColor = 'black';
-                      e.currentTarget.style.color = 'white';
-                    }}
-                    onMouseOut={(e) => {
-                      e.currentTarget.style.backgroundColor = 'transparent';
-                      e.currentTarget.style.color = 'black';
-                    }}
-                  >
-                    {contact.buttonSubmit}
-                  </Button>
+                <Button
+                  type="submit"
+                  variant="contained"
+                  sx={{
+                    width: '100px',
+                    borderRadius: '50px',
+                    padding: '16px 80px',
+                    backgroundColor: '#333',
+                    color: '#fff',
+                    border: '1px solid black',
+                    marginTop: '10%',
+                    transition: 'background-color 0.3s, color 0.3s',
+                    '&:hover': {
+                      backgroundColor: '#eee', // Fondo claro en hover
+                      color: '#333',            // Texto oscuro en hover
+                    },
+                  }}
+                >
+                  {contact.buttonSubmit}
+                </Button>
                 </Grid>
               </Grid>
             </form>
