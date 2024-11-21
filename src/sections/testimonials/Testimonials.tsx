@@ -27,7 +27,7 @@ export default function Component() {
       py: 8,
       px: 4,
       // Cambia el color de fondo basado en el índice actual
-      bgcolor: currentIndex % 2 === 0 ? '#353535' : '#162D4F' 
+      bgcolor: currentIndex % 2 === 0 ? '#353535' : '#F6F6F6', 
     }}>
       <Swiper
         modules={[Navigation, Autoplay]}
@@ -62,7 +62,7 @@ export default function Component() {
                   />
                 ) : (
                   <Image 
-                    src="/assets/quote.png"
+                    src="/assets/quoteb.svg"
                     alt="quote"
                     loading="lazy" 
                     width={110} 
@@ -78,7 +78,7 @@ export default function Component() {
                   mb: 3,
                   fontSize: { xs: '1.1rem', md: '1.25rem' },
                   lineHeight: 1.6,
-                  color: index % 2 === 0 ? '#FFFFFF': '#ffffff',
+                  color: index % 2 === 0 ? '#FFFFFF': '#162D4F',
 
                 }}
               >
@@ -87,7 +87,7 @@ export default function Component() {
               <Typography 
                 variant="subtitle1" 
                 sx={{ 
-                  color: index % 2 === 0 ? '#E8FE74': '#E8FE74',
+                  color: index % 2 === 0 ? '#E8FE74': '#162D4F',
                   fontWeight: 700,
                   mb: 0.5,
                   fontFamily: 'Raleway',
@@ -102,7 +102,7 @@ export default function Component() {
               <Typography 
                 variant="body2" 
                 sx={{ 
-                  color: index % 2 === 0 ? '#E8FE74': '#E8FE74',
+                  color: index % 2 === 0 ? '#E8FE74': '#162D4F',
                   fontWeight: 600,
                   mb: 0.5,
                   fontFamily: 'Raleway',

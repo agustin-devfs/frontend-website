@@ -25,15 +25,15 @@ export default function Home() {
         <section id="aboutus">
           <AboutUs />
         </section>
-          <MarqueeIcons/>
-         <Banner/>
-         <ParalaxText phrase2={"Industries"}/> 
-        <section id="industries">
+           <MarqueeIcons/>
+          <Banner/>
+           <ParalaxText phrase2={"Industries"}/> 
+          <section id="industries">
         <SuccessCases/>
         </section>
         <section id="testimonials">
-          <Testimonials/> 
-        </section>
+           <Testimonials/> 
+         </section>
         <section id="ourteam">
          <OurTeam/>
         </section>

@@ -1,5 +1,5 @@
 'use client'
-import { Typography, Grid, Box, useMediaQuery, useTheme } from '@mui/material';
+import { Typography, Grid, Box, useMediaQuery, useTheme, Container } from '@mui/material';
 import Image from 'next/image';
 import { hero } from '@/app/core/utils/contants';
 
@@ -11,10 +11,13 @@ function HeroSection() {
   const heightImg = isMdUp ? 525 : 100;
 
   return (
+    <Container maxWidth='xl'>
+
     <Box sx={{
       color: "black",
       position: "relative",
-      margin: "0 auto",
+      margin: "0 0",
+      padding: "5rem 1rem",
     }}>
       {/* Texto principal */}
       <Grid container spacing={0} justifyContent="center">
@@ -76,6 +79,8 @@ function HeroSection() {
         </Grid>
       </Grid>
     </Box>
+    </Container>
+
   );
 }
 

@@ -10,10 +10,12 @@ function TeamSection() {
       <Typography variant="h2" component="h1" gutterBottom style={{ fontWeight: 400, fontSize:'96px', lineHeight:'96px' }}>
         Our Team
       </Typography>
-      
+   {/*    <Box sx={{ width: "100%", height: "50%", color:'black', backgroundColor:"#fefefe", border:"#fefefe"}}>
+
+      </Box> */}
 
       {/* CEO Section */}
-      <Card variant="outlined" sx={{color:'black', backgroundColor:"#ededed", border:"#ededed"}} style={{ marginBottom: "3rem", display: "flex"}}>
+      <Card variant="outlined" sx={{color:'black', backgroundColor:"#eaeaea", border:"#eaeaea"}} style={{ marginBottom: "3rem", display: "flex"}}>
         <div style={{ width: "30%", padding: "1.5rem" }}>
         <Image src="/assets/CEO.png" alt="CEO" width={200} height={200} style={{borderRadius:"10%"}} />
         </div>

@@ -6,11 +6,11 @@ export default function Component() {
 
   const colores = [
     { back: '#A0730C', text: '#000000',imageAlignment:'left' }, 
-    { back: '#162D4F', text: '#E8FE74',imageAlignment:'left'  },
-    { back: '#494949', text: '#E8FE74',imageAlignment:'rigth' },
-    { back: '#E8FE74', text: '#162D4F',imageAlignment:'rigth'},
-    { back: '#162D4F', text: '#E8FE74',imageAlignment:'left' },
-    { back: '#353535', text: '#FEFEFE',imageAlignment:'left' }
+    { back: '#162D4F', text: '#F6F6F6',imageAlignment:'left'  },
+    { back: '#F6F6F6', text: '#162D4F',imageAlignment:'rigth'},
+    { back: '#494949', text: '#F6F6F6',imageAlignment:'rigth' },
+    { back: '#162D4F', text: '#F6F6F6',imageAlignment:'left' },
+    { back: '#A0730C', text: '#000000',imageAlignment:'left' }
   ];
 
   
