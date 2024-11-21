@@ -4,7 +4,7 @@ import { useState } from 'react';
 import {ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Image from 'next/image';
-import { contact, service } from '@/app/core/utils/contants';
+import { contact} from '@/app/core/utils/contants';
 
 export default function Component() {
   const [formData, setFormData] = useState({
