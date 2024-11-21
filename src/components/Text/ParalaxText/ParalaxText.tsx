@@ -54,11 +54,11 @@ function ParallaxText({ children, baseVelocity = 2 }: ParallaxProps) {
 		marginLeft: '50px',
 		/*   background: "linear-gradient(0deg, #A0730C 0%, #E2C98F 47%, #E8FE74 100%)",
 		 */
-
+/* 
 		background: 'linear-gradient(0deg, #A0730C 0%, #E2C98F 50%,  #FFFFFF 100%)',
 		WebkitBackgroundClip: 'text',
-		backgroundClip: 'text',
-		color: 'transparent',
+		backgroundClip: 'text', */
+		color: 'white',
 		display: 'inline-block',
 	};
 

@@ -11,6 +11,8 @@ import SuccessCases from '@/components/successCases/SuccessCases';
 import MarqueeIcons from "@/components/marquee/MarqueeIcons"; 
 import Hero from "@/sections/hero/Hero";
 import AboutUs from "@/sections/aboutUs/AboutUs";
+import SuccessCases2 from "@/components/successCases/SuccessCases2";
+import SuccessCases3 from "@/components/successCases/SuccessCases3";
 
 export default function Home() {
   return (
@@ -29,8 +31,9 @@ export default function Home() {
           <Banner/>
            <ParalaxText phrase2={"Industries"}/> 
           <section id="industries">
-        <SuccessCases/>
-        </section>
+         <SuccessCases/>         
+{/*           <SuccessCases3/>
+ */}          </section>
         <section id="testimonials">
            <Testimonials/> 
          </section>

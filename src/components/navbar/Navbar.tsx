@@ -60,7 +60,7 @@ export default function NavBar() {
               color: "white"
             },
             '&:last-of-type': {
-              color: '#a4e043',
+              color: '#A0730C',
               backgroundColor: '#364049',
               margin: "10px"
             },

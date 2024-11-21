@@ -1,6 +1,6 @@
 'use client';
-import { Box, Container, Typography } from '@mui/material';
-import { motion, useTransform, useSpring, useMotionValue } from 'framer-motion';
+import { Box, /* Container, */ Typography } from '@mui/material';
+import { motion, /* useTransform,  useSpring,*/ useMotionValue } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { about } from '@/app/core/utils/contants';
@@ -8,8 +8,8 @@ import { about } from '@/app/core/utils/contants';
 export default function AboutUsSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const scrollProgress = useMotionValue(0);
-  const smoothScroll = useSpring(scrollProgress, { stiffness: 50, damping: 20 });
-  const [scrollLocked, setScrollLocked] = useState(false);
+/*   const smoothScroll = useSpring(scrollProgress, { stiffness: 50, damping: 20 });
+ */  const [scrollLocked, setScrollLocked] = useState(false);
   const [slideIndex, setSlideIndex] = useState(0);
 
   useEffect(() => {
@@ -66,7 +66,7 @@ export default function AboutUsSection() {
           height: '100vh',
           width: '100vw',
           overflow: 'hidden',
-          backgroundImage: 'url(/assets/11.jpg)',
+          backgroundImage: 'url(/assets/11.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           margin:0,

@@ -17,14 +17,14 @@ export default function Component() {
         justifyContent: 'center',
       }}
     >
-      <Grid container alignItems="center" spacing={1}>
-        <Grid item>
+      <Grid container alignItems="center" spacing={0}>
+        <Grid item md={4}>
           <Typography
             sx={{
-              fontFamily: 'Raleway, sans-serif',
+              fontFamily: 'Raleway',
               fontSize: '64px',
               fontWeight: 600,
-              color: '#E8FE74',
+              color: '#A07C0D',
               lineHeight: 1.1,
             }}
           >
@@ -32,10 +32,10 @@ export default function Component() {
           </Typography>
         </Grid>
 
-        <Grid item>
+        <Grid item md={4}>
           <Typography
             sx={{
-              fontFamily: 'Raleway, sans-serif',
+              fontFamily: 'Raleway',
               fontSize: '64px',
               fontWeight: 600,
               color: '#FFFFFF', 
@@ -53,7 +53,7 @@ export default function Component() {
         </Grid>
 
         {/* Icono de sonrisa */}
-        <Grid item>
+        <Grid item md={4}>
           <Image
             src="/assets/sonrisa pequeña.png"
             alt="Sonrisa"

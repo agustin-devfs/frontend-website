@@ -29,7 +29,7 @@ const ServicesSection = () => (
     <Box mt={4} textAlign="center">
           <Button           
                   href="https://meetings.hubspot.com/david3299"
-                  variant="contained" color="primary" style={{ fontSize:"24px" ,backgroundColor: '#333', color: '#E8FE74', borderRadius:"25px", padding: "6px 100px" }}>
+                  variant="contained" color="primary" style={{ fontSize:"24px" ,backgroundColor: '#333', color: '#fff', borderRadius:"25px", padding: "18px 100px" }}>
           {service.button}
           </Button>
         </Box>

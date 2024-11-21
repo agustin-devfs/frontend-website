@@ -27,7 +27,7 @@ export default function Component() {
       py: 8,
       px: 4,
       // Cambia el color de fondo basado en el índice actual
-      bgcolor: currentIndex % 2 === 0 ? '#353535' : '#F6F6F6', 
+      bgcolor: currentIndex % 2 === 0 ? '#353535' : '#A0730C', 
     }}>
       <Swiper
         modules={[Navigation, Autoplay]}
@@ -87,7 +87,7 @@ export default function Component() {
               <Typography 
                 variant="subtitle1" 
                 sx={{ 
-                  color: index % 2 === 0 ? '#E8FE74': '#162D4F',
+                  color: index % 2 === 0 ? '#FFFFFF': '#162D4F',
                   fontWeight: 700,
                   mb: 0.5,
                   fontFamily: 'Raleway',
@@ -102,7 +102,7 @@ export default function Component() {
               <Typography 
                 variant="body2" 
                 sx={{ 
-                  color: index % 2 === 0 ? '#E8FE74': '#162D4F',
+                  color: index % 2 === 0 ? '#FFFFFF': '#162D4F',
                   fontWeight: 600,
                   mb: 0.5,
                   fontFamily: 'Raleway',

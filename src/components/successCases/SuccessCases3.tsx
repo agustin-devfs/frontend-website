@@ -2,31 +2,31 @@
 import { Card, CardContent, Grid, Typography } from "@mui/material";
 import Image from 'next/image';
 import { projects } from '@/app/core/utils/contants';
-import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
-export default function SlideInCard() {
+export default function FadeInOnScroll() {
   const colores = [
-    { back: '#F6F6F6', text: '#162D4F', imageAlignment: 'left' },
-    { back: '#494949', text: '#F6F6F6', imageAlignment: 'left' },
-    { back: '#A0730C', text: '#000000', imageAlignment: 'rigth' },
-    { back: '#162D4F', text: '#F6F6F6', imageAlignment: 'rigth' },
-    { back: '#494949', text: '#F6F6F6', imageAlignment: 'left' },
-    { back: '#F6F6F6', text: '#162D4F', imageAlignment: 'left' }
+    { back: '#A0730C', text: '#000000', imageAlignment: 'left' },
+    { back: '#162D4F', text: '#F6F6F6', imageAlignment: 'left' },
+    { back: '#F6F6F6', text: '#162D4F', imageAlignment: 'right' },
+    { back: '#494949', text: '#F6F6F6', imageAlignment: 'right' },
+    { back: '#162D4F', text: '#F6F6F6', imageAlignment: 'left' },
+    { back: '#A0730C', text: '#000000', imageAlignment: 'left' }
   ];
 
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
   return (
     <Grid container spacing={0}>
       {projects.map((project, index) => {
         const color = colores[index % colores.length];
+        const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
         return (
           <Grid item xs={12} sm={6} md={6} key={index} ref={ref}>
             <motion.div
-              initial={{ opacity: 0, x: color.imageAlignment === 'left' ? -100 : 100 }}
-              animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : color.imageAlignment === 'left' ? -100 : 100 }}
-              transition={{ duration: 0.5, ease: 'easeOut' }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: inView ? 1 : 0 }}
+              transition={{ duration: 0.6 }}
             >
               <Card sx={{ backgroundColor: color.back, borderRadius: 'none' }}>
                 <Grid
@@ -37,6 +37,10 @@ export default function SlideInCard() {
                   sx={{ position: "relative" }}
                 >
                   <Grid item xs={6} sx={{ display: "flex", justifyContent: color.imageAlignment === "left" ? "left" : "right" }}>
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: 'spring', stiffness: 300 }}
+                  >
                     <Image
                       width={480}
                       height={420}
@@ -44,7 +48,9 @@ export default function SlideInCard() {
                       alt={project.title}
                       style={{ objectFit: "cover", maxWidth: "100%" }}
                     />
+                  </motion.div>
                   </Grid>
+
                   <Grid item xs={6}>
                   <motion.div
                     whileHover={{ scale: 1.1 }}
@@ -64,6 +70,7 @@ export default function SlideInCard() {
                         {project.client}
                       </Typography>
                     </CardContent>
+
                     </motion.div>
 
                   </Grid>

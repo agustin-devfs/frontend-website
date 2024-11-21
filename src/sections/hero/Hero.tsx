@@ -24,6 +24,7 @@ function HeroSection() {
         <Grid item xs={12} md={10} sx={{ textAlign: { xs: 'center', md: 'left' } }}>
           <Typography variant="h2" component="h1" sx={{
             fontFamily: 'Raleway',
+            color:'#353535',
             fontWeight: 400,
             fontSize: { xs: '48px', md: '96px' },
             lineHeight: { xs: '64px', md: '128px' },
@@ -34,6 +35,7 @@ function HeroSection() {
           </Typography>
           <Typography variant="h2" component="h1" gutterBottom sx={{
             fontFamily: 'Raleway',
+            color:'#353535',
             fontWeight: 400,
             fontSize: { xs: '48px', md: '96px' },
             lineHeight: { xs: '64px', md: '128px' },
@@ -51,8 +53,8 @@ function HeroSection() {
              fontFamily: 'Podkova',
             fontWeight: 500,
             fontSize: { xs: '24px', md: '34px' },
-            color: '#353535',
-            backgroundColor: '#E8FE74',
+            color: '#F6F6F6',
+            backgroundColor: '#162D4F',
             padding: { xs: '6px 30px', md: '8px 50px' },
             borderRadius: '6px',
             display: 'inline-block',

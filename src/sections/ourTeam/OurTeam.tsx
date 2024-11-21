@@ -15,7 +15,7 @@ function TeamSection() {
       </Box> */}
 
       {/* CEO Section */}
-      <Card variant="outlined" sx={{color:'black', backgroundColor:"#eaeaea", border:"#eaeaea"}} style={{ marginBottom: "3rem", display: "flex"}}>
+      <Card variant="outlined" sx={{color:'black', backgroundColor:"#BBBBC0", border:"#eaeaea"}} style={{ marginBottom: "3rem", display: "flex"}}>
         <div style={{ width: "30%", padding: "1.5rem" }}>
         <Image src="/assets/CEO.png" alt="CEO" width={200} height={200} style={{borderRadius:"10%"}} />
         </div>
@@ -35,7 +35,7 @@ function TeamSection() {
                 fontWeight: 600,
                 fontSize: { xs: '16px', md: '24px' },
                 lineHeight: { xs: '24px', md: '50px' },
-                color:'#162D4F',}}>
+                color:'#A0730C',}}>
                 {ceo.title}
               </Typography>
 
@@ -71,7 +71,7 @@ function TeamSection() {
               <Typography variant="body1" style={{ fontWeight: 400 }}>
                 {member.name}
               </Typography>
-              <Typography variant="body2" style={{ color: "#162D4F" }}>
+              <Typography variant="body2" style={{ color: "#A0730C" }}>
                 {member.role}
               </Typography>
             </div>
