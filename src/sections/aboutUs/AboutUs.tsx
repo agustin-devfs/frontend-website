@@ -55,7 +55,7 @@ export default function AboutUsSection() {
 
   return (
   /*   <Container maxWidth='xl'
-    sx={{margin:"0",padding:"0"}}> */
+    > */
       <>
       
       <Box

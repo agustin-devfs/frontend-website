@@ -5,16 +5,19 @@ import { ceo, teamMembers } from '@/app/core/utils/contants';
 
 function TeamSection() {
   return (
+ /*    <Container maxWidth='xl' sx={{padding:0, margin:0}}
+    > */
+
     <Grid
       style={{
         backgroundColor: "#BBBBC0",
         borderBottomLeftRadius: "50%",
         borderBottomRightRadius: "50%",
       }}
-    >
+      >
       <Grid
         sx={{ maxWidth: "1200px", margin: "0 auto", pt: "5rem", pb: "4rem" }}
-      >
+        >
         <Typography
           variant="h2"
           component="h1"
@@ -25,7 +28,7 @@ function TeamSection() {
             fontSize: '96px',
             lineHeight: '96px',
           }}
-        >
+          >
           Our Team
         </Typography>
 
@@ -43,7 +46,7 @@ function TeamSection() {
             borderBottomLeftRadius: "50%",
             borderBottomRightRadius: "50%",
           }}
-        >
+          >
           <div style={{ width: "30%", padding: "1.5rem" }}>
             <Image
               src="/assets/CEO.png"
@@ -51,7 +54,7 @@ function TeamSection() {
               width={200}
               height={200}
               style={{ borderRadius: "10%" }}
-            />
+              />
           </div>
           <div>
             <CardContent style={{ width: "100%", padding: "3rem" }}>
@@ -65,7 +68,7 @@ function TeamSection() {
                   lineHeight: { xs: '24px', md: '50px' },
                   color: '#353535',
                 }}
-              >
+                >
                 {ceo.owner}
               </Typography>
               <Typography
@@ -77,7 +80,7 @@ function TeamSection() {
                   lineHeight: { xs: '24px', md: '50px' },
                   color: '#A0730C',
                 }}
-              >
+                >
                 {ceo.title}
               </Typography>
 
@@ -91,7 +94,7 @@ function TeamSection() {
                       fontWeight: 400,
                       fontSize: { xs: '16px', md: '16px' },
                     }}
-                  >
+                    >
                     {ceo.text1}
                   </Typography>
                 </div>
@@ -104,7 +107,7 @@ function TeamSection() {
                       fontWeight: 400,
                       fontSize: { xs: '16px', md: '16px' },
                     }}
-                  >
+                    >
                     {ceo.text2}
                   </Typography>
                 </div>
@@ -118,7 +121,7 @@ function TeamSection() {
                 marginLeft: "2rem",
                 width: '90%',
               }}
-            />
+              />
 
             <CardContent style={{ width: "100%", padding: "1.5rem" }}>
               {/* Team Grid */}
@@ -137,7 +140,7 @@ function TeamSection() {
                                   fontWeight: 600,
                                   color: '#353535',
                                 }}
-                              >
+                                >
                                 {member.name}
                               </Typography>
                               <Typography
@@ -146,7 +149,7 @@ function TeamSection() {
                                   color: "#A0730C",
                                   fontWeight: 600,
                                 }}
-                              >
+                                >
                                 {member.role}
                               </Typography>
                             </div>
@@ -168,7 +171,7 @@ function TeamSection() {
           alignItems: 'center',
           mt: '2rem',
         }}
-      >
+        >
         <Typography
           variant="h6"
           component="h6"
@@ -181,12 +184,13 @@ function TeamSection() {
             fontWeight: 600,
             textAlign: 'center',
           }}
-        >
+          >
           LET&apos;S BUILD TOGETHER!
         </Typography>
       </Box>
     </Grid>
-  );
+/*           </Container>
+ */  );
 }
 
 export default TeamSection;

@@ -1,27 +1,15 @@
 'use client'
-import { Typography, Grid, Box, useMediaQuery, useTheme, Container } from '@mui/material';
-import Image from 'next/image';
+import { Typography, Grid, Box, Container } from '@mui/material';
 import { hero } from '@/app/core/utils/contants';
 
 function HeroSection() {
-  const theme = useTheme();
-  const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
-
-  const widthImg = isMdUp ? 1400 : 200;
-  const heightImg = isMdUp ? 525 : 100;
+ 
 
   return (
-    <Container maxWidth='xl'>
-
-    <Box sx={{
-      color: "black",
-      position: "relative",
-      margin: "0 0",
-      padding: "5rem 1rem",
-    }}>
+    <Container maxWidth='xl' sx={{margin:"4 auto"}} >
       {/* Texto principal */}
-      <Grid container spacing={0} justifyContent="center">
-        <Grid item xs={12} md={10} sx={{ textAlign: { xs: 'center', md: 'left' } }}>
+      <Grid container justifyContent="left" alignContent={'left'}>
+        <Grid item xs={12} md={12}>
           <Typography variant="h2" component="h1" sx={{
             fontFamily: 'Raleway',
             color:'#353535',
@@ -30,6 +18,7 @@ function HeroSection() {
             lineHeight: { xs: '64px', md: '128px' },
             textUnderlinePosition: 'from-font',
             textDecorationSkipInk: 'none',
+            textAlign: { xs: 'left', md: 'left' }
           }}>
             {hero.prhaseRow1}
           </Typography>
@@ -44,43 +33,47 @@ function HeroSection() {
           }}>
           {hero.prhaseRow2}
           </Typography>
-        </Grid>
+ {/*   </Grid>
 
-        {/* Botón de llamado a la acción */}
-        <Grid item xs={12} sx={{ textAlign: { xs: 'center', md: 'right' } , mt: 2, mx:20 }}>
+        <Grid item xs={12} sx={{ textAlign: { xs: 'center', md: 'center' }, mt: 0, mx: 20, mb: 20 }}>  */}
+            {/* Contenedor con imagen de fondo y texto superpuesto */}
+            <Box
+              sx={{
+                position: "relative",  
+                width: { xs: 200, md: 1400 }, 
+                height: { xs: 100, md: 525 },  
+                backgroundImage: 'url(/assets/sonrisaHero.png)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                zIndex: 1,
+                margin: '0 1', 
+                }}>
+          
+              <Typography
+                variant="h2"
+                component="h1"
+                gutterBottom
+                sx={{
+                  position: "absolute",  
+                  top: "10%",             
+                  left: "60%",            
+                  fontFamily: 'Podkova',
+                  fontWeight: 500,
+                  fontSize: { xs: '24px', md: '34px' },
+                  color: '#F6F6F6',
+                  backgroundColor: '#162D4F',
+                  padding: { xs: '6px 10px', md: '8px 10px' },
+                  borderRadius: '6px',
+                  display: 'inline-block',
+                  zIndex: 2,  
+                }}
+              >
+                {hero.question}
+              </Typography>
+            </Box>
+          </Grid>
 
-          <Typography variant="h2" component="h1" gutterBottom sx={{
-             fontFamily: 'Podkova',
-            fontWeight: 500,
-            fontSize: { xs: '24px', md: '34px' },
-            color: '#F6F6F6',
-            backgroundColor: '#162D4F',
-            padding: { xs: '6px 30px', md: '8px 50px' },
-            borderRadius: '6px',
-            display: 'inline-block',
-          }}>
-            {hero.question}
-          </Typography>
-        </Grid>
-
-        {/* Imagen de fondo */}
-        <Grid item xs={12} sx={{
-          position: "absolute",
-          top: { xs: "80%", md: "70%" },
-          left: "10%",
-          zIndex: -1,
-          overflow: "hidden",
-        }}>
-          <Image
-            src={'/assets/sonrisaHero.png'}
-            alt="SmileIcon"
-            loading="lazy"
-            width={widthImg}
-            height={heightImg}
-          />
-        </Grid>
-      </Grid>
-    </Box>
+      </Grid> 
     </Container>
 
   );
