@@ -17,15 +17,15 @@ export default function Home() {
   return (
     <>
       <main >
-        <Navbar/>
         <Appbar />
         <Hero/>
+        <Navbar/>
         <section id="services">
         <OurServices/>
         </section>
-        <section id="aboutus">
+          <section id="aboutus">
           <AboutUs />
-        </section>
+        </section> 
            <MarqueeIcons/>
           <Banner/>
            <ParalaxText phrase2={"Industries"}/> 

@@ -21,11 +21,11 @@ export default function Footer() {
 
           <Stack direction="row" spacing={3}>
             <Link 
-              href="#" 
-              underline="none" 
+             href="https://www.webuildapps.ai/" 
+             underline="none"   
+             target="_blank" 
+             rel="noopener noreferrer"
               sx={{ color: 'white', display: 'flex', alignItems: 'center', gap: 0.5 }}
-              target="_blank" 
-              rel="noopener noreferrer"
             >
               <Image 
                 src={bars.webIconB} 
@@ -35,10 +35,10 @@ export default function Footer() {
                 height={24} 
                 style={{ borderRadius: "10%" }} 
               />              
-              App development
-            </Link>
+                  {bars.app}
+                  </Link>
             <Link 
-              href="#" 
+              href="#industries" 
               underline="none" 
               sx={{ color: 'white', display: 'flex', alignItems: 'center', gap: 0.5 }}
               target="_blank" 
@@ -55,11 +55,10 @@ export default function Footer() {
               {bars.web}
             </Link>
             <Link 
-              href="#" 
-              underline="none" 
-              sx={{ color: 'white', display: 'flex', alignItems: 'center', gap: 0.5 }}
+              href={"https://meetings.hubspot.com/david3299"}
               target="_blank" 
-              rel="noopener noreferrer"
+              rel="noopener noreferrer"underline="none" 
+              sx={{ color: 'white', display: 'flex', alignItems: 'center', gap: 0.5 }}
             >
               <Image 
                 src={bars.hireIconB} 
