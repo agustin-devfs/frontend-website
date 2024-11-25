@@ -21,6 +21,7 @@ export default function Component() {
   };
 
   return (
+
     <Box sx={{ 
       color: 'white',
       position: 'relative',
@@ -46,14 +47,15 @@ export default function Component() {
         {testimonials.map((testimonial, index) => (
           <SwiperSlide key={index}>
             <Box sx={{ 
-              maxWidth: '800px',
+              maxWidth: '70%',
               mx: 'auto',
-              px: { xs: 2, md: 4 },
+              px: { xs: 2, md: 2 },
             }}>
               <Box sx={{ mb: 4 }}>
                 {index % 2 === 0 ? (
+                  
                   <Image 
-                    src="/assets/quote.png" 
+                    src="/assets/quoteblancoDorado.svg" 
                     alt="quote"
                     loading="lazy" 
                     width={110} 
@@ -62,7 +64,7 @@ export default function Component() {
                   />
                 ) : (
                   <Image 
-                    src="/assets/quoteb.svg"
+                    src="/assets/quoteblanco.svg"
                     alt="quote"
                     loading="lazy" 
                     width={110} 
@@ -76,7 +78,7 @@ export default function Component() {
                 variant="h6" 
                 sx={{ 
                   mb: 3,
-                  fontSize: { xs: '1.1rem', md: '1.25rem' },
+                  fontSize: { xs: '1.1rem', md: '22px' },
                   lineHeight: 1.6,
                   color: index % 2 === 0 ? '#FFFFFF': '#162D4F',
 
@@ -91,9 +93,8 @@ export default function Component() {
                   fontWeight: 700,
                   mb: 0.5,
                   fontFamily: 'Raleway',
-                /*   fontSize: '18px',
+                  fontSize: '16px',
                   lineHeight: '1.6',
-                  letterSpacing: '0.13em', */
 
                 }}
               >
@@ -106,9 +107,8 @@ export default function Component() {
                   fontWeight: 600,
                   mb: 0.5,
                   fontFamily: 'Raleway',
-            /*       fontSize: '16px',
+                  fontSize: '16px',
                   lineHeight: '1.6',
-                  letterSpacing: '0.11em', */
                 }}
               >
                 {testimonial.position}
@@ -133,7 +133,7 @@ export default function Component() {
           display: { xs: 'none', sm: 'initial' }
         }}
       >
-        <ChevronLeft  sx={{color: "#E8FE74"}}/>
+        <ChevronLeft  sx={{color: "#F9F9F9"}}/>
       </IconButton>
       
       <IconButton 
@@ -151,7 +151,7 @@ export default function Component() {
           display: { xs: 'none', sm: 'initial' }
         }}
       >
-        <ChevronRight sx={{ color: "#E8FE74"}} /> 
+        <ChevronRight sx={{ color: "#F9F9F9"}} /> 
       </IconButton>
     </Box>
   );

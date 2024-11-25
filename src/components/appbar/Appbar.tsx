@@ -5,7 +5,6 @@ import { bars } from '@/app/core/utils/contants';
 
 export default function Header() {
 
-
   return (
     <AppBar position="static" sx={{ bgcolor: '#EDEDED', boxShadow: 'none' }}>
       <Container maxWidth="lg">
@@ -16,8 +15,8 @@ export default function Header() {
                 src={bars.togetherDevsIcon}
                 alt="TogetherDevs"
                 loading="lazy"
-                width={200}
-                height={200}
+                width={220}
+                height={100}
                 style={{ borderRadius: '10%' }}
               />
             </Link>

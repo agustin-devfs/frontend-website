@@ -9,7 +9,7 @@ const ServicesSection = () => (
   <Container maxWidth='xl' >
 
     <Typography variant="h2" component="h1"  
-    sx={{mt:15, mb:8 , }}
+    sx={{mt:15, mb:4 , }}
     style={{fontFamily: 'Raleway',color: '#06050F', fontWeight: 400, fontSize: '96px', lineHeight: '96px', textAlign:'center'}}>
       {service.title}
     </Typography>
@@ -26,8 +26,7 @@ const ServicesSection = () => (
         </Grid>
       ))}
     </Grid>
-
-          <Box mt={0} mb={6} textAlign="center">
+          <Box mt={0} mb={10} alignContent= "center" textAlign="center">
                 <Button
               href="https://meetings.hubspot.com/david3299"
               variant="contained"
@@ -49,6 +48,7 @@ const ServicesSection = () => (
               {service.button}
             </Button>
               </Box>
+
       </Container>
         
 );

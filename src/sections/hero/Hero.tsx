@@ -4,7 +4,6 @@ import { hero } from '@/app/core/utils/contants';
 
 function HeroSection() {
  
-
   return (
     <Container maxWidth='xl' sx={{margin:"4 auto"}} >
       {/* Texto principal */}
@@ -52,18 +51,20 @@ function HeroSection() {
               <Typography
                 variant="h2"
                 component="h1"
+                noWrap={true}
                 gutterBottom
                 sx={{
                   position: "absolute",  
                   top: "10%",             
-                  left: "60%",            
+                  left: "50%",            
                   fontFamily: 'Podkova',
                   fontWeight: 500,
                   fontSize: { xs: '24px', md: '34px' },
-                  color: '#F6F6F6',
-                  backgroundColor: '#162D4F',
-                  padding: { xs: '6px 10px', md: '8px 10px' },
-                  borderRadius: '6px',
+                  color: '#F6F6F6', 
+                  backgroundColor:'#494949' ,
+/*                   backgroundColor: '#162D4F',
+ */                  padding: { xs: '6px 10px', md: '8px 145px' },
+                  borderRadius: '3px',
                   display: 'inline-block',
                   zIndex: 2,  
                 }}

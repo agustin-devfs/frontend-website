@@ -28,7 +28,7 @@ export default function Home() {
           </section> 
             <MarqueeIcons/>
             <Banner/>
-           <ParalaxText phrase2={"Industries"}/> 
+           <ParalaxText phrase2={"SUCCESS CASES"}/> 
           <section id="industries">
          <SuccessCases/>         
           </section>
