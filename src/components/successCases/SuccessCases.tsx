@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 export default function SlideInCard() {
-  const [hoveredIndex, setHoveredIndex] = useState<any>(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const colores = [
     { back: '#F6F6F6', text: '#162D4F', imageAlignment: 'left' },
