@@ -25,9 +25,9 @@ export default function Home() {
         </section>
           <section id="aboutus">
           <AboutUs />
-        </section> 
-           <MarqueeIcons/>
-          <Banner/>
+          </section> 
+            <MarqueeIcons/>
+            <Banner/>
            <ParalaxText phrase2={"Industries"}/> 
           <section id="industries">
          <SuccessCases/>         

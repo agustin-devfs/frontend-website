@@ -11,12 +11,13 @@ function TeamSection() {
     <Grid
       style={{
         backgroundColor: "#BBBBC0",
-        borderBottomLeftRadius: "50%",
-        borderBottomRightRadius: "50%",
+        borderBottomLeftRadius: "100%",
+        borderBottomRightRadius: "100%",
       }}
       >
+
       <Grid
-        sx={{ maxWidth: "1200px", margin: "0 auto", pt: "5rem", pb: "4rem" }}
+        sx={{ maxWidth: "1200px", margin: "0 auto", pt: "4rem", pb: "1rem" }}
         >
         <Typography
           variant="h2"
@@ -49,7 +50,7 @@ function TeamSection() {
           >
           <div style={{ width: "30%", padding: "1.5rem" }}>
             <Image
-              src="/assets/CEO.png"
+              src="/assets/CEO1.png"
               alt="CEO"
               width={200}
               height={200}
@@ -57,7 +58,7 @@ function TeamSection() {
               />
           </div>
           <div>
-            <CardContent style={{ width: "100%", padding: "3rem" }}>
+            <CardContent style={{ width: "100%", padding: "2.5rem" }}>
               <Typography
                 variant="h5"
                 component="h2"
@@ -123,7 +124,7 @@ function TeamSection() {
               }}
               />
 
-            <CardContent style={{ width: "100%", padding: "1.5rem" }}>
+            <CardContent style={{ width: "100%", padding: "1rem" }}>
               {/* Team Grid */}
               <Grid container spacing={1}>
                 {Array.from({ length: Math.ceil(teamMembers.length / 4) }).map(
@@ -169,7 +170,6 @@ function TeamSection() {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          mt: '2rem',
         }}
         >
         <Typography

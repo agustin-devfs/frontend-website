@@ -1,17 +1,10 @@
 'use client'
 import { AppBar, Container, Link, Stack, Toolbar, Typography } from '@mui/material';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
 import { bars } from '@/app/core/utils/contants';
 
 export default function Header() {
-/*   // Use state to manage client-only rendering if needed
-  const [isClient, setIsClient] = useState(false);
 
-  // Ensure client-only rendering after hydration
-  useEffect(() => {
-    setIsClient(true);
-  }, []); */
 
   return (
     <AppBar position="static" sx={{ bgcolor: '#EDEDED', boxShadow: 'none' }}>
@@ -23,15 +16,15 @@ export default function Header() {
                 src={bars.togetherDevsIcon}
                 alt="TogetherDevs"
                 loading="lazy"
-                width={180}
-                height={150}
+                width={200}
+                height={200}
                 style={{ borderRadius: '10%' }}
               />
             </Link>
           </Stack>
 
          
-            <Stack direction="row" spacing={6} marginLeft={"20%"}>
+            <Stack direction="row" spacing={4} marginLeft={"20%"}>
               <Link href="https://www.webuildapps.ai/" 
               underline="none"   
               target="_blank" 

@@ -27,13 +27,13 @@ export const metadata: Metadata = {
     title: "Together Devs",
     description:
       "Togetherdevs is a software company with experience in IT solutions, helping businesses scale up team quality and productivity.",
-    url: "https://togetherdevs.com/",
+    url: "https://togetherdevs.net/",
     siteName: "Together Devs",
     locale: "es_ES",
     type: "website",
   },
   alternates: {
-    canonical: "https://togetherdevs.com/",
+    canonical: "https://togetherdevs.net/",
   },
 };
 
@@ -52,8 +52,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "Together Devs",
-              url: "https://togetherdevs.com",
-              logo: "https://togetherdevs.com/logos/isologo.png",
+              url: "https://togetherdevs.net",
+              logo: "https://togetherdevs.net/logos/isologo.png",
               sameAs: [
                 "https://www.facebook.com/togetherdevs",
                 "https://www.linkedin.com/company/togetherdevs",

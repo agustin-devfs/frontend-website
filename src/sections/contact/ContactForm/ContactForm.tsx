@@ -31,7 +31,7 @@ export default function Component() {
       container 
       justifyContent="center" 
       alignItems="center" 
-      style={{ minHeight: '100vh', marginBottom:"5%" }}
+      style={{ minHeight: '100vh', marginBottom:"0.1%" }}
     >
       <ToastContainer />
 

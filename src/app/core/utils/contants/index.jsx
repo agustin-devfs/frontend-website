@@ -8,7 +8,7 @@ export const bars = {
   app: "App development",
   web: "Web platform",
   hire:"Hire our people", 
-  togetherLink: "https://togetherdevs.com/",
+  togetherLink: "https://togetherdevs.net/",
   togetherDevsIcon:"logos/TogetherDevs azul.svg",
   appIcon:"icons/appIcon.svg",
   webIcon:"icons/webIcon.svg",
@@ -235,7 +235,13 @@ export const teamMembers = [
     buttonMeet: "SCHEDULE A MEETING",
     buttonChat: "let´s chat",
     text:"OR SIMPLY MESSAGE US",
-    buttonSubmit: "Submit"
+    buttonSubmit: "Submit",
+    formLabels: {
+      name: "Name",
+      email: "Email",
+      phone: "Phone",
+      message: "Message",
+    },
   }
 
   export const  footer = {

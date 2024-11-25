@@ -28,7 +28,7 @@ export default function SlideInCard() {
           height: '100%',
           width: '100vw',
           overflow: 'hidden',
-          backgroundImage: 'url(/logos/TogetherDevs.png)',
+          backgroundImage: 'url(/assets/25.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           margin: 0,
@@ -45,7 +45,7 @@ export default function SlideInCard() {
                 <motion.div
                   initial={{ opacity: 0, x: color.imageAlignment === 'left' ? -10 : 10 }}
                   animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : color.imageAlignment === 'left' ? -100 : 100 }}
-                  transition={{ duration: 0.5, ease: 'easeOut' }}
+                  transition={{ duration: 1, ease: 'easeOut' }}
                 >
                   <Card sx={{ backgroundColor: color.back, borderRadius: 'none' }}>
                     <Grid
