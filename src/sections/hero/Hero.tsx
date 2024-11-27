@@ -5,12 +5,12 @@ import { hero } from '@/app/core/utils/contants';
 function HeroSection() {
  
   return (
-    <Container maxWidth='xl' sx={{margin:"4 auto"}} >
+    <Container maxWidth='xl' sx={{margin:"3rem auto"}} >
       {/* Texto principal */}
       <Grid container justifyContent="left" alignContent={'left'}>
         <Grid item xs={12} md={12}>
             <Box sx={{ 
-               minHeight: { xs: '120px', md: '200px' }, 
+               minHeight: { xs: '120px',sm: '100px', md: '200px' }, 
               minWidth: { xs: '300px', md: '90%' },  
               }}>
               <Typewriter
