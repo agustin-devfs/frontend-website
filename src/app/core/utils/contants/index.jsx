@@ -250,3 +250,8 @@ export const teamMembers = [
     ALL_RIGHTS_RESERVED: "© 2024 TogetherDevs. All Rights Reserved.",
     FOLLOW_US: "Follow us",
   }
+
+  export const  RESPONSES= {
+    SUCCESS: "Email successfully sent!",
+    FAILED: "Failed to send email. Please try again later.",
+  }
