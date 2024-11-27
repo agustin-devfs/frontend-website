@@ -13,7 +13,7 @@ export const bars = {
   appIcon:"icons/appIcon.svg",
   webIcon:"icons/webIcon.svg",
   hireIcon:"icons/appIcon.svg",
-  ButtonService:"OUR SERVICE",  
+  ButtonService:"OUR SERVICES",  
   ButtonAbout:"ABOUT US",
   ButtonWork:" OUR WORK",
   ButtonCall:"GET STARDED",
@@ -63,7 +63,7 @@ export const about = {
   about:[
     {
     title: 'About Us',
-    content: "TogetherDevs is an innovative software development company specializing in custom mobile Apps and web platforms. Our goal is to help businesses across various industries turn their ideas into effective, high-impact digital solutions. Our mission is to embrace our client's ideas and take them to the next level by delivering technological products that exceed industry standards"
+    content: "TogetherDevs is an innovative software development company specializing in custom mobile Apps and web platforms. Our goal is to help businesses across various industries turn their ideas into effective, high-impact digital solutions. Our mission is to embrace our client's ideas and take them to the next level by delivering technological products that exceed industry standards."
    },
 /*   {
     title: 'How We Make It Happen',
@@ -216,8 +216,8 @@ export const ceo = {
 
 export const teamMembers = [
   { name: "Mateo Levy", role: "Chief Technology Officer" },
-  { name: "Agustin Rodriguez", role: "Software Developer & PM" },
   { name: "Ethan Harris", role: "Business Partner" },
+  { name: "Agustin Rodriguez", role: "Software Developer & PM" },
   { name: "Facundo Varela", role: "Full Stack Developer" },
   { name: "Carlos Actis", role: "Full Stack Developer" },
   { name: "Carlos Martin", role: "Full Stack Developer" },

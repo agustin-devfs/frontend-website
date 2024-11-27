@@ -51,8 +51,8 @@ export default function NavBar() {
           '& .MuiButton-root': {
             backgroundColor: '#353535',
             textTransform: 'none',
-            fontWeight: 'bold',
-            padding: '8px 16px',
+             fontWeight: '600',
+             padding: '8px 16px',
             borderColor: "#353535",
 
             '&:hover': {
@@ -60,12 +60,14 @@ export default function NavBar() {
               color: "white"
             },
             '&:last-of-type': {
-              color: 'white',
-              backgroundColor: '#364049',
+              borderRadius: '10px',
+              color: '#364049',
+              backgroundColor: "#FEFEFE",
               margin: "10px"
             },
             '&:last-of-type:hover': {
-              backgroundColor: 'rgba(80, 80, 80, 0.95)',
+              color: 'white',
+              backgroundColor: '#66757F',
             }
           },
         }}

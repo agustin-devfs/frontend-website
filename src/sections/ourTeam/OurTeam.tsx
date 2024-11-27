@@ -93,7 +93,7 @@ function TeamSection() {
                     sx={{
                       fontFamily: 'Raleway',
                       fontWeight: 400,
-                      fontSize: { xs: '16px', md: '16px' },
+                      fontSize: { xs: '16px', md: '20px' },
                     }}
                     >
                     {ceo.text1}
@@ -106,7 +106,7 @@ function TeamSection() {
                     sx={{
                       fontFamily: 'Raleway',
                       fontWeight: 400,
-                      fontSize: { xs: '16px', md: '16px' },
+                      fontSize: { xs: '16px', md: '20px' },
                     }}
                     >
                     {ceo.text2}
@@ -124,7 +124,7 @@ function TeamSection() {
               }}
               />
 
-            <CardContent style={{ width: "100%", padding: "1rem" }}>
+            <CardContent style={{ width: "100%", padding: "1.5rem" }}>
               {/* Team Grid */}
               <Grid container spacing={1}>
                 {Array.from({ length: Math.ceil(teamMembers.length / 4) }).map(
@@ -134,21 +134,24 @@ function TeamSection() {
                         {teamMembers
                           .slice(colIndex * 4, colIndex * 4 + 4)
                           .map((member, index) => (
-                            <div key={index} style={{ marginBottom: '16px' }}>
+                            <div key={index} style={{ marginBottom: '20px' }}>
                               <Typography
                                 variant="body1"
-                                style={{
+                                sx={{
                                   fontWeight: 600,
                                   color: '#353535',
+                                  fontSize: { xs: '16px', md: '16px' },
+
                                 }}
                                 >
                                 {member.name}
                               </Typography>
                               <Typography
                                 variant="body2"
-                                style={{
+                                sx={{
                                   color: "#A0730C",
                                   fontWeight: 600,
+                                  fontSize: { xs: '16px', md: '16px' },
                                 }}
                                 >
                                 {member.role}
@@ -165,7 +168,7 @@ function TeamSection() {
         </Card>
       </Grid>
 
-      <Box
+     {/*  <Box
         sx={{
           display: 'flex',
           justifyContent: 'center',
@@ -187,7 +190,7 @@ function TeamSection() {
           >
           LET&apos;S BUILD TOGETHER!
         </Typography>
-      </Box>
+      </Box> */}
     </Grid>
 /*           </Container>
  */  );

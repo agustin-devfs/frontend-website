@@ -13,7 +13,7 @@ export default function Component() {
         color: 'white',
         width: '100%',
         height: '40vh',
-        padding: '15vh 10vw',
+        padding: '15vh 15vw',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',

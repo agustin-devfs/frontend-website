@@ -18,8 +18,12 @@ export default function SlideInCard() {
     { back: '#F6F6F6', text: '#162D4F', imageAlignment: 'left' }
   ];
 
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
-
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1, // Aumenta el umbral para activar la animación antes
+    rootMargin: '45%' 
+  });
+  
   return (
     <Box sx={{ position: 'relative', overflow: 'hidden' }}>
       <Box
@@ -29,7 +33,7 @@ export default function SlideInCard() {
           width: '100vw',
           overflow: 'hidden',
           backgroundImage: 'url(/assets/25.png)',
-          backgroundSize: 'cover',
+           backgroundSize: 'cover',
           backgroundPosition: 'center',
           margin: 0,
           padding: 0

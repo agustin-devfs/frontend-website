@@ -28,8 +28,8 @@ export default function Home() {
           </section> 
             <MarqueeIcons/>
             <Banner/>
-           <ParalaxText phrase2={"SUCCESS CASES"}/> 
           <section id="industries">
+           <ParalaxText phrase2={"OUR WORK"}/> 
          <SuccessCases/>         
           </section>
         <section id="testimonials">

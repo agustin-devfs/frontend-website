@@ -1,10 +1,10 @@
 "use client";
-import { Button, TextField, Typography, Divider, Grid } from '@mui/material';
+import { Button, TextField, Typography, Divider, Grid, Box } from '@mui/material';
 import { useState } from 'react';
 import {ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Image from 'next/image';
-import { contact} from '@/app/core/utils/contants';
+import { contact, link_whatsapp} from '@/app/core/utils/contants';
 
 export default function Component() {
   const [formData, setFormData] = useState({
@@ -36,6 +36,30 @@ export default function Component() {
       <ToastContainer />
 
       <Grid item xs={12} sm={8} md={6} lg={4}>
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          mb:4,
+        }}
+        >
+        <Typography
+          variant="h6"
+          component="h6"
+          style={{
+            maxWidth: 'fit-content',
+            backgroundColor: '#162D4F',
+            color: '#F6F6F6',
+            padding: '8px 50px',
+            borderRadius: '6px',
+            fontWeight: 600,
+            textAlign: 'center',
+          }}
+          >
+          LET&apos;S BUILD TOGETHER!
+        </Typography>
+      </Box>
         <Grid container spacing={3} direction="column" alignItems="center">
             <Grid item xs={8}>
             <Image src="/assets/sonrisa pequeña.png" alt="CEO" width={100} height={35} style={{borderRadius:"10%"}} />
@@ -72,10 +96,10 @@ export default function Component() {
 
               <Button
                 variant="outlined"
-/*                 href={""}
+                 href={link_whatsapp}
                    target="_blank" 
                     rel="noopener noreferrer"
- */                fullWidth
+                fullWidth
                 sx={{
                   borderColor: '#A0730C',
                   backgroundColor: 'transparent',
