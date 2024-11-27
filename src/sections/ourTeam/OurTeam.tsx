@@ -1,5 +1,5 @@
 'use client'
-import { Typography, Card, CardContent, Grid, Divider, Box } from '@mui/material';
+import { Typography, Card, CardContent, Grid, Divider } from '@mui/material';
 import Image from 'next/image';
 import { ceo, teamMembers } from '@/app/core/utils/contants';
 
