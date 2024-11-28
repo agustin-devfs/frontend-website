@@ -58,21 +58,42 @@ export const servicesData = [
 
 
 export const about = {
-  aboutImage: {"/assets/sonrisa pequeña.png":String},
+  aboutImage: "/assets/11.png",
 
-  about:[
+  about: [
     {
-    title: 'About Us',
-    content: "TogetherDevs is an innovative software development company specializing in custom mobile Apps and web platforms. Our goal is to help businesses across various industries turn their ideas into effective, high-impact digital solutions. Our mission is to embrace our client's ideas and take them to the next level by delivering technological products that exceed industry standards."
-   },
-/*   {
-    title: 'How We Make It Happen',
-    content: "• Teaming up with clients to bring ideas to life.• Personalized approach to every project • Commitment to quality and innovation • Ensuring tangible and measurable results."},
-  {
-    title: 'Our Values',
-    content: "• Commitment – Dedicated to client success and project excellence. • Curiosity – Constantly learning and innovating to improve.• Passion – Driven by enthusiasm and purpose.• Transparency – Open and honest in all communications. • Customer Orientation – Focused on delivering client-centered solutions." 
-  },  */
-]};
+      title: "About Us",
+      content: 
+        "TogetherDevs is an innovative software development company specializing in custom mobile Apps and web platforms. " +
+        "Our goal is to help businesses across various industries turn their ideas into effective, high-impact digital solutions. " +
+        "Our mission is to embrace our client's ideas and take them to the next level by delivering technological products that exceed industry standards."
+    },
+    {
+      title: "How We Make It Happen",
+      content: 
+        "• Teaming up with clients to bring ideas to life.\n" +
+        "• Personalized approach to every project\n" +
+        "• Commitment to quality and innovation\n" +
+        "• Ensuring tangible and measurable results."
+    },
+    {
+      title: "Our Values",
+      content: 
+        "• Commitment\n" +
+        "  – Dedicated to client success and project excellence.\n" +
+        "• Curiosity\n" +
+        "  – Constantly learning and innovating to improve.\n" +
+        "• Passion\n" +
+        "  – Driven by enthusiasm and purpose.\n" +
+        "• Transparency\n" +
+        "  – Open and honest in all communications.\n" +
+        "• Customer Orientation\n" +
+        "  – Focused on delivering client-centered solutions."
+    }
+  ]
+};
+
+
 
 export const icons = [
       { src: "/technologies/netcore.svg", alt: ".NET Core" },

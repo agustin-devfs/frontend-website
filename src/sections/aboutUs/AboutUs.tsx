@@ -1,133 +1,137 @@
 'use client';
-import { Box, /* Container, */ Typography } from '@mui/material';
-import { motion, /* useTransform,  useSpring,*/ useMotionValue } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+
+import { Box, Typography } from '@mui/material';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Mousewheel } from 'swiper/modules';
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
 import { about } from '@/app/core/utils/contants';
 
+// Importa estilos de Swiper
+import 'swiper/css';
+import 'swiper/css/pagination';
+
 export default function AboutUsSection() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const scrollProgress = useMotionValue(0);
-/*   const smoothScroll = useSpring(scrollProgress, { stiffness: 50, damping: 20 });
- */  const [scrollLocked, setScrollLocked] = useState(false);
-  const [slideIndex, setSlideIndex] = useState(0);
+  const [scrollLocked, setScrollLocked] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const section = sectionRef.current;
-      if (!section) return;
-
-      const rect = section.getBoundingClientRect();
-      const start = window.innerHeight * 0.7255;
-      const end = window.innerHeight * 0.7276;
-
-      if (rect.top <= start && rect.bottom >= end) {
-        if (!scrollLocked) {
-          document.body.style.overflow = 'hidden';
-          setScrollLocked(true);
-        }
-
-        const scrollableHeight = section.scrollHeight - section.offsetHeight;
-        const progress = Math.min(
-          Math.max((start - rect.top) / scrollableHeight, 0),
-          1
-        );
-        scrollProgress.set(progress);
-
-        // Ajustar el índice de la diapositiva basada en el progreso del scroll
-        const totalSlides = about.about.length;
-        const newIndex = Math.floor(progress * (totalSlides - 1));
-        setSlideIndex(newIndex);
-      } else {
-        if (scrollLocked && slideIndex >= about.about.length - 1) {
-          document.body.style.overflow = '';
-          setScrollLocked(false);
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
+    if (scrollLocked) {
+      document.body.style.overflow = 'hidden'; // Bloquea el scroll del body
+      document.documentElement.style.overflow = 'hidden'; // Bloquea el scroll del html
+    } else {
+      document.body.style.overflow = ''; // Restaura el scroll del body
+      document.documentElement.style.overflow = ''; // Restaura el scroll del html
+    }
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-      document.body.style.overflow = '';
+      document.body.style.overflow = ''; // Asegura desbloquear al desmontar
+      document.documentElement.style.overflow = ''; // Asegura desbloquear al desmontar
     };
-  }, [scrollProgress, scrollLocked, slideIndex]);
+  }, [scrollLocked]);
+  
 
   return (
-  /*   <Container maxWidth='xl'
-    > */
-      <>
-      
+    <Box
+      id="aboutus"
+      sx={{
+        position: 'relative',
+        height: '100vh',
+        width: '100vw',
+        overflow: 'hidden',
+        backgroundImage: 'url(/assets/11.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        margin: 0,
+        padding: 0,
+      }}
+    >
+      {/* Contenedor del carrusel */}
       <Box
-        ref={sectionRef}
-        id="aboutus"
         sx={{
-          position: 'relative',
-          height: '100vh',
-          width: '100vw',
+          position: 'absolute',
+          top: 50,
+          left: '60%',
+          width: '40%',
+          height: '90%',
+          zIndex: 2,
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
           overflow: 'hidden',
-          backgroundImage: 'url(/assets/11.png)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          margin:0,
-          padding:0
+          backgroundColor: 'white',
+          borderTopLeftRadius: '25%',
+          borderBottomLeftRadius: '25%',
         }}
-        >
-        {/* Scrollable Content */}
-        <Box
-          sx={{
-            position: 'absolute',
-            top: 50,
-            left: '65%',
-            width: '40%',
-            height: '90%',
-            zIndex: 2,
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            overflowY: 'hidden', // Quitar el scroll para que actúe como carrusel
-            backgroundColor: 'white',
-            borderTopLeftRadius: '25%',
-            borderBottomLeftRadius: '25%',
+      >
+        <Swiper
+          direction="vertical"
+          modules={[Mousewheel]}
+          pagination={{ clickable: true }}
+          mousewheel
+          style={{ width: '90%', height: '100%' }}
+          onSlideChange={(swiper) => {
+            // Bloquea el scroll al entrar en el Swiper
+            if (swiper.activeIndex > 0 && swiper.activeIndex < about.about.length - 1) {
+              setScrollLocked(true);
+            }
           }}
-          >
+          onReachBeginning={() => {
+            // Habilita el scroll al regresar al inicio
+            setScrollLocked(false);
+          }}
+          onReachEnd={() => {
+            // Habilita el scroll al llegar al final
+            setScrollLocked(false);
+          }}
+        >
           {about.about.map((item, index) => (
-            <motion.div
-            key={index}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{
-                opacity: slideIndex === index ? 1 : 0,
-                y: slideIndex === index ? 0 : 50,
-              }}
-              transition={{ duration: 0.5 }}
-              style={{
-                position: slideIndex === index ? 'relative' : 'absolute',
-                width: '70%',
-                display: slideIndex === index ? 'block' : 'none',
-              }}
+            <SwiperSlide key={index} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+              <Box 
+                display="flex" 
+                alignItems="center" 
+                sx={{
+                  gap: 2, // Espaciado entre el título y la imagen
+                  mb: 2
+                }}
               >
-              <Typography variant="h3" sx={{ fontFamily: 'Raleway', fontWeight: 400, fontSize: { xs: '32px', md: '48px' }, color: 'black' }}>
-                {item.title}
-              </Typography>
-              <Image src={"/assets/sonrisa pequeña.png"} alt="Sonrisa" width={96} height={38} style={{ margin: '10px 0' }} />
+                <Typography
+                  variant="h3"
+                  sx={{
+                    fontFamily: 'Raleway',
+                    fontWeight: 400,
+                    fontSize: { xs: '32px', md: '46px' },
+                    color: 'black',
+                    textAlign: 'left',
+                  }}
+                >
+                  {item.title}
+                </Typography>
+                <Image
+                  src={'/assets/sonrisa pequeña.png'}
+                  alt="Sonrisa"
+                  width={96}
+                  height={38}
+                />
+              </Box>
+
               <Typography
                 variant="body1"
                 sx={{
                   fontFamily: 'Raleway',
                   fontWeight: 400,
-                  fontSize: { xs: '16px', md: '26px' },
+                  fontSize: { xs: '16px', md: '24px' },
                   lineHeight: { xs: '24px', md: '45px' },
                   color: 'black',
+                  textAlign: 'center',
+                  padding: '0 20px',
                 }}
-                >
+              >
                 {item.content}
               </Typography>
-            </motion.div>
+            </SwiperSlide>
           ))}
-        </Box>
+        </Swiper>
       </Box>
-{/*     </Container>
- */}  </>
+    </Box>
   );
 }
