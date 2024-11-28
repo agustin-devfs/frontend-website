@@ -73,7 +73,7 @@ export default function NavBar() {
         }}
       >
         <Grid style={{ padding: "20px", marginTop: "10px" }}>
-          <Link href="https://togetherdevs.net/" underline="none" sx={{ display: 'flex', alignItems: 'center' }}>
+          <Link href="https://togetherdevs.com/" underline="none" sx={{ display: 'flex', alignItems: 'center' }}>
             <Image
               src="logos/TogetherDevs.svg"
               alt="TogetherDevs"

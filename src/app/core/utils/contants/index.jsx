@@ -8,7 +8,7 @@ export const bars = {
   app: "App development",
   web: "Web platform",
   hire:"Hire our people", 
-  togetherLink: "https://togetherdevs.net/",
+  togetherLink: "https://togetherdevs.com/",
   togetherDevsIcon:"logos/TogetherDevs azul.svg",
   appIcon:"icons/appIcon.svg",
   webIcon:"icons/webIcon.svg",
