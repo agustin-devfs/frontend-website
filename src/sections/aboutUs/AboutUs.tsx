@@ -116,8 +116,8 @@ export default function AboutUsSection() {
                 sx={{
                   fontFamily: 'Raleway',
                   fontWeight: 400,
-                  fontSize: { xs: '16px', md: '30px' },
-                  lineHeight: { xs: '24px', md: '50px' },
+                  fontSize: { xs: '16px', md: '26px' },
+                  lineHeight: { xs: '24px', md: '45px' },
                   color: 'black',
                 }}
                 >
