@@ -12,14 +12,14 @@ export const bars = {
   togetherDevsIcon:"logos/TogetherDevs azul.svg",
   appIcon:"icons/appIcon.svg",
   webIcon:"icons/webIcon.svg",
-  hireIcon:"icons/appIcon.svg",
+  hireIcon:"icons/hireIcon.svg",
   ButtonService:"OUR SERVICES",  
   ButtonAbout:"ABOUT US",
   ButtonWork:" OUR WORK",
   ButtonCall:"GET STARDED",
   appIconB:"icons/appIconB.svg",
   webIconB:"icons/webIconB.svg",
-  hireIconB:"icons/appIconB.svg",
+  hireIconB:"icons/hireIconB.svg",
 }
 //HERO
 export const hero = 

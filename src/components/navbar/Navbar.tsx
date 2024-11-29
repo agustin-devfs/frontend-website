@@ -1,10 +1,12 @@
 'use client'
 import { useEffect, useState } from "react";
 import { bars } from "@/app/core/utils/contants";
-import { ButtonGroup, Button, Link, Grid } from "@mui/material";
+import { ButtonGroup, Button, Link, Grid, useTheme, useMediaQuery } from "@mui/material";
 import Image from 'next/image';
 
 export default function NavBar() {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm')); // Detecta pantallas pequeñas
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
@@ -41,8 +43,19 @@ export default function NavBar() {
     pointerEvents: isVisible ? 'auto' : 'none',
   };
 
+  const navbarStylesSmall: React.CSSProperties = {
+    width: '200px',
+    opacity: isVisible ? 0 : 0, 
+    transition: 'opacity 0.3s ease-in-out',
+    backgroundColor: '#353535',
+    position: 'fixed',
+    bottom: '0%',
+    zIndex: 1000,
+    pointerEvents: isVisible ? 'auto' : 'none',
+  };
+
   return (
-    <Grid container md={4.5} style={navbarStyles}>
+    <Grid container md={4.5} style={ isSmallScreen ? navbarStylesSmall:navbarStyles } >
       <ButtonGroup
         variant="contained"
         sx={{

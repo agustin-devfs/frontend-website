@@ -2,12 +2,11 @@
 
 import { Box, Typography } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Mousewheel } from 'swiper/modules';
+import { Pagination,Mousewheel } from 'swiper/modules';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { about } from '@/app/core/utils/contants';
 
-// Importa estilos de Swiper
 import 'swiper/css';
 import 'swiper/css/pagination';
 
@@ -65,7 +64,7 @@ export default function AboutUsSection() {
       >
         <Swiper
           direction="vertical"
-          modules={[Mousewheel]}
+          modules={[Pagination, Mousewheel]}
           pagination={{ clickable: true }}
           mousewheel
           style={{ width: '90%', height: '100%' }}

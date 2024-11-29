@@ -1,42 +1,55 @@
-import { AppBar, Box, Container, IconButton, Link, Stack, Toolbar, Typography } from '@mui/material';
+'use client';
+import { AppBar, Box, Container, IconButton, Link, Stack, Toolbar, Typography, useTheme, useMediaQuery } from '@mui/material';
 import { Facebook, Instagram, LinkedIn } from '@mui/icons-material';
 import Image from 'next/image';
 import { bars, footer } from '@/app/core/utils/contants';
 
 export default function Footer() {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm')); // Detecta pantallas pequeñas
+  const ismediumScreen = useMediaQuery(theme.breakpoints.down('md')); // Detecta pantallas medianas
+  const isnormalScreen = useMediaQuery(theme.breakpoints.down('lg')); // Detecta pantallas grandes
   return (
     <AppBar position="static" sx={{ bgcolor: '#141519', boxShadow: 'none', marginTop: 'auto' }}>
       <Container maxWidth="lg">
-        <Toolbar sx={{ justifyContent: 'space-between', py: 2 }}>
+        <Toolbar sx={{ justifyContent: 'space-between', py: { xs: 1, md: 2 } , px: isSmallScreen ? 1 : 0 }}>
           <Link href="/" underline="none" sx={{ display: 'flex', alignItems: 'center' }}>
             <Image 
               src="logos/TogetherDevs.svg" 
               alt="TogetherDevs"
               loading="lazy"
-              width={150} 
-              height={50} 
+              width={isSmallScreen ? 150 : 150} 
+              height={isSmallScreen ? 35 : 50} 
               style={{ borderRadius: "10%" }} 
             />
           </Link>
 
-          <Stack direction="row" spacing={3}>
+          <Stack 
+            direction={isSmallScreen ? "column" : "row"} 
+            spacing={isSmallScreen ? 6 : 3} 
+            sx={{
+              flexDirection: { xs: 'column', md: 'row' },
+              alignItems: { xs: 'flex-end', md: 'center' },
+              marginLeft: { xs: "5%", md: '20%' },
+            }}
+          >
             <Link 
-             href="https://www.webuildapps.ai/" 
-             underline="none"   
-             target="_blank" 
-             rel="noopener noreferrer"
+              href="https://www.webuildapps.ai/" 
+              underline="none"   
+              target="_blank" 
+              rel="noopener noreferrer"
               sx={{ color: 'white', display: 'flex', alignItems: 'center', gap: 0.5 }}
             >
               <Image 
-                src={bars.webIconB} 
+                src={bars.appIconB} 
                 alt="AppIcon"
                 loading="lazy"
-                width={24} 
+                width={isSmallScreen ? 16 : 24} 
                 height={24} 
                 style={{ borderRadius: "10%" }} 
               />              
-                  {bars.app}
-                  </Link>
+              {bars.app}
+            </Link>
             <Link 
               href="#industries" 
               underline="none" 
@@ -48,7 +61,7 @@ export default function Footer() {
                 src={bars.webIconB} 
                 alt="AppIcon"
                 loading="lazy"
-                width={24} 
+                width={isSmallScreen ? 16 : 24} 
                 height={24} 
                 style={{ borderRadius: "10%" }} 
               />
@@ -57,14 +70,15 @@ export default function Footer() {
             <Link 
               href={"https://meetings.hubspot.com/david3299"}
               target="_blank" 
-              rel="noopener noreferrer"underline="none" 
+              rel="noopener noreferrer" 
+              underline="none" 
               sx={{ color: 'white', display: 'flex', alignItems: 'center', gap: 0.5 }}
             >
               <Image 
                 src={bars.hireIconB} 
                 alt="AppIcon"
                 loading="lazy"
-                width={24} 
+                width={isSmallScreen ? 16 : 24} 
                 height={24} 
                 style={{ borderRadius: "10%" }} 
               />
@@ -74,8 +88,13 @@ export default function Footer() {
         </Toolbar>
 
         <Box sx={{ py: 2, borderTop: '1px solid rgba(255,255,255,0.1)' }}>
-          <Stack direction="row" justifyContent="space-between" alignItems="center">
-            <Stack direction="row" spacing={1}>
+          <Stack 
+            direction={isSmallScreen ? "column" : "row"} 
+            justifyContent="space-between" 
+            alignItems={isSmallScreen ? "center" : "flex-start"} 
+            spacing={isSmallScreen ? 2 : 0}
+          >
+            <Stack direction="row" spacing={1} justifyContent={isSmallScreen ? "center" : "flex-start"}>
               <IconButton
                 href="https://www.linkedin.com/company/togetherdevs/about/"
                 size="small" 
@@ -108,7 +127,11 @@ export default function Footer() {
               </IconButton>
             </Stack>
 
-            <Stack direction="row" spacing={2} sx={{ color: 'white', fontSize: '0.875rem' }}>
+            <Stack 
+              direction={isSmallScreen ? "column" : "row"} 
+              spacing={2} 
+              sx={{ color: 'white', fontSize: '0.875rem', textAlign: isSmallScreen ? 'center' : 'left' }}
+            >
               <Link 
                 href="#" 
                 underline="none" 
