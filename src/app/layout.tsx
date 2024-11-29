@@ -1,9 +1,9 @@
-import { useEffect } from "react";
-import type { Metadata } from "next";
+"use client"; // Directiva para habilitar funcionalidades del cliente
+
 import { Raleway, Podkova } from "next/font/google";
 import "./globals.css";
+import { useEffect } from "react";
 
-// Importación de fuentes de Google Fonts
 const raleway = Raleway({
   subsets: ["latin"],
   variable: "--font-raleway",
@@ -16,38 +16,14 @@ const podkova = Podkova({
   weight: ["400", "700"],
 });
 
-export const metadata: Metadata = {
-  title: "Together Devs",
-  description:
-    "Togetherdevs is a software company with experience in IT solutions, helping businesses scale up team quality and productivity.",
-  icons: {
-    icon: "./../../../public/assets/logos/isologo.png",
-    apple: "./../../../public/assets/logos/isologo.png",
-  },
-  openGraph: {
-    title: "Together Devs",
-    description:
-      "Togetherdevs is a software company with experience in IT solutions, helping businesses scale up team quality and productivity.",
-    url: "https://togetherdevs.com/",
-    siteName: "Together Devs",
-    locale: "es_ES",
-    type: "website",
-  },
-  alternates: {
-    canonical: "https://togetherdevs.com/",
-  },
-};
-
 // Función para detectar dispositivos móviles
 function isMobileClient() {
   const userAgent = typeof window !== "undefined" ? navigator.userAgent || navigator.vendor : "";
 
-  // Detecta dispositivos Android
   if (/android/i.test(userAgent)) {
     return true;
   }
 
-  // Detecta dispositivos iOS
   if (/iPad|iPhone|iPod/.test(userAgent)) {
     return true;
   }
@@ -62,7 +38,7 @@ export default function RootLayout({
 }>) {
   useEffect(() => {
     if (isMobileClient()) {
-      window.location.href = "https://webuildapps.ai"; // Redirige a la página móvil
+      window.location.href = "https://webuildapps.ai";
     }
   }, []);
 

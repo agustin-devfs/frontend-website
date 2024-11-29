@@ -1,5 +1,4 @@
 'use client'
-import { useEffect } from "react";
 import Footer from "@/sections/footer/Footer";
 import OurTeam from "@/sections/ourTeam/OurTeam";
 import ContactForm from "@/sections/contact/ContactForm/ContactForm";
@@ -14,29 +13,7 @@ import MarqueeIcons from "@/components/marquee/MarqueeIcons";
 import Hero from "@/sections/hero/Hero";
 import AboutUs from "@/sections/aboutUs/AboutUs";
 
-/* function isMobileClient() {
-  const userAgent = navigator.userAgent || navigator.vendor;
-
-  // Detecta dispositivos Android
-  if (/android/i.test(userAgent)) {
-    return true; // Es un cliente móvil
-  }
-
-  // Detecta dispositivos iOS
-  if (/iPad|iPhone|iPod/.test(userAgent)) {
-    return true;
-  }
-
-  return false; 
-} */
-
 export default function Home() {
-/*   useEffect(() => {
-    if (isMobileClient()) {
-      window.location.href = "https://webuildapps.ai";
-    }
-  }, []);
- */
   return (
     <>
       <main>
