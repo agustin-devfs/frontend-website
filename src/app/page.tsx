@@ -14,7 +14,7 @@ import MarqueeIcons from "@/components/marquee/MarqueeIcons";
 import Hero from "@/sections/hero/Hero";
 import AboutUs from "@/sections/aboutUs/AboutUs";
 
-function isMobileClient() {
+/* function isMobileClient() {
   const userAgent = navigator.userAgent || navigator.vendor;
 
   // Detecta dispositivos Android
@@ -24,19 +24,19 @@ function isMobileClient() {
 
   // Detecta dispositivos iOS
   if (/iPad|iPhone|iPod/.test(userAgent)) {
-    return true; // Es un cliente móvil
+    return true;
   }
 
-  return false; // No es un cliente móvil
-}
+  return false; 
+} */
 
 export default function Home() {
-  useEffect(() => {
+/*   useEffect(() => {
     if (isMobileClient()) {
-      window.location.href = "https://webuildapps.ai"; // Redirige a la página para móviles
+      window.location.href = "https://webuildapps.ai";
     }
-  }, []); // Solo se ejecuta una vez al montar el componente
-
+  }, []);
+ */
   return (
     <>
       <main>

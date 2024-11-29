@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import type { Metadata } from "next";
 import { Raleway, Podkova } from "next/font/google";
 import "./globals.css";
@@ -18,11 +19,11 @@ const podkova = Podkova({
 export const metadata: Metadata = {
   title: "Together Devs",
   description:
-    "Togetherdevsis a software company with experience in IT solutions, helping businesses scale up team quality and productivity.",
+    "Togetherdevs is a software company with experience in IT solutions, helping businesses scale up team quality and productivity.",
   icons: {
     icon: "./../../../public/assets/logos/isologo.png",
-     apple: "./../../../public/assets/logos/isologo.png",
-   },
+    apple: "./../../../public/assets/logos/isologo.png",
+  },
   openGraph: {
     title: "Together Devs",
     description:
@@ -37,11 +38,34 @@ export const metadata: Metadata = {
   },
 };
 
+// Función para detectar dispositivos móviles
+function isMobileClient() {
+  const userAgent = typeof window !== "undefined" ? navigator.userAgent || navigator.vendor : "";
+
+  // Detecta dispositivos Android
+  if (/android/i.test(userAgent)) {
+    return true;
+  }
+
+  // Detecta dispositivos iOS
+  if (/iPad|iPhone|iPod/.test(userAgent)) {
+    return true;
+  }
+
+  return false;
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  useEffect(() => {
+    if (isMobileClient()) {
+      window.location.href = "https://webuildapps.ai"; // Redirige a la página móvil
+    }
+  }, []);
+
   return (
     <html lang="en">
       <head>
@@ -68,4 +92,3 @@ export default function RootLayout({
     </html>
   );
 }
-
