@@ -6,9 +6,8 @@ import { bars, footer } from '@/app/core/utils/contants';
 
 export default function Footer() {
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm')); // Detecta pantallas pequeñas  
-   const ismediumScreen = useMediaQuery(theme.breakpoints.down('md')); // Detecta pantallas medianas
-  const isnormalScreen = useMediaQuery(theme.breakpoints.down('lg')); // Detecta pantallas grandes */
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));  
+
   return (
     <AppBar position="static" sx={{ bgcolor: '#141519', boxShadow: 'none', marginTop: 'auto' }}>
       <Container maxWidth="lg">

@@ -2,7 +2,6 @@
 
 import { Raleway, Podkova } from "next/font/google";
 import "./globals.css";
-import { useEffect } from "react";
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -16,31 +15,12 @@ const podkova = Podkova({
   weight: ["400", "700"],
 });
 
-// Función para detectar dispositivos móviles
-function isMobileClient() {
-  const userAgent = typeof window !== "undefined" ? navigator.userAgent || navigator.vendor : "";
-
-  if (/android/i.test(userAgent)) {
-    return true;
-  }
-
-  if (/iPad|iPhone|iPod/.test(userAgent)) {
-    return true;
-  }
-
-  return false;
-}
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-/*   useEffect(() => {
-    if (isMobileClient()) {
-      window.location.href = "https://webuildapps.ai";
-    }
-  }, []); */
 
   return (
     <html lang="en">

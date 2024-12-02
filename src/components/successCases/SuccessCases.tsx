@@ -1,5 +1,5 @@
 'use client'
-import { Box, Card, CardContent, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Card, CardContent, Grid, Typography, /* useMediaQuery, useTheme */ } from "@mui/material";
 import Image from 'next/image';
 import { projects } from '@/app/core/utils/contants';
 import { useInView } from 'react-intersection-observer';
@@ -8,10 +8,10 @@ import { useState } from 'react';
 
 export default function SlideInCard() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const theme = useTheme();
-  const ismediumScreen = useMediaQuery(theme.breakpoints.down('md')); // Detecta pantallas medianas
-  const isnormalScreen = useMediaQuery(theme.breakpoints.down('lg')); // Detecta pantallas grandes */
-  const isxlScreen = useMediaQuery(theme.breakpoints.down('xl'));
+  /* const theme = useTheme();
+   const ismediumScreen = useMediaQuery(theme.breakpoints.down('md')); 
+  const isnormalScreen = useMediaQuery(theme.breakpoints.down('lg')); 
+  const isxlScreen = useMediaQuery(theme.breakpoints.down('xl')); */
 
   const colores = [
     { back: '#F6F6F6', text: '#162D4F', imageAlignment: 'left' },

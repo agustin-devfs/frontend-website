@@ -31,7 +31,7 @@ const CardService: FC<ServiceCardProps> = ({ title, description, imageSrc, image
         alignItems="center"
         flexGrow={1}
         sx={{ cursor: "pointer" }}
-        pt={isLargeScreen? 6: 10}
+        pt={isLargeScreen? 2: 10}
       >
         <Image
           src={imageSrc}
