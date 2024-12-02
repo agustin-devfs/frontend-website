@@ -1,10 +1,15 @@
 'use client'
 
 import Box from '@mui/material/Box'
-import { Grid, Typography } from '@mui/material'
+import { Grid, Typography, useMediaQuery, useTheme } from '@mui/material'
 import Image from 'next/image'
 
-export default function Component() {
+export default function Banner() {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm')); // Detecta pantallas pequeñas
+  const isMediumScreen = useMediaQuery(theme.breakpoints.down('md')); // Pantallas medianas
+  const isNormalScreen = useMediaQuery(theme.breakpoints.down('lg')); 
+  const isLargeScreen = useMediaQuery(theme.breakpoints.down('xl')); 
 
   return (
     <Box
@@ -23,20 +28,20 @@ export default function Component() {
             <Typography
               sx={{
                 fontFamily: 'Raleway',
-                fontSize: '64px',
+                fontSize: isSmallScreen? '25px' :isMediumScreen? '40px' : isNormalScreen? '50px': isLargeScreen? '54px':'64px',
                 fontWeight: 600,
                 color: '#A07C0D',
                 lineHeight: 1.1,
                 display: 'inline-block',  // Ajuste para alineación
               }}
             >
-              Ready to build
+             {'Ready to build'}
             </Typography>
 
             <Typography
               sx={{
                 fontFamily: 'Raleway',
-                fontSize: '64px',
+                fontSize: isSmallScreen? '25px' : isMediumScreen? '40px' : isNormalScreen? '50px':isLargeScreen? '54px':'64px',
                 fontWeight: 600,
                 color: '#FFFFFF',
                 lineHeight: 1.1,
@@ -54,7 +59,7 @@ export default function Component() {
 
 
         {/* Icono de sonrisa */}
-        <Grid item md={4}>
+        <Grid item sm={1} md={1} lg={1}>
           <Image
             src="/assets/sonrisa pequeña.png"
             alt="Sonrisa"

@@ -6,10 +6,15 @@ import { bars } from '@/app/core/utils/contants';
 export default function Header() {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm')); // Detecta pantallas pequeñas
+  const isMediumScreen = useMediaQuery(theme.breakpoints.down('md')); // Pantallas medianas
+  const isNormalScreen = useMediaQuery(theme.breakpoints.down('lg')); 
+  const isLargeScreen = useMediaQuery(theme.breakpoints.down('xl')); 
+
+
   return (
     <AppBar position="static" sx={{ bgcolor: '#EDEDED', boxShadow: 'none' }}>
-      <Container maxWidth="lg">
-        <Toolbar sx={{ justifyContent: 'space-between', py: { xs: 1, md: 2 } }}>
+      <Container maxWidth="xl">
+        <Toolbar sx={{ justifyContent: 'space-between', py: { xs: 1, md: 1, lg: 0} }}>
           {/* Logo Section */}
           <Stack direction="row">
             <Link
@@ -24,10 +29,10 @@ export default function Header() {
                 src={bars.togetherDevsIcon}
                 alt="TogetherDevs"
                 loading="lazy"
-                width={isSmallScreen ? 150 : 220} 
-                height={isSmallScreen ? 35 : 100} 
+                width={isSmallScreen ? 150 : isMediumScreen ? 180 : isLargeScreen ? 200 : 220} 
+                height={isSmallScreen ? 35 :  isMediumScreen ? 80 : isLargeScreen ? 100 :100} 
                 style={{ borderRadius: '10%', 
-                 marginTop: isSmallScreen ? '5%' : '3%',
+                 marginTop: isSmallScreen ? '5%' :isMediumScreen ? '12%': isLargeScreen ? '10%': '8%',
               }}
               />
             </Link>
@@ -35,12 +40,12 @@ export default function Header() {
 
           {/* Navigation Links */}
           <Stack
-               direction={isSmallScreen ? "column" : "row"} 
-               spacing={isSmallScreen ? 1 : 3} 
+               direction={isSmallScreen ? "column" :  isMediumScreen ? "row" : "row"} 
+               spacing={isSmallScreen ? 1 : isMediumScreen ? 1 : isNormalScreen? 2 :3} 
             sx={{
               mt: { xs: 2, md: 0 },
               alignItems: { xs: 'flex-end', md: 'center' },
-              marginLeft: { xs: "5%", md: '20%' },
+              marginLeft: { xs: "5%", md: '10%' },
             }}
           >
             <Link

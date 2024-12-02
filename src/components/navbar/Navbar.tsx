@@ -7,6 +7,10 @@ import Image from 'next/image';
 export default function NavBar() {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm')); // Detecta pantallas pequeñas
+  const isNormalScreen = useMediaQuery(theme.breakpoints.down('lg')); 
+  const isLargeScreen = useMediaQuery(theme.breakpoints.down('xl')); 
+
+    
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
@@ -55,9 +59,10 @@ export default function NavBar() {
   };
 
   return (
-    <Grid container md={4.5} style={ isSmallScreen ? navbarStylesSmall:navbarStyles } >
+    <Grid container sm={10} md={7.2} lg={6} xl={4.8} style={ isSmallScreen ? navbarStylesSmall:navbarStyles } >
       <ButtonGroup
         variant="contained"
+        
         sx={{
           backgroundColor: '#353535',
           
@@ -65,7 +70,8 @@ export default function NavBar() {
             backgroundColor: '#353535',
             textTransform: 'none',
              fontWeight: '600',
-             padding: '8px 16px',
+             fontSize: isSmallScreen? '10px':isNormalScreen? '12px': isLargeScreen? '14px':'16px',
+             padding: isSmallScreen? '4px 0px': isNormalScreen? '6px 10px':'8px 10px',
             borderColor: "#353535",
 
             '&:hover': {
@@ -91,7 +97,7 @@ export default function NavBar() {
               src="logos/TogetherDevs.svg"
               alt="TogetherDevs"
               loading="lazy"
-              width={120}
+              width={150}
               height={30}
               style={{ borderRadius: "10%" }}
             />

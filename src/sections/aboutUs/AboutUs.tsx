@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination,Mousewheel } from 'swiper/modules';
 import Image from 'next/image';
@@ -11,6 +11,10 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 export default function AboutUsSection() {
+  const theme = useTheme(); // Hook dentro del cuerpo del componente
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm')); // Detecta pantallas pequeñas
+  const isMediumScreen = useMediaQuery(theme.breakpoints.down('md')); // Detecta pantallas medianas
+  
   const [scrollLocked, setScrollLocked] = useState(false);
 
   useEffect(() => {
@@ -33,7 +37,7 @@ export default function AboutUsSection() {
       id="aboutus"
       sx={{
         position: 'relative',
-        height: '100vh',
+        height: isMediumScreen? '80vh':'100vh',
         width: '100vw',
         overflow: 'hidden',
         backgroundImage: 'url(/assets/11.png)',
@@ -48,8 +52,8 @@ export default function AboutUsSection() {
         sx={{
           position: 'absolute',
           top: 50,
-          left: '60%',
-          width: '40%',
+          left: isMediumScreen? '40%':'60%',
+          width: isMediumScreen? '60%':'40%',
           height: '90%',
           zIndex: 2,
           display: 'flex',
@@ -89,7 +93,7 @@ export default function AboutUsSection() {
                 display="flex" 
                 alignItems="center" 
                 sx={{
-                  gap: 2, // Espaciado entre el título y la imagen
+                  gap: 2, 
                   mb: 2
                 }}
               >
@@ -98,7 +102,7 @@ export default function AboutUsSection() {
                   sx={{
                     fontFamily: 'Raleway',
                     fontWeight: 400,
-                    fontSize: { xs: '32px', md: '46px' },
+                    fontSize: { xs: '30px', sm: '30px', md: '36px', lg: '46px' },
                     color: 'black',
                     textAlign: 'left',
                   }}
@@ -108,8 +112,8 @@ export default function AboutUsSection() {
                 <Image
                   src={'/assets/sonrisa pequeña.png'}
                   alt="Sonrisa"
-                  width={96}
-                  height={38}
+                  width={ isSmallScreen? 54 : isMediumScreen ? 72 : 96}
+                  height={isSmallScreen? 21 : isMediumScreen? 28  : 38}
                 />
               </Box>
 
@@ -118,8 +122,8 @@ export default function AboutUsSection() {
                 sx={{
                   fontFamily: 'Raleway',
                   fontWeight: 400,
-                  fontSize: { xs: '16px', md: '24px' },
-                  lineHeight: { xs: '24px', md: '45px' },
+                  fontSize: { xs: '14px',sm: '16px', md: '20px', lg: '24px' },
+                  lineHeight: { xs: '24px', sm: '30px', md: '40px', lg: '45px' },
                   color: 'black',
                   textAlign: 'center',
                   padding: '0 20px',

@@ -36,11 +36,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  useEffect(() => {
+/*   useEffect(() => {
     if (isMobileClient()) {
       window.location.href = "https://webuildapps.ai";
     }
-  }, []);
+  }, []); */
 
   return (
     <html lang="en">
