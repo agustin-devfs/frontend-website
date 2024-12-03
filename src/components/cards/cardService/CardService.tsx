@@ -11,6 +11,7 @@ interface ServiceCardProps {
 
 const CardService: FC<ServiceCardProps> = ({ title, description, imageSrc, imageAlt }) => {
   const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm')); 
   const isMediumScreen = useMediaQuery(theme.breakpoints.down('md')); 
   const isNormalScreen = useMediaQuery(theme.breakpoints.down('lg')); 
   const isLargeScreen = useMediaQuery(theme.breakpoints.down('xl')); 
@@ -31,12 +32,12 @@ const CardService: FC<ServiceCardProps> = ({ title, description, imageSrc, image
         alignItems="center"
         flexGrow={1}
         sx={{ cursor: "pointer" }}
-        pt={isLargeScreen? 2: 10}
+        pt={isSmallScreen? 0 : isLargeScreen? 2: 10}
       >
         <Image
           src={imageSrc}
-          width={isMediumScreen? 100: isNormalScreen? 110: 160}
-          height={isMediumScreen? 100: isNormalScreen? 110: 160}
+          width={isSmallScreen? 80 : isMediumScreen? 100: isNormalScreen? 110: 160}
+          height={ isSmallScreen? 80 : isMediumScreen? 100: isNormalScreen? 110: 160}
           alt={imageAlt}
           loading="lazy"
         />

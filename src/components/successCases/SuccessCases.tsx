@@ -1,5 +1,5 @@
 'use client'
-import { Box, Card, CardContent, Grid, Typography, /* useMediaQuery, useTheme */ } from "@mui/material";
+import { Box, Card, CardContent, Grid, Typography,  useMediaQuery, useTheme } from "@mui/material";
 import Image from 'next/image';
 import { projects } from '@/app/core/utils/contants';
 import { useInView } from 'react-intersection-observer';
@@ -8,10 +8,9 @@ import { useState } from 'react';
 
 export default function SlideInCard() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  /* const theme = useTheme();
-   const ismediumScreen = useMediaQuery(theme.breakpoints.down('md')); 
-  const isnormalScreen = useMediaQuery(theme.breakpoints.down('lg')); 
-  const isxlScreen = useMediaQuery(theme.breakpoints.down('xl')); */
+  const theme = useTheme();
+  const isMediumScreen = useMediaQuery(theme.breakpoints.down('md')); 
+  const isLargeScreen = useMediaQuery(theme.breakpoints.down('xl')); 
 
   const colores = [
     { back: '#F6F6F6', text: '#162D4F', imageAlignment: 'left' },
@@ -36,8 +35,8 @@ export default function SlideInCard() {
           height: '100%',
           width: '100vw',
           overflow: 'hidden',
-          backgroundImage: 'url(/assets/25.png)',
-           backgroundSize: 'cover',
+/*           backgroundImage: 'url(/assets/25.png)',
+ */          backgroundSize: 'cover',
           backgroundPosition: 'center',
           margin: 0,
           padding: 0
@@ -68,13 +67,15 @@ export default function SlideInCard() {
                           whileHover={{ scale: 1.1 }}
                           transition={{ type: 'spring', stiffness: 300 }}
                           animate={{
-                            scale: isHovered ? 0.9 : (hoveredIndex !== null ? 1 : 1), // aca Reduce escala si no está en hover
-                            x: color.imageAlignment === "left" && isHovered ? -50 : 0
+                             scale: isHovered ? 0.9 : (hoveredIndex !== null ? 1 : 1), // aca Reduce escala si no está en hover
+                             x: isHovered 
+                            ? (color.imageAlignment === "left" ? -50 : 50)
+                            : 0
                          }}
                         >
                           <Image
-                            width={420}
-                            height={420}
+                            width={isMediumScreen? 340:isLargeScreen? 400:420}
+                            height={isMediumScreen? 340:isLargeScreen? 400:420}
                             src={project.image}
                             alt={project.title}
                             style={{ objectFit: "cover", maxWidth: "100%", display: "block" }}
@@ -92,7 +93,7 @@ export default function SlideInCard() {
                           onHoverStart={() => setHoveredIndex(index)}
                           onHoverEnd={() => setHoveredIndex(null)}
                           animate={{
-                            scale: isHovered ? 1.2 : (hoveredIndex !== null ? 0.9 : 1), // Reduce escala si no está en hover
+                            scale: isHovered ? 1 : (hoveredIndex !== null ? 1 : 1), // Reduce escala si no está en hover
                             x: isHovered 
                             ? (color.imageAlignment === "left" ? -50 : 50)
                             : 0
@@ -101,19 +102,42 @@ export default function SlideInCard() {
                         >
                           <CardContent>
                             <Typography variant="subtitle2" 
-                            sx={{ color: color.text, fontFamily: 'Raleway', fontWeight: 700, fontSize: '18px', lineHeight: '1.5', textTransform: 'uppercase', marginBottom: '8px', letterSpacing: '0.1em' }}>
+                            sx={{ color: color.text,
+                             fontFamily: 'Raleway', 
+                             fontWeight: 700, 
+                             fontSize: isMediumScreen? '13px':isLargeScreen? '15px': '18px', 
+                             lineHeight: '1.5', 
+                             textTransform: 'uppercase', 
+                             marginBottom: '8px', 
+                             letterSpacing: '0.1em' }}>
                               {project.category}
                             </Typography>
                             <Typography variant="h6" component="div" 
-                            sx={{ color: color.text, fontFamily: 'Raleway', fontWeight: 500, fontSize: '32px', lineHeight: '1', textTransform: 'uppercase', marginBottom: '8px' }}>
+                            sx={{ color: color.text, 
+                            fontFamily: 'Raleway', 
+                            fontWeight: 500, 
+                            fontSize: isMediumScreen? '11px':isLargeScreen? '14px': '32px', 
+                            lineHeight: '1', 
+                            textTransform: 'uppercase', 
+                            marginBottom: '8px' }}>
                               {project.title}
                             </Typography>
                             <Typography variant="body2" 
-                            sx={{ color: color.text, fontFamily: 'Raleway', fontWeight: 500, fontSize: '18px', lineHeight: '1.25', marginBottom: '8px' }}>
+                            sx={{ color: color.text, 
+                            fontFamily: 'Raleway',  
+                            fontWeight: 500, 
+                            fontSize: isMediumScreen? '11px':isLargeScreen? '14px': '18px', 
+                            lineHeight: '1.25', 
+                            marginBottom: '8px' }}>
                               {project.description}
                             </Typography>
                             <Typography variant="subtitle2" 
-                            sx={{ color: color.text, fontFamily: 'Raleway', fontWeight: 700, fontSize: '20px', lineHeight: '1.25', marginBottom: '8px' }}>
+                            sx={{ color: color.text, 
+                            fontFamily: 'Raleway', 
+                            fontWeight: 700, 
+                            fontSize: isMediumScreen? '12px':isLargeScreen? '16px': '18px', 
+                            lineHeight: '1.25', 
+                            marginBottom: '8px' }}>
                               {project.client}
                             </Typography>
                           </CardContent>

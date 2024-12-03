@@ -10,9 +10,7 @@ const nextConfig: NextConfig = {
     return config;
   },
   images: {
-    // Configuración para soportar imágenes AVIF y PNG
     formats: ['image/avif', 'image/webp'],
-    // Usa remotePatterns para permitir imágenes externas
     remotePatterns: [
       {
         protocol: 'https',

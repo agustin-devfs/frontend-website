@@ -25,7 +25,7 @@ export default function Footer() {
 
           <Stack 
             direction={isSmallScreen ? "column" : "row"} 
-            spacing={isSmallScreen ? 6 : 3} 
+            spacing={isSmallScreen ? 3 : 3} 
             sx={{
               flexDirection: { xs: 'column', md: 'row' },
               alignItems: { xs: 'flex-end', md: 'center' },

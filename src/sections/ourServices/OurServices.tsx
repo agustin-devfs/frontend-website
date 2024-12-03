@@ -9,7 +9,7 @@ const ServicesSection = () => {
   const isLargeScreen = useMediaQuery(theme.breakpoints.down('xl')); 
 
   return (
-    <Container maxWidth="xl" sx={{ mt: isLargeScreen? 12: 12, mb: isLargeScreen? 8:14 }}>
+    <Container maxWidth="xl" sx={{ mt: isSmallScreen? 4 :isLargeScreen? 12: 12, mb: isLargeScreen? 8:14 }}>
       {/* Título */}
       <Grid container justifyContent="center" sx={{ mb: 4 }}>
         <Grid item xs={12}>
@@ -34,7 +34,7 @@ const ServicesSection = () => {
       {/* Tarjetas */}
       <Grid container spacing={isMediumScreen? 1: 4} justifyContent="center">
         {servicesData.map((service, index) => (
-          <Grid item xs={12} sm={5} md={4} key={index}>
+          <Grid item xs={9} sm={5} md={4} key={index}>
             <CardService
               title={service.title}
               description={service.description}

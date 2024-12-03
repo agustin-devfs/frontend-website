@@ -12,8 +12,10 @@ import 'swiper/css/pagination';
 
 export default function AboutUsSection() {
   const theme = useTheme(); // Hook dentro del cuerpo del componente
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm')); // Detecta pantallas pequeñas
-  const isMediumScreen = useMediaQuery(theme.breakpoints.down('md')); // Detecta pantallas medianas
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm')); 
+  const isMediumScreen = useMediaQuery(theme.breakpoints.down('md')); 
+  const isLargeScreen = useMediaQuery(theme.breakpoints.down('xl')); 
+
   
   const [scrollLocked, setScrollLocked] = useState(false);
 
@@ -37,7 +39,7 @@ export default function AboutUsSection() {
       id="aboutus"
       sx={{
         position: 'relative',
-        height: isMediumScreen? '80vh':'100vh',
+        height: isMediumScreen? '80vh': isLargeScreen? '90vh':'100vh',
         width: '100vw',
         overflow: 'hidden',
         backgroundImage: 'url(/assets/11.png)',
@@ -51,7 +53,7 @@ export default function AboutUsSection() {
       <Box
         sx={{
           position: 'absolute',
-          top: 50,
+          top: isLargeScreen? 30: 50,
           left: isMediumScreen? '40%':'60%',
           width: isMediumScreen? '60%':'40%',
           height: '90%',
@@ -102,7 +104,7 @@ export default function AboutUsSection() {
                   sx={{
                     fontFamily: 'Raleway',
                     fontWeight: 400,
-                    fontSize: { xs: '30px', sm: '30px', md: '36px', lg: '46px' },
+                    fontSize: { xs: '30px', sm: '30px', md: '36px', lg: '36px', xl: '48px' },
                     color: 'black',
                     textAlign: 'left',
                   }}
@@ -112,8 +114,8 @@ export default function AboutUsSection() {
                 <Image
                   src={'/assets/sonrisa pequeña.png'}
                   alt="Sonrisa"
-                  width={ isSmallScreen? 54 : isMediumScreen ? 72 : 96}
-                  height={isSmallScreen? 21 : isMediumScreen? 28  : 38}
+                  width={ isSmallScreen? 54 : isMediumScreen ? 72 : isLargeScreen? 65: 96}
+                  height={isSmallScreen? 21 : isMediumScreen? 28  : isLargeScreen? 25: 38}
                 />
               </Box>
 
@@ -122,8 +124,8 @@ export default function AboutUsSection() {
                 sx={{
                   fontFamily: 'Raleway',
                   fontWeight: 400,
-                  fontSize: { xs: '14px',sm: '16px', md: '20px', lg: '24px' },
-                  lineHeight: { xs: '24px', sm: '30px', md: '40px', lg: '45px' },
+                  fontSize: { xs: '14px',sm: '16px', md: '20px', lg: '22px', xl: '28px' },
+                  lineHeight: { xs: '24px', sm: '30px', md: '40px', lg: '40px',xl: '44px' },
                   color: 'black',
                   textAlign: 'center',
                   padding: '0 20px',

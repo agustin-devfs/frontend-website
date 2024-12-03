@@ -59,7 +59,7 @@ export default function NavBar() {
   };
 
   return (
-    <Grid container sm={10} md={7.2} lg={6} xl={4.8} style={ isSmallScreen ? navbarStylesSmall:navbarStyles } >
+    <Grid container sm={10} md={7.2} lg={4.8} xl={4.8} style={ isSmallScreen ? navbarStylesSmall:navbarStyles } >
       <ButtonGroup
         variant="contained"
         
@@ -70,8 +70,8 @@ export default function NavBar() {
             backgroundColor: '#353535',
             textTransform: 'none',
              fontWeight: '600',
-             fontSize: isSmallScreen? '10px':isNormalScreen? '12px': isLargeScreen? '14px':'16px',
-             padding: isSmallScreen? '4px 0px': isNormalScreen? '6px 10px':'8px 10px',
+             fontSize: isSmallScreen? '10px':isNormalScreen? '12px': isLargeScreen? '12px':'16px',
+             padding: isSmallScreen? '4px 0px': isNormalScreen? '4px 10px': isLargeScreen? '4px 9px':'8px 11px',
             borderColor: "#353535",
 
             '&:hover': {
@@ -91,13 +91,13 @@ export default function NavBar() {
           },
         }}
       >
-        <Grid style={{ padding: "20px", marginTop: "10px" }}>
+        <Grid style={{ padding: isLargeScreen ? '12px' :"20px", marginTop: "10px" }}>
           <Link href="https://togetherdevs.com/" underline="none" sx={{ display: 'flex', alignItems: 'center' }}>
             <Image
               src="logos/TogetherDevs.svg"
               alt="TogetherDevs"
               loading="lazy"
-              width={150}
+              width={isLargeScreen ? 100: 150}
               height={30}
               style={{ borderRadius: "10%" }}
             />
