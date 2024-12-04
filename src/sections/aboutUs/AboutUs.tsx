@@ -26,7 +26,7 @@ export default function AboutUs({ onScrollLock }: { onScrollLock: (lock: boolean
             // Configuración para un desplazamiento suave
             scrollIntoView(aboutUsRef.current, {
               align: {
-                top: 5, // Alinear al inicio de la sección
+                top: 1, // Alinear al inicio de la sección
               },
               time: 500, // Duración en ms del desplazamiento
             });
