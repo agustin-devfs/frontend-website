@@ -8,6 +8,9 @@ function TeamSection() {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm')); 
   const isMediumScreen = useMediaQuery(theme.breakpoints.down('md')); 
   const isLargeScreen = useMediaQuery(theme.breakpoints.down('xl')); 
+
+  const itemsPerRow = isSmallScreen ? 2 : 4; 
+
   return (
 
  <Grid container
@@ -45,8 +48,8 @@ function TeamSection() {
             style={{
               marginBottom: isLargeScreen ? '1.5rem' : "3rem",
               display: "flex",
-              flexDirection: isSmallScreen ? "column" : "row", // Apila los elementos en pantallas pequeñas
-              alignItems: isSmallScreen ? "center" : "flex-start", // Centra los elementos en pantallas pequeñas
+              flexDirection: isSmallScreen ? "column" : "row", 
+              alignItems: isSmallScreen ? "center" : "flex-start", 
               borderBottomLeftRadius: isSmallScreen ? "2%" : "50%",
               borderBottomRightRadius:  isSmallScreen ? "2%" : "50%",
             }}
@@ -127,46 +130,44 @@ function TeamSection() {
               }}
               />
 
-            <CardContent style={{ width: "100%", padding: isSmallScreen ? "1rem 8rem" : "1.5rem" }}>
-              {/* Team Grid */}
-              <Grid container spacing={1}>
-                {Array.from({ length: Math.ceil(teamMembers.length / 4) }).map(
-                  (_, colIndex) => (
-                    <Grid item key={colIndex} xs={12} sm={6} md={3}>
-                      <div style={{ textAlign: 'left' }}>
-                        {teamMembers
-                          .slice(colIndex * 4, colIndex * 4 + 4)
-                          .map((member, index) => (
-                            <div key={index} style={{ marginBottom: isLargeScreen? '1rem':'1rem' }}>
-                              <Typography
-                                variant="body1"
-                                sx={{
-                                  fontWeight: 600,
-                                  color: '#353535',
-                                  fontSize: { xs: '12px', md: '14px', lg: '14px', xl: '16px' },
-
-                                }}
-                                >
-                                {member.name}
-                              </Typography>
-                              <Typography
-                                variant="body2"
-                                sx={{
-                                  color: "#A0730C",
-                                  fontWeight: 600,
-                                  fontSize: { xs: '12px', md: '14px', lg: '14px', xl: '16px' },
-                                }}
-                                >
-                                {member.role}
-                              </Typography>
-                            </div>
-                          ))}
-                      </div>
-                    </Grid>
-                  )
-                )}
-              </Grid>
-            </CardContent>
+              <CardContent style={{ width: "100%", padding: isSmallScreen ? "1rem" : "1.5rem" }}>
+                  <Grid container spacing={2}>
+                    {Array.from({ length: Math.ceil(teamMembers.length / itemsPerRow) }).map(
+                      (_, colIndex) => (
+                        <Grid item key={colIndex} xs={6} sm={6} md={3}>
+                          <div style={{ textAlign: 'left' }}>
+                            {teamMembers
+                              .slice(colIndex * itemsPerRow, colIndex * itemsPerRow + itemsPerRow)
+                              .map((member, index) => (
+                                <div key={index} style={{ marginBottom: '1rem' }}>
+                                  <Typography
+                                    variant="body1"
+                                    sx={{
+                                      fontWeight: 600,
+                                      color: '#353535',
+                                      fontSize: { xs: '12px', md: '14px', lg: '14px', xl: '16px' },
+                                    }}
+                                  >
+                                    {member.name}
+                                  </Typography>
+                                  <Typography
+                                    variant="body2"
+                                    sx={{
+                                      color: "#A0730C",
+                                      fontWeight: 600,
+                                      fontSize: { xs: '12px', md: '14px', lg: '14px', xl: '16px' },
+                                    }}
+                                  >
+                                    {member.role}
+                                  </Typography>
+                                </div>
+                              ))}
+                          </div>
+                        </Grid>
+                      )
+                    )}
+                  </Grid>
+                </CardContent>
           </div>
         </Card>
       </Grid>

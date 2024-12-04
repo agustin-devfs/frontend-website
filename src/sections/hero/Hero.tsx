@@ -17,8 +17,8 @@ function HeroSection() {
         <Grid item xs={12} md={12} lg={12}>
           <Box
             sx={{
-              marginLeft: isSmallScreen? '0rem' :isNormalScreen? '0.5rem' : isLargeScreen? '12rem' : '7%',
-              minHeight: isSmallScreen ? '10px' : isMediumScreen ? '150px' : isNormalScreen? '160px': isLargeScreen? '162px':'180px',
+              marginLeft: isSmallScreen? '0rem' :isNormalScreen? '0.5rem' : isLargeScreen? '10rem' : '7%',
+              minHeight: isSmallScreen ? '80px' : isMediumScreen ? '155px' : isNormalScreen? '160px': isLargeScreen? '162px':'180px',
               minWidth: isSmallScreen ? '200px' : isMediumScreen ?'90%' : isLargeScreen? '90%': '90%',
             }}
           >
@@ -35,7 +35,7 @@ function HeroSection() {
                       text-underline-position: from-font;
                       text-decoration-skip-ink: none;
                       text-align: left;
-                    ">We Develop Ideas into</span>`
+                    ">We Develop Ideas Into</span>`
                   )
                   .callFunction(() => {
                     const typewriter2 = document.getElementById('typewriter2');

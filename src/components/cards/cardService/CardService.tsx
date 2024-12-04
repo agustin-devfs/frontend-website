@@ -56,7 +56,7 @@ const CardService: FC<ServiceCardProps> = ({ title, description, imageSrc, image
         sx={{
           fontFamily: 'Raleway',
           fontWeight: 700,
-          fontSize: isMediumScreen ? '32px' : isNormalScreen? '38px': isLargeScreen? '42px':'46px',
+          fontSize:isSmallScreen? '28px': isMediumScreen ? '32px' : isNormalScreen? '38px': isLargeScreen? '42px':'46px',
           lineHeight: isMediumScreen ? '36px' : isNormalScreen? '36px': isLargeScreen? '38px':'42px',
         }}
       >
@@ -67,7 +67,7 @@ const CardService: FC<ServiceCardProps> = ({ title, description, imageSrc, image
           style={{
             color: '#353535',
             fontWeight: 500,
-            fontSize: isMediumScreen ? '20px' :isLargeScreen? '24px': '26px',
+            fontSize: isSmallScreen? '18px':isMediumScreen ? '20px' :isLargeScreen? '24px': '26px',
             lineHeight: '40px',
             textAlign: 'center',
           }}

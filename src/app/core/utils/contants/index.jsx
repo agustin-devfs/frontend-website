@@ -24,7 +24,7 @@ export const bars = {
 //HERO
 export const hero = 
   {
-  prhaseRow1: "We Develop Ideas into" ,
+  prhaseRow1: "We Develop Ideas Into" ,
   prhaseRow2:"Thriving Digital Experiences",
   question: "READY TO BUILD TOGETHER?",
   imageBacground: "/sonrisaHero.png",
@@ -37,7 +37,7 @@ export const service =
 }
 export const servicesData = [
   {
-    title: "Apps",
+    title: "Apps Development",
     description: "Development of Native and hybrid Mobile Apps for iOS & Android devices.",
     imageSrc: "icons/appIcon.svg",
     imageAlt: "App",
@@ -49,7 +49,7 @@ export const servicesData = [
     imageAlt: "Web Platforms",
   },
   {
-    title: "Hire our people",
+    title: "Hire Our People",
     description: "Our team is composed of experts in all tech stacks and know how to succeed.",
     imageSrc: "icons/hireIcon.svg", 
     imageAlt: "Hire our people",
@@ -64,31 +64,30 @@ export const about = {
     {
       title: "About Us",
       content: 
-        "TogetherDevs is an innovative software development company specializing in custom mobile Apps and web platforms. " +
-        "Our goal is to help businesses across various industries turn their ideas into effective, high-impact digital solutions. " +
-        "Our mission is to embrace our client's ideas and take them to the next level by delivering technological products that exceed industry standards."
-    },
+      [ "TogetherDevs is an innovative software development company specializing in custom mobile Apps and web platforms. " ,
+        "• <strong>Our goal</strong> is to help businesses across various industries turn their ideas into effective, high-impact digital solutions. " ,
+        "• <strong>Our mission</strong> is to embrace our client's ideas and take them to the next level by delivering technological products that exceed industry standards."
+      ]
+      },
     {
-      title: "How We Make It Happen",
+      title: /* "How We Make It Happen" */ "How We Do It",
       content: 
-        "• Teaming up with clients to bring ideas to life.\n" +
-        "• Personalized approach to every project\n" +
-        "• Commitment to quality and innovation\n" +
+       [   
+        "• Teaming up with clients to bring ideas to life.\n" ,
+        "• Personalized approach to every project\n" ,
+        "• Commitment to quality and innovation\n" ,
         "• Ensuring tangible and measurable results."
+       ]
     },
     {
       title: "Our Values",
-      content: 
-        "• Commitment\n" +
-        "  – Dedicated to client success and project excellence.\n" +
-        "• Curiosity\n" +
-        "  – Constantly learning and innovating to improve.\n" +
-        "• Passion\n" +
-        "  – Driven by enthusiasm and purpose.\n" +
-        "• Transparency\n" +
-        "  – Open and honest in all communications.\n" +
-        "• Customer Orientation\n" +
-        "  – Focused on delivering client-centered solutions."
+      content: [
+        "• <strong>Commitment:</strong>\n Dedicated to client success and project excellence.",
+        "• <strong>Curiosity:</strong>\n  Constantly learning and innovating to improve.",
+        "• <strong>Passion:</strong>\n   Driven by enthusiasm and purpose.",
+        "• <strong>Transparency:</strong>\n  Open and honest in all communications.",
+        "• <strong>Customer Orientation:</strong>\n  Focused on delivering client-centered solutions."
+      ]
     }
   ]
 };

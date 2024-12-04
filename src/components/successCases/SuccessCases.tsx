@@ -9,6 +9,7 @@ import { useState } from 'react';
 export default function SlideInCard() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm')); 
   const isMediumScreen = useMediaQuery(theme.breakpoints.down('md')); 
   const isLargeScreen = useMediaQuery(theme.breakpoints.down('xl')); 
 
@@ -24,7 +25,7 @@ export default function SlideInCard() {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1, // Aumenta el umbral para activar la animación antes
-    rootMargin: '45%' 
+    rootMargin: isSmallScreen? '180%' : '75%' 
   });
   
   return (

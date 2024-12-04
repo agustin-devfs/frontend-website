@@ -1,18 +1,17 @@
 'use client';
 
-import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Box, useMediaQuery, useTheme } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination,Mousewheel } from 'swiper/modules';
-import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { about } from '@/app/core/utils/contants';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
+import CardAbout from '@/components/banner/swiperAbout/CardAbout';
 
 export default function AboutUsSection() {
-  const theme = useTheme(); // Hook dentro del cuerpo del componente
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm')); 
+  const theme = useTheme(); 
   const isMediumScreen = useMediaQuery(theme.breakpoints.down('md')); 
   const isLargeScreen = useMediaQuery(theme.breakpoints.down('xl')); 
 
@@ -91,48 +90,7 @@ export default function AboutUsSection() {
         >
           {about.about.map((item, index) => (
             <SwiperSlide key={index} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-              <Box 
-                display="flex" 
-                alignItems="center" 
-                sx={{
-                  gap: 2, 
-                  mb: 2
-                }}
-              >
-                <Typography
-                  variant="h3"
-                  sx={{
-                    fontFamily: 'Raleway',
-                    fontWeight: 400,
-                    fontSize: { xs: '30px', sm: '30px', md: '36px', lg: '36px', xl: '48px' },
-                    color: 'black',
-                    textAlign: 'left',
-                  }}
-                >
-                  {item.title}
-                </Typography>
-                <Image
-                  src={'/assets/sonrisa pequeña.png'}
-                  alt="Sonrisa"
-                  width={ isSmallScreen? 54 : isMediumScreen ? 72 : isLargeScreen? 65: 96}
-                  height={isSmallScreen? 21 : isMediumScreen? 28  : isLargeScreen? 25: 38}
-                />
-              </Box>
-
-              <Typography
-                variant="body1"
-                sx={{
-                  fontFamily: 'Raleway',
-                  fontWeight: 400,
-                  fontSize: { xs: '14px',sm: '16px', md: '20px', lg: '22px', xl: '28px' },
-                  lineHeight: { xs: '24px', sm: '30px', md: '40px', lg: '40px',xl: '44px' },
-                  color: 'black',
-                  textAlign: 'center',
-                  padding: '0 20px',
-                }}
-              >
-                {item.content}
-              </Typography>
+            <CardAbout item={item}/>
             </SwiperSlide>
           ))}
         </Swiper>

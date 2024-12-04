@@ -45,6 +45,7 @@ export default function NavBar() {
     transform: 'translateX(-50%)',
     zIndex: 1000,
     pointerEvents: isVisible ? 'auto' : 'none',
+    borderRadius: '8px',
   };
 
   const navbarStylesSmall: React.CSSProperties = {
@@ -56,10 +57,12 @@ export default function NavBar() {
     bottom: '0%',
     zIndex: 1000,
     pointerEvents: isVisible ? 'auto' : 'none',
+    borderRadius: '8px',
+
   };
 
   return (
-    <Grid container sm={10} md={7.2} lg={4.8} xl={4.8} style={ isSmallScreen ? navbarStylesSmall:navbarStyles } >
+    <Grid container sm={8.6} md={6.5} lg={4.8} xl={4.8} style={ isSmallScreen ? navbarStylesSmall:navbarStyles } >
       <ButtonGroup
         variant="contained"
         
@@ -70,9 +73,11 @@ export default function NavBar() {
             backgroundColor: '#353535',
             textTransform: 'none',
              fontWeight: '600',
-             fontSize: isSmallScreen? '10px':isNormalScreen? '12px': isLargeScreen? '12px':'16px',
+             fontSize: isSmallScreen? '10px':isNormalScreen? '10px': isLargeScreen? '12px':'16px',
              padding: isSmallScreen? '4px 0px': isNormalScreen? '4px 10px': isLargeScreen? '4px 9px':'8px 11px',
             borderColor: "#353535",
+            whiteSpace: 'nowrap', 
+            overflow: 'hidden',
 
             '&:hover': {
               backgroundColor: '#353535',

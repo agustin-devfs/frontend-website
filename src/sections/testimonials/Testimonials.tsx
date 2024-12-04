@@ -11,8 +11,14 @@ import { ChevronLeft, ChevronRight } from '@mui/icons-material'
 import { testimonials } from "@/app/core/utils/contants/index"
 import Image from 'next/image'
 import { SetStateAction, useState } from 'react'
+import { useMediaQuery, useTheme } from '@mui/material'
 
 export default function Component() {
+  const theme = useTheme(); 
+  const isMediumScreen = useMediaQuery(theme.breakpoints.down('md')); 
+  const isLargeScreen = useMediaQuery(theme.breakpoints.down('xl')); 
+
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Cambia el índice actual basado en el SwiperSlide activo
@@ -141,7 +147,7 @@ export default function Component() {
         sx={{ 
           position: 'absolute',
           top: '80%',
-          right: '12%',
+          right: isMediumScreen? '5%': isLargeScreen? '8%':'12%',
           transform: 'translateY(-50%)',
           color: 'transparent',
           zIndex: 2,

@@ -9,7 +9,7 @@ const ServicesSection = () => {
   const isLargeScreen = useMediaQuery(theme.breakpoints.down('xl')); 
 
   return (
-    <Container maxWidth="xl" sx={{ mt: isSmallScreen? 4 :isLargeScreen? 12: 12, mb: isLargeScreen? 8:14 }}>
+    <Container maxWidth="xl" sx={{ mt: isSmallScreen? 4 : isMediumScreen? 4:isLargeScreen? 12: 12, mb: isLargeScreen? 8:14 }}>
       {/* Título */}
       <Grid container justifyContent="center" sx={{ mb: 4 }}>
         <Grid item xs={12}>
@@ -21,7 +21,7 @@ const ServicesSection = () => {
               fontFamily: 'Raleway',
               color: '#06050F',
               fontWeight: 400,
-              fontSize: isSmallScreen ? '48px' : isMediumScreen ? '68px' : isLargeScreen? '80px': '96px',
+              fontSize: isSmallScreen ? '30px' : isMediumScreen ? '68px' : isLargeScreen? '80px': '96px',
               lineHeight: isSmallScreen ? '56px' : '96px',
               textAlign: 'center',
             }}

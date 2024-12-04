@@ -18,7 +18,7 @@ export default function Banner() {
         color: 'white',
         width: '100%',
         height: '40vh',
-        padding: '15vh 15vw',
+        padding: isSmallScreen? '8vh 6vw':'15vh 15vw',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -32,7 +32,7 @@ export default function Banner() {
                 fontWeight: 600,
                 color: '#A07C0D',
                 lineHeight: 1.1,
-                display: 'inline-block',  // Ajuste para alineación
+                display: 'inline-block', 
               }}
             >
              {'Ready to build'}
@@ -63,8 +63,8 @@ export default function Banner() {
           <Image
             src="/assets/sonrisa pequeña.png"
             alt="Sonrisa"
-            width={96}
-            height={38}
+            width={isSmallScreen? 50 :96}
+            height={isSmallScreen?20 :38}
             style={{ marginLeft: '10px' }}
           />
         </Grid>
