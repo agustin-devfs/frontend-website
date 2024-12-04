@@ -3,8 +3,8 @@
 import { Box, useMediaQuery, useTheme } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Mousewheel } from 'swiper/modules';
-import { useEffect, useRef } from 'react';
-import scrollIntoView from 'scroll-into-view';
+/* import { useEffect, useRef } from 'react';
+import scrollIntoView from 'scroll-into-view'; */
 import { about } from '@/app/core/utils/contants';
 import CardAbout from '@/components/banner/swiperAbout/CardAbout';
 
@@ -15,7 +15,8 @@ export default function AboutUs({ onScrollLock }: { onScrollLock: (lock: boolean
   const theme = useTheme();
   const isMediumScreen = useMediaQuery(theme.breakpoints.down('md'));
   const isLargeScreen = useMediaQuery(theme.breakpoints.down('xl'));
-  const aboutUsRef = useRef<HTMLDivElement>(null);
+  
+   /*const aboutUsRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -28,7 +29,7 @@ export default function AboutUs({ onScrollLock }: { onScrollLock: (lock: boolean
               align: {
                 top: 1, // Alinear al inicio de la sección
               },
-              time: 500, // Duración en ms del desplazamiento
+              time: 100, // Duración en ms del desplazamiento
             });
           }
         } else {
@@ -45,13 +46,13 @@ export default function AboutUs({ onScrollLock }: { onScrollLock: (lock: boolean
     return () => {
       if (aboutUsRef.current) observer.unobserve(aboutUsRef.current);
     };
-  }, [onScrollLock]);
+  }, [onScrollLock]); */
 
   
   return (
     <Box
-      ref={aboutUsRef}
-      id="aboutus"
+/*       ref={aboutUsRef}
+ */      id="aboutus"
       sx={{
         position: 'relative',
         height: isMediumScreen ? '80vh' : isLargeScreen ? '90vh' : '100vh',
