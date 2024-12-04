@@ -141,7 +141,7 @@ export default function Component() {
                   borderWidth: 3, // Ancho del borde
                   width: '100%', // Ancho completo del contenedor
                   minWidth: '300px',
-                  maxWidth: { xs: '100%', sm: '300px' }, // Máximo ancho responsivo
+                  maxWidth: { xs: '70%', sm: '300px' }, // Máximo ancho responsivo
                   height: { xs: '40px', sm: '50px' }, // Altura responsiva
                   mt: "2%",
                   '&:hover': {
@@ -168,7 +168,7 @@ export default function Component() {
                   borderWidth: 3, 
                   width: '100%', 
                   minWidth: '300px',
-                  maxWidth: { xs: '100%', sm: '300px' }, 
+                  maxWidth: { xs: '70%', sm: '300px' }, 
                   height: { xs: '40px', sm: '50px' }, 
                   mt: "2%",
 
@@ -206,7 +206,7 @@ export default function Component() {
                 spacing={2}
                 sx={{
                   width: '100vw',
-                  maxWidth: '400px',
+                  maxWidth: {xs: '100%', sm:'400px'},
                 }}
               >
                 <Grid  item xs={12} sm={8} md={8} lg={6} >

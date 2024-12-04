@@ -24,6 +24,7 @@
     "react-hook-form": "^7.53.2",
     "react-intersection-observer": "^9.13.1",
     "react-toastify": "^10.0.6",
+    "scroll-into-view": "^1.16.2",
     "swiper": "^11.1.15",
     "typewriter-effect": "^2.21.0",
     "yup": "^1.4.0"
@@ -34,6 +35,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/scroll-into-view": "^1.16.4",
     "eslint": "^8",
     "eslint-config-next": "15.0.3",
     "typescript": "^5"

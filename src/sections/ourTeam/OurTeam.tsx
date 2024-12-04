@@ -9,15 +9,15 @@ function TeamSection() {
   const isMediumScreen = useMediaQuery(theme.breakpoints.down('md')); 
   const isLargeScreen = useMediaQuery(theme.breakpoints.down('xl')); 
 
-  const itemsPerRow = isSmallScreen ? 2 : 4; 
+  const itemsPerRow = isSmallScreen ? 7 :isMediumScreen? 7 : 4; 
 
   return (
 
  <Grid container
       style={{
         backgroundColor: "#BBBBC0",
-        borderBottomLeftRadius: isSmallScreen? "1%": isMediumScreen? '10%':"100%",
-        borderBottomRightRadius: isSmallScreen? "1%": isMediumScreen? '10%':"100%",
+        borderBottomLeftRadius: isSmallScreen? "1%": isMediumScreen? '5%':"100%",
+        borderBottomRightRadius: isSmallScreen? "1%": isMediumScreen? '5%':"100%",
       }}
       >
 
@@ -28,6 +28,7 @@ function TeamSection() {
           variant="h2"
           component="h1"
           style={{
+            marginLeft: isSmallScreen ? "1rem" : "2rem",
             color: '#353535',
             fontWeight: 400,
             fontSize: isSmallScreen ? '48px' : isMediumScreen ? '68px' : isLargeScreen? '80px': '96px',
@@ -50,11 +51,14 @@ function TeamSection() {
               display: "flex",
               flexDirection: isSmallScreen ? "column" : "row", 
               alignItems: isSmallScreen ? "center" : "flex-start", 
-              borderBottomLeftRadius: isSmallScreen ? "2%" : "50%",
-              borderBottomRightRadius:  isSmallScreen ? "2%" : "50%",
+              borderBottomLeftRadius: isSmallScreen ? "1%" : isMediumScreen ?'10%':"50%",
+              borderBottomRightRadius:  isSmallScreen ? "1%" : isMediumScreen ? '10%': "50%",
             }}
           >
-            <div style={{ width: isSmallScreen ? "100%" : "30%", padding: "1.5rem", textAlign: isSmallScreen ? "center" : "left" }}>
+            <div style={{ width: isSmallScreen ? "100%" : "30%", 
+            marginTop: isSmallScreen ? "0" : "1.5rem",
+              padding: "1.5rem", 
+              textAlign: isSmallScreen ? "center" : "right" }}>
               <Image
                 src="/assets/CEO1.png"
                 alt="CEO"
@@ -64,14 +68,14 @@ function TeamSection() {
               />
             </div>
             <div style={{ width: isSmallScreen ? "100%" : "70%" }}>
-              <CardContent style={{ width: "100%", padding: isSmallScreen ? "1rem" : "2.5rem", }}>
+              <CardContent style={{ width: "100%", padding: isSmallScreen ? "0.5rem 2rem" : "2.5rem 2.5rem 2.5rem 1.5rem", }}>
                 <Typography
                   variant="h5"
                   component="h2"
                   sx={{
                     fontFamily: 'Raleway',
                     fontWeight: 700,
-                    fontSize: { xs: '16px', md: '26px', lg: '25px', xl: '32px' },
+                    fontSize: { xs: '16px', md: '22px', lg: '25px', xl: '32px' },
                     lineHeight: { xs: '24px', md: '40px', lg: '42px', xl: '50px' },
                     color: '#353535',
                   }}
@@ -83,7 +87,7 @@ function TeamSection() {
                   sx={{
                     fontFamily: 'Raleway',
                     fontWeight: 600,
-                    fontSize: { xs: '16px', md: '26px', lg: '25px', xl: '32px' },
+                    fontSize: { xs: '16px', md: '22px', lg: '25px', xl: '32px' },
                     lineHeight: { xs: '24px', md: '40px', lg: '42px', xl: '50px' },
                     color: '#A0730C',
                   }}
@@ -98,7 +102,7 @@ function TeamSection() {
                       sx={{
                         fontFamily: 'Raleway',
                         fontWeight: 400,
-                        fontSize: { xs: '16px', md: '18px', lg: '18px', xl: '24px' },
+                        fontSize: { xs: '16px', md: '16px', lg: '18px', xl: '24px' },
                       }}
                     >
                       {ceo.text1}
@@ -111,7 +115,7 @@ function TeamSection() {
                       sx={{
                         fontFamily: 'Raleway',
                         fontWeight: 400,
-                        fontSize: { xs: '16px', md: '18px', lg: '18px', xl: '24px' },
+                        fontSize: { xs: '16px', md: '16px', lg: '18px', xl: '24px' },
                       }}
                     >
                       {ceo.text2}
@@ -130,7 +134,7 @@ function TeamSection() {
               }}
               />
 
-              <CardContent style={{ width: "100%", padding: isSmallScreen ? "1rem" : "1.5rem" }}>
+              <CardContent style={{ width: "100%", padding: isSmallScreen ? "1rem 2rem 1rem" : "1.5rem" }}>
                   <Grid container spacing={2}>
                     {Array.from({ length: Math.ceil(teamMembers.length / itemsPerRow) }).map(
                       (_, colIndex) => (

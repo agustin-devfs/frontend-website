@@ -84,9 +84,9 @@ export const about = {
       content: [
         "• <strong>Commitment:</strong>\n Dedicated to client success and project excellence.",
         "• <strong>Curiosity:</strong>\n  Constantly learning and innovating to improve.",
-        "• <strong>Passion:</strong>\n   Driven by enthusiasm and purpose.",
+        "• <strong>Passion:</strong>\n Driven by enthusiasm and purpose.",
         "• <strong>Transparency:</strong>\n  Open and honest in all communications.",
-        "• <strong>Customer Orientation:</strong>\n  Focused on delivering client-centered solutions."
+        "• <strong>Customer Orientation:</strong>\n  Focused on delivering client-centered solutions.",
       ]
     }
   ]

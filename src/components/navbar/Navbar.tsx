@@ -36,12 +36,13 @@ export default function NavBar() {
   }, []);
 
   const navbarStyles: React.CSSProperties = {
-    opacity: isVisible ? 1 : 0, 
+    opacity: isVisible ? 1 : 0,
+    maxWidth:'400px',
     transition: 'opacity 0.3s ease-in-out',
     backgroundColor: '#353535',
     position: 'fixed',
     bottom: '16%',
-    left: '50%',
+    left: '45%',
     transform: 'translateX(-50%)',
     zIndex: 1000,
     pointerEvents: isVisible ? 'auto' : 'none',
@@ -62,7 +63,7 @@ export default function NavBar() {
   };
 
   return (
-    <Grid container sm={8.6} md={6.5} lg={4.8} xl={4.8} style={ isSmallScreen ? navbarStylesSmall:navbarStyles } >
+    <Grid container sm={8.6} md={6.5} lg={4.8} xl={4} style={ isSmallScreen ? navbarStylesSmall:navbarStyles } >
       <ButtonGroup
         variant="contained"
         
