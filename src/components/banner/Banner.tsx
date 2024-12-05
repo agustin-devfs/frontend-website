@@ -17,7 +17,7 @@ export default function Banner() {
         bgcolor: '#353535',
         color: 'white',
         width: '100%',
-        height: '40vh',
+        height: isSmallScreen? '25vh' : '40vh',
         padding: isSmallScreen? '8vh 6vw':'15vh 15vw',
         display: 'flex',
         alignItems: 'center',

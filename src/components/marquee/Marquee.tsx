@@ -10,7 +10,7 @@ import {
 	useAnimationFrame,
 } from 'framer-motion';
 import { wrap } from '@motionone/utils';
-import { Box } from '@mui/material';
+import { Box, useMediaQuery, useTheme } from '@mui/material';
 
 // Cambiado para aceptar un array de ReactNode o un string
 interface ParallaxProps {
@@ -19,6 +19,10 @@ interface ParallaxProps {
 }
 
 function ParallaxText({ children, baseVelocity = 2 }: ParallaxProps) {
+
+	const theme = useTheme();
+	const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm')); // Detecta pantallas pequeñas
+
 	const baseX = useMotionValue(0);
 	const { scrollY } = useScroll();
 	const scrollVelocity = useVelocity(scrollY);
@@ -52,9 +56,6 @@ function ParallaxText({ children, baseVelocity = 2 }: ParallaxProps) {
 	const spanCount = 30;
 	const spanStyles = {
 		x,
-	/* 	background: 'linear-gradient(0deg, #A0730C 0%, #E2C98F 50%,  #FFFFFF 100%)',
-		WebkitBackgroundClip: 'text',
-		backgroundClip: 'text', */
 		color: 'transparent',
 		display: 'inline-block',
 	};
@@ -68,10 +69,10 @@ function ParallaxText({ children, baseVelocity = 2 }: ParallaxProps) {
 				fontWeight: 400,
 				fontSize: '53px',
 				fontFamily: 'Raleway',
-        background: '#A0730C',
-		padding: '18px',
-			}}
-		>
+				background: '#A0730C',
+				padding: isSmallScreen ? '5px' :'18px',
+					}}
+				>
 			<motion.div style={{ x, whiteSpace: 'nowrap', width: '100%' }}>
 				{Array.from({ length: spanCount }).map((_, index) => (
 					<motion.span key={index} style={spanStyles}>

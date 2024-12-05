@@ -13,12 +13,24 @@ function HeroSection() {
   return (
     <Container maxWidth="xl" sx={{ margin: isLargeScreen? '0rem auto': '2rem auto' }}>
       {/* Texto principal */}
-      <Grid container justifyContent="left" alignContent="left">
-        <Grid item xs={12} md={12} lg={12}>
-          <Box
+      <Grid container>
+      <Grid 
+          item 
+          xs={12} 
+          md={12} 
+          lg={12} 
+          sx={{
+            display: 'flex', 
+            flexDirection: 'column',
+            justifyContent: 'center', // Centrado horizontal
+            alignItems: 'center', // Centrado vertical
+       
+          }}
+        >     
+        <Box
             sx={{
-              marginLeft: isSmallScreen? '0.2rem' :isNormalScreen? '0.5rem' : isLargeScreen? '10rem' : '7%',
-              minHeight: isSmallScreen ? '80px' : isMediumScreen ? '155px' : isNormalScreen? '160px': isLargeScreen? '162px':'180px',
+/*               marginLeft: isSmallScreen? '0.2rem' :isNormalScreen? '0.5rem' : isLargeScreen? '10rem' : '7%',
+ */              minHeight: isSmallScreen ? '80px' : isMediumScreen ? '155px' : isNormalScreen? '160px': isLargeScreen? '162px':'180px',
               minWidth: isSmallScreen ? '200px' : isMediumScreen ?'90%' : isLargeScreen? '90%': '90%',
             }}
           >

@@ -13,23 +13,19 @@ import 'swiper/css/pagination';
 
 export default function AboutUs({ onScrollLock }: { onScrollLock: (lock: boolean) => void }) {
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const isMediumScreen = useMediaQuery(theme.breakpoints.down('md'));
   const isLargeScreen = useMediaQuery(theme.breakpoints.down('xl'));
   
- /*  const aboutUsRef = useRef<HTMLDivElement>(null);
-
+   /*const aboutUsRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    const currentRef = aboutUsRef.current; 
-
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
         if (entry.isIntersecting) {
           onScrollLock(true);
-          if (currentRef) {
+          if (aboutUsRef.current) {
             // Configuración para un desplazamiento suave
-            scrollIntoView(currentRef, {
+            scrollIntoView(aboutUsRef.current, {
               align: {
                 top: 1, // Alinear al inicio de la sección
               },
@@ -43,18 +39,19 @@ export default function AboutUs({ onScrollLock }: { onScrollLock: (lock: boolean
       { threshold: 0.5 }
     );
   
-    if (currentRef) {
-      observer.observe(currentRef);
+    if (aboutUsRef.current) {
+      observer.observe(aboutUsRef.current);
     }
   
     return () => {
-      if (currentRef) observer.unobserve(currentRef); // Usamos la referencia guardada
+      if (aboutUsRef.current) observer.unobserve(aboutUsRef.current);
     };
-  }, [onScrollLock]); 
- */
+  }, [onScrollLock]); */
+
+  
   return (
     <Box
-/*       ref={aboutUsRef} // Aquí volvemos a habilitar la referencia
+/*       ref={aboutUsRef}
  */      id="aboutus"
       sx={{
         position: 'relative',
@@ -69,9 +66,9 @@ export default function AboutUs({ onScrollLock }: { onScrollLock: (lock: boolean
       <Box
         sx={{
           position: 'absolute',
-          top: isSmallScreen ? 20 : isLargeScreen ? 30 : 50,
-          left: isSmallScreen ? '25%' :isMediumScreen ? '40%' : '60%',
-          width: isSmallScreen ? '80%' :isMediumScreen ? '60%' : '40%',
+          top: isLargeScreen ? 30 : 50,
+          left: isMediumScreen ? '40%' : '60%',
+          width: isMediumScreen ? '60%' : '40%',
           height: '90%',
           zIndex: 2,
           display: 'flex',
