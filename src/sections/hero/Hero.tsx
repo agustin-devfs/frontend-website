@@ -17,7 +17,7 @@ function HeroSection() {
         <Grid item xs={12} md={12} lg={12}>
           <Box
             sx={{
-              marginLeft: isSmallScreen? '0rem' :isNormalScreen? '0.5rem' : isLargeScreen? '10rem' : '7%',
+              marginLeft: isSmallScreen? '0.2rem' :isNormalScreen? '0.5rem' : isLargeScreen? '10rem' : '7%',
               minHeight: isSmallScreen ? '80px' : isMediumScreen ? '155px' : isNormalScreen? '160px': isLargeScreen? '162px':'180px',
               minWidth: isSmallScreen ? '200px' : isMediumScreen ?'90%' : isLargeScreen? '90%': '90%',
             }}
@@ -30,7 +30,7 @@ function HeroSection() {
                       font-family: 'Raleway';
                       color: #353535;
                       font-weight: 400;
-                      font-size: ${isSmallScreen ? '30px' : isMediumScreen ? '55px' : isNormalScreen? '65px': isLargeScreen? '68px':'96px'};
+                      font-size: ${isSmallScreen ? '26px' : isMediumScreen ? '55px' : isNormalScreen? '65px': isLargeScreen? '68px':'96px'};
                       line-height: ${isSmallScreen ? '40px' : '64px'};
                       text-underline-position: from-font;
                       text-decoration-skip-ink: none;
@@ -60,7 +60,7 @@ function HeroSection() {
                               font-family: 'Raleway';
                               color: #353535;
                               font-weight: 400;
-                              font-size: ${isSmallScreen ? '30px' : isMediumScreen ? '55px' : isNormalScreen? '65px': isLargeScreen? '68px':'96px'};
+                              font-size: ${isSmallScreen ? '26px' : isMediumScreen ? '55px' : isNormalScreen? '65px': isLargeScreen? '68px':'96px'};
                               line-height: ${isSmallScreen ? '40px' : '90px'};
                               text-align: left;
                             ">Thriving Digital Experiences</span>`
@@ -79,8 +79,8 @@ function HeroSection() {
             sx={{
               
               position: 'relative',
-              width: isSmallScreen ? 385 : isMediumScreen ? 690 : isNormalScreen? 950: isLargeScreen? 970: 1250,
-              height: isSmallScreen ? 145 : isMediumScreen ? 260 : isNormalScreen? 350: isLargeScreen? 360 :470,
+              width: isSmallScreen ? 350 : isMediumScreen ? 690 : isNormalScreen? 950: isLargeScreen? 970: 1250,
+              height: isSmallScreen ? 130 : isMediumScreen ? 260 : isNormalScreen? 350: isLargeScreen? 360 :470,
               backgroundImage: 'url(/assets/sonrisaHero.png)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
@@ -99,7 +99,7 @@ function HeroSection() {
                 left: isSmallScreen ? '18%': isMediumScreen ? '55%':isNormalScreen? '45%': isLargeScreen? '45%': '50%',
                 fontFamily: 'Podkova',
                 fontWeight: 500,
-                fontSize: isSmallScreen ? '18px' : isMediumScreen ?'24px': isNormalScreen? '30px': isLargeScreen? '30px':'36px',
+                fontSize: isSmallScreen ? '16px' : isMediumScreen ?'24px': isNormalScreen? '30px': isLargeScreen? '30px':'36px',
                 color: '#F6F6F6',
                 backgroundColor: '#162D4F',
                 padding: isSmallScreen ? '6px 15px' : isMediumScreen ? '6px 10px' :isNormalScreen?  '6px 60px': isLargeScreen? '6px 80px':'6px 130px',

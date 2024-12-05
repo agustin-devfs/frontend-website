@@ -7,11 +7,13 @@ import { bars, footer } from '@/app/core/utils/contants';
 export default function Footer() {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));  
+  const isMediumScreen = useMediaQuery(theme.breakpoints.down('md'));
+  const isNormalScreen = useMediaQuery(theme.breakpoints.down('lg'));
 
   return (
     <AppBar position="static" sx={{ bgcolor: '#141519', boxShadow: 'none', marginTop: 'auto' }}>
       <Container maxWidth="lg">
-        <Toolbar sx={{ justifyContent: 'space-between', py: { xs: 1, md: 2 } , px: isSmallScreen ? 1 : 0 }}>
+        <Toolbar sx={{ justifyContent: 'space-between', py: { xs: 2, md: 2 } , px: isSmallScreen ? 1 : 0 }}>
           <Link href="/" underline="none" sx={{ display: 'flex', alignItems: 'center' }}>
             <Image 
               src="logos/TogetherDevs.svg" 
@@ -24,11 +26,11 @@ export default function Footer() {
           </Link>
 
           <Stack 
-            direction={isSmallScreen ? "column" : "row"} 
-            spacing={isSmallScreen ? 3 : 3} 
+            direction={isSmallScreen ? "column" : isMediumScreen ? 'row': "row"} 
+            spacing={isSmallScreen ? 1 : isMediumScreen ? 3 : isNormalScreen? 8 : 8} 
             sx={{
-              flexDirection: { xs: 'column', md: 'row' },
-              alignItems: { xs: 'flex-end', md: 'center' },
+              flexDirection: { xs: 'column', sm: 'row', md: 'row' },
+              alignItems: { xs: 'flex-start',sm: 'center' , md: 'center' },
               marginLeft: { xs: "5%", md: '20%' },
             }}
           >

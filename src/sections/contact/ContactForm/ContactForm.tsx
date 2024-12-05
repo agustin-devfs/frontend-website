@@ -206,7 +206,7 @@ export default function Component() {
                 spacing={2}
                 sx={{
                   width: '100vw',
-                  maxWidth: {xs: '100%', sm:'400px'},
+                  maxWidth: {xs: '300px', sm:'400px'},
                 }}
               >
                 <Grid  item xs={12} sm={8} md={8} lg={6} >

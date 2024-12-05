@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 export default function NavBar() {
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm')); // Detecta pantallas pequeñas
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm')); 
   const isNormalScreen = useMediaQuery(theme.breakpoints.down('lg')); 
   const isLargeScreen = useMediaQuery(theme.breakpoints.down('xl')); 
 

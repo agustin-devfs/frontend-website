@@ -18,6 +18,8 @@ function TeamSection() {
         backgroundColor: "#BBBBC0",
         borderBottomLeftRadius: isSmallScreen? "1%": isMediumScreen? '5%':"100%",
         borderBottomRightRadius: isSmallScreen? "1%": isMediumScreen? '5%':"100%",
+        padding: isSmallScreen ? '1rem 1rem 0rem 1rem' : '3rem',
+        
       }}
       >
 
@@ -28,11 +30,13 @@ function TeamSection() {
           variant="h2"
           component="h1"
           style={{
-            marginLeft: isSmallScreen ? "1rem" : "2rem",
+            marginLeft: isSmallScreen ? "0rem" : "2rem",
             color: '#353535',
             fontWeight: 400,
             fontSize: isSmallScreen ? '48px' : isMediumScreen ? '68px' : isLargeScreen? '80px': '96px',
             lineHeight: isSmallScreen ? '56px' : '96px',
+            textAlign: isSmallScreen ? "center" : "left",
+            justifyContent: isSmallScreen ? "center" : "left",
           }}
           >
           {'Our Team'}
@@ -47,7 +51,7 @@ function TeamSection() {
               border: "#eaeaea",
             }}
             style={{
-              marginBottom: isLargeScreen ? '1.5rem' : "3rem",
+              marginBottom: isSmallScreen ? '0rem' : isLargeScreen ? '1.5rem' : "3rem",
               display: "flex",
               flexDirection: isSmallScreen ? "column" : "row", 
               alignItems: isSmallScreen ? "center" : "flex-start", 
@@ -56,8 +60,8 @@ function TeamSection() {
             }}
           >
             <div style={{ width: isSmallScreen ? "100%" : "30%", 
-            marginTop: isSmallScreen ? "0" : "1.5rem",
-              padding: "1.5rem", 
+              marginTop: isSmallScreen ? "0" : "1.5rem",
+              padding: isSmallScreen ? '0.5rem' :"1.5rem", 
               textAlign: isSmallScreen ? "center" : "right" }}>
               <Image
                 src="/assets/CEO1.png"
@@ -68,7 +72,7 @@ function TeamSection() {
               />
             </div>
             <div style={{ width: isSmallScreen ? "100%" : "70%" }}>
-              <CardContent style={{ width: "100%", padding: isSmallScreen ? "0.5rem 2rem" : "2.5rem 2.5rem 2.5rem 1.5rem", }}>
+              <CardContent style={{ width: "100%", padding: isSmallScreen ? "0.1rem 2rem" : "2.5rem 2.5rem 2.5rem 1.5rem", }}>
                 <Typography
                   variant="h5"
                   component="h2"
@@ -78,6 +82,7 @@ function TeamSection() {
                     fontSize: { xs: '16px', md: '22px', lg: '25px', xl: '32px' },
                     lineHeight: { xs: '24px', md: '40px', lg: '42px', xl: '50px' },
                     color: '#353535',
+                    textAlign: isSmallScreen ? "center" : "left",
                   }}
                 >
                   {ceo.owner}
@@ -90,11 +95,13 @@ function TeamSection() {
                     fontSize: { xs: '16px', md: '22px', lg: '25px', xl: '32px' },
                     lineHeight: { xs: '24px', md: '40px', lg: '42px', xl: '50px' },
                     color: '#A0730C',
+                    textAlign: isSmallScreen ? "center" : "left",
+
                   }}
                 >
                   {ceo.title}
                 </Typography>
-                <div style={{ display: "flex", flexDirection: isSmallScreen ? "column" : "row", gap: "1rem", marginRight: "4rem" }}>
+                <div style={{ display: "flex", flexDirection: isSmallScreen ? "column" : "row", gap: "1rem", marginRight: "0rem" }}>
                   <div style={{ flex: 1, marginBottom: isSmallScreen ? "0rem" : "0" }}>
                     <Typography
                       variant="body2"
@@ -103,6 +110,8 @@ function TeamSection() {
                         fontFamily: 'Raleway',
                         fontWeight: 400,
                         fontSize: { xs: '16px', md: '16px', lg: '18px', xl: '24px' },
+                        textAlign: isSmallScreen ? "center" : "left",
+                        justifyContent: isSmallScreen ? "center" : "left",
                       }}
                     >
                       {ceo.text1}
@@ -116,6 +125,8 @@ function TeamSection() {
                         fontFamily: 'Raleway',
                         fontWeight: 400,
                         fontSize: { xs: '16px', md: '16px', lg: '18px', xl: '24px' },
+                        textAlign: isSmallScreen ? "center" : "left",
+                        justifyContent: isSmallScreen ? "center" : "left",
                       }}
                     >
                       {ceo.text2}
@@ -134,7 +145,7 @@ function TeamSection() {
               }}
               />
 
-              <CardContent style={{ width: "100%", padding: isSmallScreen ? "1rem 2rem 1rem" : "1.5rem" }}>
+              <CardContent style={{ width: "100%", padding: isSmallScreen ? "1rem 1.5rem 0.1rem" : "1.5rem" }}>
                   <Grid container spacing={2}>
                     {Array.from({ length: Math.ceil(teamMembers.length / itemsPerRow) }).map(
                       (_, colIndex) => (
@@ -150,6 +161,8 @@ function TeamSection() {
                                       fontWeight: 600,
                                       color: '#353535',
                                       fontSize: { xs: '12px', md: '14px', lg: '14px', xl: '16px' },
+                                      textAlign: isSmallScreen ? "center" : "left",
+                                      justifyContent: isSmallScreen ? "center" : "left",
                                     }}
                                   >
                                     {member.name}
@@ -160,6 +173,8 @@ function TeamSection() {
                                       color: "#A0730C",
                                       fontWeight: 600,
                                       fontSize: { xs: '12px', md: '14px', lg: '14px', xl: '16px' },
+                                      textAlign: isSmallScreen ? "center" : "left",
+                                      justifyContent: isSmallScreen ? "center" : "left",
                                     }}
                                   >
                                     {member.role}

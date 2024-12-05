@@ -25,7 +25,7 @@ export default function SlideInCard() {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1, // Aumenta el umbral para activar la animación antes
-    rootMargin: isSmallScreen? '180%' : '75%' 
+    rootMargin: isSmallScreen? '300%' :isMediumScreen? '150%' : '75%' 
   });
   
   return (

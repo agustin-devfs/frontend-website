@@ -15,6 +15,7 @@ import { useMediaQuery, useTheme } from '@mui/material'
 
 export default function Component() {
   const theme = useTheme(); 
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm')); 
   const isMediumScreen = useMediaQuery(theme.breakpoints.down('md')); 
   const isLargeScreen = useMediaQuery(theme.breakpoints.down('xl')); 
 
@@ -31,9 +32,8 @@ export default function Component() {
     <Box sx={{ 
       color: 'white',
       position: 'relative',
-      py: 8,
-      px: 4,
-      // Cambia el color de fondo basado en el índice actual
+      py: isSmallScreen? 10:8,
+      px: isSmallScreen? 1: 4,
       bgcolor: currentIndex % 2 === 0 ? '#353535' : '#A0730C', 
     }}>
       <Swiper
@@ -48,14 +48,15 @@ export default function Component() {
         }}
         loop={true}
         spaceBetween={50}
-        onSlideChange={handleSlideChange} // Maneja el cambio de slide
+        onSlideChange={handleSlideChange} 
       >
         {testimonials.map((testimonial, index) => (
           <SwiperSlide key={index}>
             <Box sx={{ 
-              maxWidth: '70%',
+              maxWidth: isSmallScreen ? '90%' : '70%',
               mx: 'auto',
               px: { xs: 2, md: 2 },
+              pb: { xs: 2, md: 6 },
             }}>
               <Box sx={{ mb: 4 }}>
                 {index % 2 === 0 ? (
@@ -128,36 +129,36 @@ export default function Component() {
         className="swiper-button-prev"
         sx={{ 
           position: 'absolute',
-          top: '80%',
-          left: '80%',
-          transform: 'translateY(-50%)',
+          top: isSmallScreen? '91%' : '80%',
+          left: isSmallScreen? '30%' : '80%',
           color: 'transparent',
           zIndex: 2,
           backgroundColor: 'grey',
           width: '50px', 
           height: '50px', 
-          display: { xs: 'none', sm: 'initial' }
+          display: 'initial', 
+ 
         }}
       >
-        <ChevronLeft  sx={{color: "#F9F9F9"}}/>
+        <ChevronLeft  sx={{color: "#F9F9F9", }}/>
       </IconButton>
       
       <IconButton 
         className="swiper-button-next"
         sx={{ 
           position: 'absolute',
-          top: '80%',
-          right: isMediumScreen? '5%': isLargeScreen? '8%':'12%',
-          transform: 'translateY(-50%)',
+          top: isSmallScreen? '91%' : '80%',
+          right:isSmallScreen? '25%' : isMediumScreen? '5%': isLargeScreen? '8%':'12%',
           color: 'transparent',
           zIndex: 2,
           backgroundColor: 'grey',
           width: '50px', 
           height: '50px', 
-          display: { xs: 'none', sm: 'initial' }
+          display: 'initial', 
+
         }}
       >
-        <ChevronRight sx={{ color: "#F9F9F9"}} /> 
+        <ChevronRight sx={{ color: "#F9F9F9",}} /> 
       </IconButton>
     </Box>
   );

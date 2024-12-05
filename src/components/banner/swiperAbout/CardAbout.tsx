@@ -22,8 +22,8 @@ const CardAbout: React.FC<CardAboutProps> = ({ item }) => {
         display="flex"
         alignItems="center"
         sx={{
-          gap: 2,
-          mb: 4,
+          gap:isSmallScreen? 1 : 2,
+          mb:isSmallScreen? 1: 4,
         }}
       >
         <Typography
@@ -31,7 +31,7 @@ const CardAbout: React.FC<CardAboutProps> = ({ item }) => {
           sx={{
             fontFamily: 'Raleway',
             fontWeight: 400,
-            fontSize: { xs: '30px', sm: '30px', md: '36px', lg: '36px', xl: '48px' },
+            fontSize: { xs: '21px', sm: '30px', md: '36px', lg: '36px', xl: '48px' },
             color: 'black',
             textAlign: 'left',
           }}
@@ -54,7 +54,7 @@ const CardAbout: React.FC<CardAboutProps> = ({ item }) => {
             fontFamily: 'Raleway',
             fontWeight: 400,
             fontSize: { xs: '14px', sm: '16px', md: '20px', lg: '20px', xl: '28px' },
-            lineHeight: { xs: '24px', sm: '30px', md: '30px', lg: '35px', xl: '44px' },
+            lineHeight: { xs: '18px', sm: '30px', md: '30px', lg: '35px', xl: '44px' },
             color: 'black',
             textAlign: 'left',
             padding: '0 20px',

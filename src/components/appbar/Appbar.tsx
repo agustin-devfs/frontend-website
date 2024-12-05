@@ -29,10 +29,10 @@ export default function Header() {
                 src={bars.togetherDevsIcon}
                 alt="TogetherDevs"
                 loading="lazy"
-                width={isSmallScreen ? 150 : isMediumScreen ? 180 : isLargeScreen ? 200 : 220} 
+                width={isSmallScreen ? 180 : isMediumScreen ? 180 : isLargeScreen ? 200 : 220} 
                 height={isSmallScreen ? 35 :  isMediumScreen ? 80 : isLargeScreen ? 100 :100} 
                 style={{ borderRadius: '10%', 
-                 marginTop: isSmallScreen ? '5%' :isMediumScreen ? '12%': isLargeScreen ? '10%': '8%',
+                 marginTop: isSmallScreen ? '1.5rem' :isMediumScreen ? '12%': isLargeScreen ? '10%': '8%',
               }}
               />
             </Link>
@@ -41,10 +41,10 @@ export default function Header() {
           {/* Navigation Links */}
           <Stack
                direction={isSmallScreen ? "column" :  isMediumScreen ? "row" : "row"} 
-               spacing={isSmallScreen ? 1 : isMediumScreen ? 1 : isNormalScreen? 2 :3} 
+               spacing={isSmallScreen ? 0.5 : isMediumScreen ? 1 : isNormalScreen? 2 :3} 
             sx={{
               mt: { xs: 2, md: 0 },
-              alignItems: { xs: 'flex-end', md: 'center' },
+              alignItems: { xs: 'flex-start', md: 'center' },
               marginLeft: { xs: "5%", md: '10%' },
             }}
           >
@@ -72,7 +72,7 @@ export default function Header() {
                 sx={{
                   fontFamily: 'Raleway',
                   fontWeight: 600,
-                  fontSize: { xs: '14px', md: '22px' },
+                  fontSize: { xs: '12px', md: '22px' },
                   lineHeight: { xs: '16px', md: '25px' },
                   letterSpacing: '1%',
                   color: '#353535',
@@ -105,7 +105,7 @@ export default function Header() {
                 sx={{
                   fontFamily: 'Raleway',
                   fontWeight: 600,
-                  fontSize: { xs: '14px', md: '22px' },
+                  fontSize: { xs: '12px', md: '22px' },
                   lineHeight: { xs: '16px', md: '25px' },
                   letterSpacing: '1%',
                   color: '#353535',
@@ -141,7 +141,7 @@ export default function Header() {
                 sx={{
                   fontFamily: 'Raleway',
                   fontWeight: 600,
-                  fontSize: { xs: '14px', md: '22px' },
+                  fontSize: { xs: '12px', md: '22px' },
                   lineHeight: { xs: '16px', md: '25px' },
                   letterSpacing: '1%',
                   color: '#353535',

@@ -32,9 +32,9 @@ const ServicesSection = () => {
       </Grid>
 
       {/* Tarjetas */}
-      <Grid container spacing={isMediumScreen? 1: 4} justifyContent="center">
+      <Grid container spacing={ isSmallScreen? 0 :isMediumScreen? 1: 4} justifyContent="center">
         {servicesData.map((service, index) => (
-          <Grid item xs={9} sm={5} md={4} key={index}>
+          <Grid item xs={10} sm={5} md={4} key={index}>
             <CardService
               title={service.title}
               description={service.description}
