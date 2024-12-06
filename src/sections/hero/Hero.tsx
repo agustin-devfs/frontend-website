@@ -90,8 +90,18 @@ function HeroSection() {
             sx={{
               
               position: 'relative',
-              width: isSmallScreen ? 350 : isMediumScreen ? 690 : isNormalScreen? 950: isLargeScreen? 970: 1250,
-              height: isSmallScreen ? 130 : isMediumScreen ? 260 : isNormalScreen? 350: isLargeScreen? 360 :470,
+              width: {
+                xs: 350, 
+                sm: 690, 
+                md: 950, 
+                lg: 1250, 
+              },
+              height: {
+                xs: 130,
+                sm: 260,
+                md: 350,
+                lg: 470,
+              },
               backgroundImage: 'url(/assets/sonrisaHero.png)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
