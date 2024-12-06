@@ -13,7 +13,7 @@ export default function SlideInCard() {
   const isMediumScreen = useMediaQuery(theme.breakpoints.down('md')); 
   const isLargeScreen = useMediaQuery(theme.breakpoints.down('xl')); 
 
-  const colores = [
+  const coloresNormal = [
     { back: '#F6F6F6', text: '#162D4F', imageAlignment: 'left' },
     { back: '#494949', text: '#F6F6F6', imageAlignment: 'left' },
     { back: '#A0730C', text: '#000000', imageAlignment: 'right' },
@@ -22,9 +22,20 @@ export default function SlideInCard() {
     { back: '#F6F6F6', text: '#162D4F', imageAlignment: 'left' }
   ];
 
+  const coloresSmall = [
+    { back: '#F6F6F6', text: '#162D4F', imageAlignment: 'left' },
+    { back: '#494949', text: '#F6F6F6', imageAlignment: 'right' },
+    { back: '#A0730C', text: '#000000', imageAlignment: 'left' },
+    { back: '#162D4F', text: '#F6F6F6', imageAlignment: 'right' },
+    { back: '#494949', text: '#F6F6F6', imageAlignment: 'left' },
+    { back: '#F6F6F6', text: '#162D4F', imageAlignment: 'right' }
+  ];
+
+const colores = isSmallScreen ? coloresSmall : coloresNormal; 
+
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.1, // Aumenta el umbral para activar la animación antes
+    threshold: 0.1,
     rootMargin: isSmallScreen? '300%' :isMediumScreen? '150%' : '75%' 
   });
   

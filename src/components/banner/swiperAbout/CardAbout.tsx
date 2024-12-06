@@ -31,7 +31,7 @@ const CardAbout: React.FC<CardAboutProps> = ({ item }) => {
           sx={{
             fontFamily: 'Raleway',
             fontWeight: 400,
-            fontSize: { xs: '21px', sm: '30px', md: '36px', lg: '36px', xl: '48px' },
+            fontSize: { xs: '22px', sm: '30px', md: '36px', lg: '36px', xl: '48px' },
             color: 'black',
             textAlign: 'left',
           }}
@@ -53,8 +53,8 @@ const CardAbout: React.FC<CardAboutProps> = ({ item }) => {
           sx={{
             fontFamily: 'Raleway',
             fontWeight: 400,
-            fontSize: { xs: '14px', sm: '16px', md: '20px', lg: '20px', xl: '28px' },
-            lineHeight: { xs: '18px', sm: '30px', md: '30px', lg: '35px', xl: '44px' },
+            fontSize: { xs: '16px', sm: '16px', md: '20px', lg: '20px', xl: '28px' },
+            lineHeight: { xs: '20px', sm: '30px', md: '30px', lg: '35px', xl: '44px' },
             color: 'black',
             textAlign: 'left',
             padding: '0 20px',

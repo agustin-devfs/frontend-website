@@ -9,11 +9,10 @@ import Appbar from '@/components/appbar/Appbar';
 import OurServices from '@/sections/ourServices/OurServices';
 import Navbar from '@/components/navbar/Navbar';
 import Banner from '@/components/banner/Banner';
-import SuccessCases from '@/components/successCases/SuccessCases';
-import ParalaxText from '@/components/Text/ParalaxText/ParalaxText';
 import MarqueeIcons from '@/components/marquee/MarqueeIcons';
 import Hero from '@/sections/hero/Hero';
 import AboutUs from '@/sections/aboutUs/AboutUs';
+import IndustriesSection from '@/sections/industries/Industries';
 
 export default function Home() {
   const [scrollLocked, setScrollLocked] = useState(false);
@@ -48,8 +47,7 @@ export default function Home() {
         <MarqueeIcons />
         <Banner />
         <section id="industries">
-          <ParalaxText phrase2={'OUR WORK'} />
-          <SuccessCases />
+         <IndustriesSection/>
         </section>
         <section id="testimonials">
           <Testimonials />

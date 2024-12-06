@@ -13,6 +13,7 @@ import 'swiper/css/pagination';
 
 export default function AboutUs({ onScrollLock }: { onScrollLock: (lock: boolean) => void }) {
   const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const isMediumScreen = useMediaQuery(theme.breakpoints.down('md'));
   const isLargeScreen = useMediaQuery(theme.breakpoints.down('xl'));
   
@@ -55,7 +56,7 @@ export default function AboutUs({ onScrollLock }: { onScrollLock: (lock: boolean
  */      id="aboutus"
       sx={{
         position: 'relative',
-        height: isMediumScreen ? '80vh' : isLargeScreen ? '90vh' : '100vh',
+        height:  isMediumScreen ? '80vh' : isLargeScreen ? '90vh' : '100vh',
         width: '100vw',
         overflow: 'hidden',
         backgroundImage: 'url(/assets/11.png)',
@@ -66,10 +67,10 @@ export default function AboutUs({ onScrollLock }: { onScrollLock: (lock: boolean
       <Box
         sx={{
           position: 'absolute',
-          top: isLargeScreen ? 30 : 50,
-          left: isMediumScreen ? '40%' : '60%',
-          width: isMediumScreen ? '60%' : '40%',
-          height: '90%',
+          top: isSmallScreen ? 50 : isLargeScreen ? 30 : 50,
+          left: isSmallScreen ? '15%' : isMediumScreen ? '40%' : '60%',
+          width: isSmallScreen ? '90%' :isMediumScreen ? '60%' : '40%',
+          height: isSmallScreen ? '80%':'90%',
           zIndex: 2,
           display: 'flex',
           flexDirection: 'column',
