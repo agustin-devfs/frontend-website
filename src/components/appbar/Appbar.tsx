@@ -35,14 +35,16 @@ export default function Header() {
                  marginTop: isSmallScreen ? '1.5rem' :isMediumScreen ? '12%': isLargeScreen ? '10%': '8%',
               }}
               />
+
+              
             </Link>
           </Stack>
 
           {/* Navigation Links */}
           <Stack
-               direction={isSmallScreen ? "column" :  isMediumScreen ? "row" : "row"} 
-               spacing={isSmallScreen ? 0.5 : isMediumScreen ? 1 : isNormalScreen? 2 :3} 
-            sx={{
+           sx={{
+              direction: { xs: 'column', md: 'row' },
+              spacing: { xs: 0.5, md: 1 },
               mt: { xs: 2, md: 0 },
               alignItems: { xs: 'flex-start', md: 'center' },
               marginLeft: { xs: "5%", md: '10%' },

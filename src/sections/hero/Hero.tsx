@@ -116,14 +116,15 @@ function HeroSection() {
               gutterBottom
               sx={{
                 position: 'absolute',
-                top: isSmallScreen ?'18%': '10%',
-                left: isSmallScreen ? '18%': isMediumScreen ? '55%':isNormalScreen? '45%': isLargeScreen? '45%': '50%',
+  
+               top: {xs:'18%', sm:'10%', md:'10%', lg:'10%',},
+               left:{xs:'18%', sm:'55%', md:'45%', lg:'45%',},
                 fontFamily: 'Podkova',
                 fontWeight: 500,
-                fontSize: isSmallScreen ? '16px' : isMediumScreen ?'24px': isNormalScreen? '30px': isLargeScreen? '30px':'36px',
+                fontSize: {xs:'16px', sm:'24px', md:'30px', lg:'30px',},
                 color: '#F6F6F6',
                 backgroundColor: '#162D4F',
-                padding: isSmallScreen ? '6px 15px' : isMediumScreen ? '6px 10px' :isNormalScreen?  '6px 60px': isLargeScreen? '6px 80px':'6px 130px',
+                padding:{xs:'6px 15px', sm:'6px 10px', md:'6px 60px', lg:'6px 80px',},
                 borderRadius: '3px',
                 display: 'inline-block',
                 zIndex: 2,

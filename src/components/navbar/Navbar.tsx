@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { useEffect, useState } from "react";
 import { bars } from "@/app/core/utils/contants";
 import { ButtonGroup, Button, Link, Grid, useTheme, useMediaQuery } from "@mui/material";
@@ -6,11 +6,13 @@ import Image from 'next/image';
 
 export default function NavBar() {
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm')); 
-  const isNormalScreen = useMediaQuery(theme.breakpoints.down('lg')); 
-  const isLargeScreen = useMediaQuery(theme.breakpoints.down('xl')); 
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
-    
+  useEffect(() => {
+    const isSmall = window.matchMedia(theme.breakpoints.down("sm")).matches;
+    setIsSmallScreen(isSmall);
+  }, [theme.breakpoints]);
+
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
@@ -24,7 +26,6 @@ export default function NavBar() {
     });
 
     const sectionIds = ["services", "aboutus", "industries", "contactForm"];
-    
     sectionIds.forEach(id => {
       const element = document.getElementById(id);
       if (element) observer.observe(element);
@@ -35,75 +36,72 @@ export default function NavBar() {
     };
   }, []);
 
-  const navbarStyles: React.CSSProperties = {
-    opacity: isVisible ? 1 : 0,
-    maxWidth:'400px',
-    transition: 'opacity 0.3s ease-in-out',
-    backgroundColor: '#353535',
-    position: 'fixed',
-    bottom: '16%',
-    left: '45%',
-    transform: 'translateX(-50%)',
-    zIndex: 1000,
-    pointerEvents: isVisible ? 'auto' : 'none',
-    borderRadius: '8px',
-  };
+  const navbarStyles = isSmallScreen
+  ? ({
+      width: "200px",
+      opacity: isVisible ? 1 : 0,
+      transition: "opacity 0.3s ease-in-out",
+      backgroundColor: "#353535",
+      position: "fixed",
+      bottom: "0%",
+      zIndex: 1000,
+      pointerEvents: isVisible ? "auto" : "none", 
+      borderRadius: "8px",
+    } as React.CSSProperties)
+  : ({
+      opacity: isVisible ? 0 : 0,
+      maxWidth: "400px",
+      transition: "opacity 0.3s ease-in-out",
+      backgroundColor: "#353535",
+      position: "fixed",
+      bottom: "16%",
+      left: "45%",
+      transform: "translateX(-50%)",
+      zIndex: 1000,
+      pointerEvents: isVisible ? "auto" : "none", 
+      borderRadius: "8px",
+    } as React.CSSProperties);
 
-  const navbarStylesSmall: React.CSSProperties = {
-    width: '200px',
-    opacity: isVisible ? 0 : 0, 
-    transition: 'opacity 0.3s ease-in-out',
-    backgroundColor: '#353535',
-    position: 'fixed',
-    bottom: '0%',
-    zIndex: 1000,
-    pointerEvents: isVisible ? 'auto' : 'none',
-    borderRadius: '8px',
-
-  };
 
   return (
-    <Grid container sm={8.6} md={6.5} lg={4.8} xl={4} style={ isSmallScreen ? navbarStylesSmall:navbarStyles } >
+    <Grid container style={navbarStyles}>
       <ButtonGroup
         variant="contained"
-        
         sx={{
-          backgroundColor: '#353535',
-          
-          '& .MuiButton-root': {
-            backgroundColor: '#353535',
-            textTransform: 'none',
-             fontWeight: '600',
-             fontSize: isSmallScreen? '10px':isNormalScreen? '10px': isLargeScreen? '12px':'16px',
-             padding: isSmallScreen? '4px 0px': isNormalScreen? '4px 10px': isLargeScreen? '4px 9px':'8px 11px',
+          backgroundColor: "#353535",
+          "& .MuiButton-root": {
+            backgroundColor: "#353535",
+            textTransform: "none",
+            fontWeight: "600",
+            fontSize: isSmallScreen ? "10px" : "16px",
+            padding: isSmallScreen ? "4px 0px" : "8px 11px",
             borderColor: "#353535",
-            whiteSpace: 'nowrap', 
-            overflow: 'hidden',
-
-            '&:hover': {
-              backgroundColor: '#353535',
-              color: "white"
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+            "&:hover": {
+              backgroundColor: "#353535",
+              color: "white",
             },
-            '&:last-of-type': {
-              borderRadius: '10px',
-              color: '#364049',
+            "&:last-of-type": {
+              borderRadius: "10px",
+              color: "#364049",
               backgroundColor: "#FEFEFE",
-              margin: "10px"
+              margin: "10px",
             },
-            '&:last-of-type:hover': {
-              color: 'white',
-              backgroundColor: '#66757F',
-            }
+            "&:last-of-type:hover": {
+              color: "white",
+              backgroundColor: "#66757F",
+            },
           },
         }}
       >
-        <Grid style={{ padding: isLargeScreen ? '12px' :"20px", marginTop: "10px" }}>
-          <Link href="https://togetherdevs.com/" underline="none" sx={{ display: 'flex', alignItems: 'center' }}>
+        <Grid style={{ padding: "12px", marginTop: "10px" }}>
+          <Link href="https://togetherdevs.com/" underline="none" sx={{ display: "flex", alignItems: "center" }}>
             <Image
               src="logos/TogetherDevs.svg"
               alt="TogetherDevs"
               loading="lazy"
-              width={isLargeScreen ? 100: 150}
+              width={isSmallScreen ? 100 : 150}
               height={30}
               style={{ borderRadius: "10%" }}
             />

@@ -110,42 +110,48 @@ export const icons = [
     {
       category: "MEDIA ENTERTAINMENT",
       title: "Project: Streaming and Social Interaction Platform",
-      description: "For AMW.TV, we crafted a groundbreaking streaming platform powered by AI, redefining how users consume and interact with content. By merging personalized experiences with social engagement, the platform drives higher user interaction, unlocks diverse revenue opportunities, and equips content owners with actionable insights.",
+      //description: "For AMW.TV, we crafted a groundbreaking streaming platform powered by AI, redefining how users consume and interact with content. By merging personalized experiences with social engagement, the platform drives higher user interaction, unlocks diverse revenue opportunities, and equips content owners with actionable insights.",
+      description: "We built an AI-powered streaming platform that revolutionizes content consumption and interaction, driving massive audience engagement and unlocking diverse revenue streams.",
       client: "Client: AMWTV",
       image: "/industries/amw.png"
     },
     {
       category: "ECOMMERCE",
       title: "Project: Simple Shops",
-      description:"Our team delivered a versatile platform for Simple Shops, granting merchants seamless control over their digital storefronts. From tailored customization to inventory and logistics management, this solution transforms online retail, streamlining operations, facilitating swift onboarding, and ensuring scalability for future growth.",
+     // description:"Our team delivered a versatile platform for Simple Shops, granting merchants seamless control over their digital storefronts. From tailored customization to inventory and logistics management, this solution transforms online retail, streamlining operations, facilitating swift onboarding, and ensuring scalability for future growth.",
+      description: "We developed a versatile platform for Simple Shops, empowering merchants with seamless control over their digital storefronts. With features like customization, inventory, and logistics management, it streamlines operations, enables quick onboarding, and supports scalable growth.",
       client: "Client: Simple Shops",
       image: "/industries/simple shops.png"
     },
     {
       category: "FITNESS",
       title: " Project: Fitness Training and Marketplace Platform",
-      description: "For WeMove Training, we built an innovative marketplace designed for personal trainers to showcase and sell their programs while offering users tailored fitness journeys. This platform elevates engagement, boosts sales potential, and fosters a vibrant fitness community by integrating advanced features and analytics.",
+      //description: "For WeMove Training, we built an innovative marketplace designed for personal trainers to showcase and sell their programs while offering users tailored fitness journeys. This platform elevates engagement, boosts sales potential, and fosters a vibrant fitness community by integrating advanced features and analytics.",
+      description:"We helped WeMove Training to release and innovative marketplace, enabling personal trainers to sell their programs and users to access tailored fitness journeys. The platform enhances engagement, drives sales, and builds a thriving fitness community with advanced features and analytics.",
       client: "Client: WeMove Training",
       image: "/industries/fitness.png"
     },
     {
       category: "AI",
       title: "Project: AI Meeting Assistant",
-      description:"We collaborated with North Tier to create an AI-driven virtual assistant, designed to streamline meeting management. This smart solution automates note-taking, task assignments, and follow-ups in real-time, accessible via web and mobile platforms. The result: improved efficiency, higher task completion rates, and enhanced team collaboration.",
+      //description:"We collaborated with North Tier to create an AI-driven virtual assistant, designed to streamline meeting management. This smart solution automates note-taking, task assignments, and follow-ups in real-time, accessible via web and mobile platforms. The result: improved efficiency, higher task completion rates, and enhanced team collaboration.",
+      description: "We partnered with North Tier to develop an AI-powered virtual assistant that simplifies meeting management. It automates note-taking, task assignments, and follow-ups in real-time, accessible on web and mobile, boosting efficiency, task completion, and team collaboration.",
       client: "Client: North Tier",
       image: "/industries/ai.png"
     },
     {
       category: "FINTECH",
       title: "PROJECT INTELLIGENT ADVISORS",
-      description: "West Side Consulting benefited from our development of a cutting-edge platform for managing investments. The solution offers an intuitive user experience across web and mobile devices, enabling real-time portfolio tracking and automated management. It enhances user adoption while preparing for scalable growth.",
+      //description: "West Side Consulting benefited from our development of a cutting-edge platform for managing investments. The solution offers an intuitive user experience across web and mobile devices, enabling real-time portfolio tracking and automated management. It enhances user adoption while preparing for scalable growth.",
+      description:"We developed a cutting-edge investment management platform for West Side Consulting, delivering an intuitive web and mobile experience. The solution enables real-time portfolio tracking, automated management, and scalability, driving user adoption and growth.",
       client: "Client: West Side Consulting",
       image: "/industries/asesores.png"
     },
     {
       category: "HEALTHY INDUSTRY",
       title: "AI-DRIVEN VIRTUAL MEDICAL ASSISTANT",
-      description: "We developed an innovative AI-Driven Virtual Medical Assistant designed to streamline patient interactions and reduce administrative burdens on healthcare professionals. This solution enhances clinical efficiency, improves patient outcomes, and ensures compliance with healthcare standards through automated follow-ups and intelligent documentation.",
+      //description: "We developed an innovative AI-Driven Virtual Medical Assistant designed to streamline patient interactions and reduce administrative burdens on healthcare professionals. This solution enhances clinical efficiency, improves patient outcomes, and ensures compliance with healthcare standards through automated follow-ups and intelligent documentation.",
+      description: "We designed an AI-driven Virtual Medical Assistant to streamline patient care, boost efficiency, and ensure compliance with automated follow-ups and smart documentation.",
       client: "Client: Horizon Health",
       image: "/industries/medical.png"
     },
@@ -157,6 +163,7 @@ export const icons = [
     image: "/industries/medical.png"
     }, */
   ];
+
 export const testimonials = [
  /*  {
     author: "Guilllermo Bertossi: ",
