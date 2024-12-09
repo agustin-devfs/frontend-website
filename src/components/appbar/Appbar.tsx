@@ -7,7 +7,6 @@ export default function Header() {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm')); // Detecta pantallas pequeñas
   const isMediumScreen = useMediaQuery(theme.breakpoints.down('md')); // Pantallas medianas
-  const isNormalScreen = useMediaQuery(theme.breakpoints.down('lg')); 
   const isLargeScreen = useMediaQuery(theme.breakpoints.down('xl')); 
 
 

@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from "react";
 import { bars } from "@/app/core/utils/contants";
-import { ButtonGroup, Button, Link, Grid, useTheme, useMediaQuery } from "@mui/material";
+import { ButtonGroup, Button, Link, Grid, useTheme } from "@mui/material";
 import Image from 'next/image';
 
 export default function NavBar() {
