@@ -41,10 +41,10 @@ export default function Header() {
 
           {/* Navigation Links */}
           <Stack
+          spacing={isSmallScreen ? 0.5 : 2}
+          direction= {isSmallScreen ? "column" : "row"}
            sx={{
-              direction: { xs: 'column', md: 'row' },
-              spacing: { xs: 0.5, md: 1 },
-              mt: { xs: 2, md: 0 },
+              mt: { xs: 2, md: 1 },
               alignItems: { xs: 'flex-start', md: 'center' },
               marginLeft: { xs: "5%", md: '10%' },
             }}
