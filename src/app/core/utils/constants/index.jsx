@@ -8,7 +8,7 @@ export const bars = {
   app: "Sanaciones",
   web: "Circulos",
   hire:"Talleres", 
-  LogoIcon:"logos/luna.svg",
+  LogoIcon:"logos/luna.png",
   appIcon:"icons/appIcon.svg",
   webIcon:"icons/webIcon.svg",
   hireIcon:"icons/hireIcon.svg",
@@ -26,6 +26,12 @@ export const service =
 {
   title: "Nuestro Servicio",
   button: "Conectemos"
+}
+
+//PRODUCTS
+export const product = {
+  title: "Nuestros Productos",
+  button: "Comprar"
 }
 
 //CONTACT

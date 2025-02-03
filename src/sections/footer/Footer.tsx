@@ -11,7 +11,7 @@ import {
   useTheme,
   useMediaQuery,
 } from "@mui/material";
-import { Facebook, Instagram, LinkedIn } from "@mui/icons-material";
+import { Facebook, Instagram, YouTube } from "@mui/icons-material";
 import Image from "next/image";
 import { bars, footer } from "@/app/core/utils/constants";
 
@@ -63,7 +63,7 @@ export default function Footer() {
             }}
           >
             <Link
-              href="https://www.webuildapps.ai/"
+              href="/"
               underline="none"
               target="_blank"
               rel="noopener noreferrer"
@@ -85,7 +85,7 @@ export default function Footer() {
               {bars.app}
             </Link>
             <Link
-              href="#industries"
+              href="/"
               underline="none"
               sx={{
                 color: "white",
@@ -107,7 +107,7 @@ export default function Footer() {
               {bars.web}
             </Link>
             <Link
-              href={""}
+              href={"/"}
               target="_blank"
               rel="noopener noreferrer"
               underline="none"
@@ -143,36 +143,37 @@ export default function Footer() {
               spacing={1}
               justifyContent={isSmallScreen ? "center" : "flex-start"}
             >
+           
               <IconButton
-                href="https://www.linkedin.com/company/togetherdevs/about/"
+                href="https://www.facebook.com/LunaRojaCirculo/"
                 size="small"
                 sx={{ color: "white" }}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Perfil de LinkedIn de TogetherDevs"
-              >
-                <LinkedIn />
-              </IconButton>
-              <IconButton
-                href="https://www.facebook.com/Togetherdevs/"
-                size="small"
-                sx={{ color: "white" }}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Página de Facebook de TogetherDevs"
+                aria-label="Página de Facebook"
               >
                 <Facebook />
               </IconButton>
               <IconButton
-                href="https://www.instagram.com/togetherdevs?igsh=cTdhcTU1aHkzdGp0"
+                href="https://www.instagram.com/lunarojacirculo/?igsh=c2RmbWVrZHZta3dn"
                 size="small"
                 sx={{ color: "white" }}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Cuenta de Instagram de TogetherDevs"
+                aria-label="Cuenta de Instagram"
               >
                 <Instagram />
               </IconButton>
+                <IconButton
+                          href="https://www.instagram.com/lunarojacirculo/?igsh=c2RmbWVrZHZta3dn"
+                          size="small"
+                          sx={{ color: "white" }}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Cuenta de Youtube"
+                        >
+                          <YouTube/>
+                        </IconButton>
             </Stack>
 
             <Stack

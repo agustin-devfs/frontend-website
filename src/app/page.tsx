@@ -6,6 +6,8 @@ import Testimonials from "@/sections/testimonials/Testimonials";
 import Appbar from "@/components/appbar/Appbar";
 import OurServices from "@/sections/ourServices/OurServices";
 import Hero from "@/sections/hero/Hero";
+import OurProducts from "@/sections/ourProducts/OurProducts";
+import BannerSwiper from "@/components/banner/Banner";
 
 export default function Home() {
   return (
@@ -21,13 +23,19 @@ export default function Home() {
 
         <section id="aboutus"></section>
 
-        <section id="industries"></section>
+       
 
         <section id="testimonials">
           <Testimonials />
         </section>
 
-        <section id="ourteam"></section>
+        <section id="products">
+          <OurProducts />
+        </section>
+
+        <section id="galery">
+          <BannerSwiper />
+        </section>
 
         <section id="contactForm">
           <ContactForm />

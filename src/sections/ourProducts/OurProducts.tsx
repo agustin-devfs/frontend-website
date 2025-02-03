@@ -7,9 +7,9 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import CardService from "@/components/cards/cardService/CardService";
-import { service, link_whatsapp } from "@/app/core/utils/constants";
-import useCardList from "./fecthCards";
+import { product, link_whatsapp } from "@/app/core/utils/constants";
+import useProductList from "./fecthProducts";
+import CardProducts from "@/components/cards/cardProducts/CardProducts";
 
 const ServicesSection = () => {
   const theme = useTheme();
@@ -17,11 +17,11 @@ const ServicesSection = () => {
   const isMediumScreen = useMediaQuery(theme.breakpoints.down("md"));
   const isLargeScreen = useMediaQuery(theme.breakpoints.down("xl"));
 
-  const { isLoading, cards } = useCardList(); // Obtiene los datos de la API
+  const { isLoading, products } = useProductList(); // Obtiene los datos de la API
 
   if (isLoading) return <div>Loading...</div>;
-
-  return (
+/*  console.log("products", products);
+ */  return (
     <Container
       maxWidth="xl"
       sx={{
@@ -51,7 +51,7 @@ const ServicesSection = () => {
               textAlign: "center",
             }}
           >
-            {service.title}
+            {product.title}
           </Typography>
         </Grid>
       </Grid>
@@ -62,7 +62,7 @@ const ServicesSection = () => {
         spacing={isSmallScreen ? 0 : isMediumScreen ? 1 : 4}
         justifyContent="center"
       >
-        {cards.map((card, index) => (
+        {products.map((product, index) => (
           <Grid
             item
             xs={10}
@@ -76,11 +76,14 @@ const ServicesSection = () => {
               alignItems: "center",
             }}
           >
-            <CardService
-              title={card.title}
-              description={card.description}
-              imageSrc={card.imageSrc}
-              imageAlt={card.imageAlt}
+            <CardProducts
+              title={product.title}
+              description={product.description}
+              price={product.price} code={product.code} 
+              status={product.status} 
+              stock={product.stock} 
+              category={product.category} 
+              thumbnails={product.thumbnails}       
             />
           </Grid>
         ))}
@@ -106,7 +109,7 @@ const ServicesSection = () => {
             },
           }}
         >
-          {service.button}
+          {product.button}
         </Button>
       </Box>
     </Container>

@@ -1,10 +1,14 @@
-import { useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 
 interface ServiceHero {
+  buttonDer: ReactNode;
+  buttonIzq: ReactNode;
+  texto: ReactNode;
+  title: ReactNode;
   titleHero: string;
   textHero: string;
-  buttonIzq: string;
-  buttonDer: string;
+  buttonL: string;
+  buttonR: string;
 }
 
 const useHeroList = () => {
@@ -19,8 +23,8 @@ const useHeroList = () => {
         const transformedHeros: ServiceHero[] = data.data.map((Hero: ServiceHero) => ({
           title: Hero.titleHero,
           texto: Hero.textHero,
-          buttonIzq: Hero.buttonIzq,
-          buttonDer: Hero.buttonDer,
+          buttonIzq: Hero.buttonL,
+          buttonDer: Hero.buttonL,
         }));
         setHeros(transformedHeros);
       } catch (error) {

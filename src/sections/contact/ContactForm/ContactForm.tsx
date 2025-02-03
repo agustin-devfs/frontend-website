@@ -105,7 +105,7 @@ export default function Component() {
             <Button
               variant="outlined"
               fullWidth
-              href={""}
+              href={"/"}
               target="_blank"
               rel="noopener noreferrer"
               sx={{
