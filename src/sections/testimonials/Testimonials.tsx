@@ -8,10 +8,10 @@ import { Autoplay, Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import { ChevronLeft, ChevronRight } from '@mui/icons-material'
-import { testimonials } from "@/app/core/utils/contants/index"
 import Image from 'next/image'
 import { SetStateAction, useState } from 'react'
 import { useMediaQuery, useTheme } from '@mui/material'
+import useTestimonialList from './fetchTestimonials';
 
 export default function Component() {
   const theme = useTheme(); 
@@ -27,6 +27,13 @@ export default function Component() {
     setCurrentIndex(swiper.realIndex); // swiper.realIndex obtiene el índice del slide actual
   };
 
+
+
+  const { isLoading, testimonials } = useTestimonialList(); // Obtiene los datos de la API
+
+  if (isLoading) return <div>Loading...</div>;
+
+  console.log(testimonials);
   return (
 
     <Box sx={{ 
@@ -58,7 +65,7 @@ export default function Component() {
               px: { xs: 2, md: 2 },
               pb: { xs: 2, md: 6 },
             }}>
-              <Box sx={{ mb: 4 }}>
+            {/* <Box sx={{ mb: 4 }}>
                 {index % 2 === 0 ? (
                   
                   <Image 
@@ -79,7 +86,7 @@ export default function Component() {
                     style={{ borderRadius: "10%" }} 
                   />
                 )}
-              </Box>
+              </Box> */}
 
               <Typography 
                 variant="h6" 

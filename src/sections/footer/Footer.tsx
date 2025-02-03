@@ -16,8 +16,8 @@ export default function Footer() {
         <Toolbar sx={{ justifyContent: 'space-between', py: { xs: 2, md: 2 } , px: isSmallScreen ? 1 : 0 }}>
           <Link href="/" underline="none" sx={{ display: 'flex', alignItems: 'center' }}>
             <Image 
-              src="logos/TogetherDevs.svg" 
-              alt="TogetherDevs"
+              src="" 
+              alt="LogoIcon"
               loading="lazy"
               width={isSmallScreen ? 150 : 150} 
               height={isSmallScreen ? 35 : 50} 

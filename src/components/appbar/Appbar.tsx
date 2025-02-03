@@ -17,23 +17,23 @@ export default function Header() {
           {/* Logo Section */}
           <Stack direction="row">
             <Link
-              href={bars.togetherLink}
+              href={bars.LogoIcon}
               underline="none"
               sx={{
                 display: 'flex',
                 alignItems: 'center',
               }}
             >
-              <Image
-                src={bars.togetherDevsIcon}
-                alt="TogetherDevs"
+             <Image
+                src={""}
+                alt="LogoIcon"
                 loading="lazy"
                 width={isSmallScreen ? 180 : isMediumScreen ? 180 : isLargeScreen ? 200 : 220} 
                 height={isSmallScreen ? 35 :  isMediumScreen ? 80 : isLargeScreen ? 100 :100} 
                 style={{ borderRadius: '10%', 
                  marginTop: isSmallScreen ? '1.5rem' :isMediumScreen ? '12%': isLargeScreen ? '10%': '8%',
               }}
-              />
+              /> 
 
               
             </Link>

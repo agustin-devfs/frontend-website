@@ -92,7 +92,7 @@ export default function Component() {
       container 
       justifyContent="center" 
       alignItems="center" 
-      style={{ minHeight: '100vh', marginBottom:"1%" }}
+      style={{ minHeight: '100vh', margin:"1%" }}
     >
       <ToastContainer />
 
@@ -118,7 +118,7 @@ export default function Component() {
             textAlign: 'center',
           }}
           >
-          LET&apos;S BUILD TOGETHER!
+          CONECTEMOS
         </Typography>
       </Box>
         <Grid container spacing={3} direction="column" alignItems="center">
@@ -187,7 +187,9 @@ export default function Component() {
                 color: 'black',
                 fontWeight: 600,
                 textAlign: 'center',
-                marginTop: '5%'
+                marginTop: '5%',
+                textTransform:'uppercase',
+
               }}
             >
               {contact.text}
@@ -217,7 +219,7 @@ export default function Component() {
                       <TextField
                       {...field}
                       fullWidth
-                      label="First Name"
+                      label="Nombre"
                       variant="standard"
                       error={!!fieldState.error}
                       helperText={fieldState.error?.message}
@@ -241,7 +243,7 @@ export default function Component() {
                       <TextField
                       {...field}
                       fullWidth
-                      label="Last Name"
+                      label="Apellido"
                       variant="standard"
                       error={!!fieldState.error}
                       helperText={fieldState.error?.message}
@@ -289,7 +291,7 @@ export default function Component() {
                       <TextField
                       {...field}
                       fullWidth
-                      label="Phone"
+                      label="Telefono"
                       variant="standard"
                       error={!!fieldState.error}
                       helperText={fieldState.error?.message}
@@ -313,7 +315,7 @@ export default function Component() {
                       <TextField
                       {...field}
                       fullWidth
-                      label="Message"
+                      label="Mensaje"
                       variant="standard"
                       multiline
                       rows={4}
