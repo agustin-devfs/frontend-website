@@ -15,7 +15,7 @@ const useTestimonialList = () => {
       try {
         const response = await fetch("/api/testimonials");
         const data = await response.json();
-        const transformedTestimonials: ServiceTestimonial[] = data.data.map((testimonial: any) => ({
+        const transformedTestimonials: ServiceTestimonial[] = data.data.map((testimonial: ServiceTestimonial) => ({
           author: testimonial.author,
           position: testimonial.position,
           quote: testimonial.quote,

@@ -8,7 +8,7 @@ export default function Seo({
   canonicalUrl,
 }) {
   return (
-    <Helmet titleTemplate="Together Devs" defaultTitle="Together Devs">
+    <Helmet titleTemplate="Luna Roja" defaultTitle="Luna Roja">
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />

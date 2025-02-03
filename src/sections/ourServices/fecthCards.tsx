@@ -17,7 +17,7 @@ const useCardList = () => {
       try {
         const response = await fetch('/api/cards');
         const data = await response.json();
-        const transformedCards: ServiceCard[] = data.data.map((card: any) => ({
+        const transformedCards: ServiceCard[] = data.data.map((card: ServiceCard) => ({
           title: card.title,
           description: card.description,
           imageSrc: card.imageSrc,

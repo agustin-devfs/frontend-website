@@ -1,8 +1,12 @@
 import { Box, Button, Container, Typography } from "@mui/material";
 import { Facebook, Instagram, YouTube } from "@mui/icons-material";
 import backgroundImage from "../../../public/assets/banner.jpg";
+import useHeroList from "./fetchHero";
 
 export default function HeroSection() {
+
+  console.log(useHeroList);
+
   return (
     <Box
       sx={{

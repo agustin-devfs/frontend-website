@@ -1,12 +1,12 @@
 'use client';
 import { AppBar, Container, Link, Stack, Toolbar, Typography, useMediaQuery, useTheme } from '@mui/material';
 import Image from 'next/image';
-import { bars } from '@/app/core/utils/contants';
+import { bars } from '@/app/core/utils/constants';
 
 export default function Header() {
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm')); // Detecta pantallas pequeñas
-  const isMediumScreen = useMediaQuery(theme.breakpoints.down('md')); // Pantallas medianas
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm')); 
+  const isMediumScreen = useMediaQuery(theme.breakpoints.down('md')); 
   const isLargeScreen = useMediaQuery(theme.breakpoints.down('xl')); 
 
 
@@ -25,7 +25,7 @@ export default function Header() {
               }}
             >
              <Image
-                src={""}
+                src={"/images/LogoIcon.png"}
                 alt="LogoIcon"
                 loading="lazy"
                 width={isSmallScreen ? 180 : isMediumScreen ? 180 : isLargeScreen ? 200 : 220} 
@@ -50,7 +50,7 @@ export default function Header() {
             }}
           >
             <Link
-              href="https://www.webuildapps.ai/"
+              href="/"
               underline="none"
               target="_blank"
               rel="noopener noreferrer"
@@ -85,7 +85,7 @@ export default function Header() {
             </Link>
 
             <Link
-              href="#industries"
+              href="/"
               underline="none"
               sx={{
                 color: 'Black',
@@ -119,7 +119,7 @@ export default function Header() {
             </Link>
 
             <Link
-              href="https://meetings.hubspot.com/david3299"
+              href="/"
               target="_blank"
               rel="noopener noreferrer"
               underline="none"

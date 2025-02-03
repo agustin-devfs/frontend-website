@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Together Devs",
+  title: "Luna Roja",
   description:
     "Togetherdevs is a software company with experience in IT solutions, helping businesses scale up team quality and productivity.",
   icons: {
@@ -9,11 +9,11 @@ export const metadata: Metadata = {
     apple: "./../../../public/assets/logos/isologo.png",
   },
   openGraph: {
-    title: "Together Devs",
+    title: "Luna Roja",
     description:
       "Togetherdevs is a software company with experience in IT solutions, helping businesses scale up team quality and productivity.",
     url: "https://togetherdevs.com/",
-    siteName: "Together Devs",
+    siteName: "Luna Roja",
     locale: "es_ES",
     type: "website",
   },

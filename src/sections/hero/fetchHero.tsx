@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
 interface ServiceHero {
-  title: string;
-  text: string;
+  titleHero: string;
+  textHero: string;
   buttonIzq: string;
   buttonDer: string;
 }
@@ -16,11 +16,11 @@ const useHeroList = () => {
       try {
         const response = await fetch("/api/hero");
         const data = await response.json();
-        const transformedHeros: ServiceHero[] = data.data.map((Hero: any) => ({
-          title: Hero.title,
-          texto: Hero.texto,
-          buttonIzq: Hero.botonIzq,
-          buttonDer: Hero.botonDer,
+        const transformedHeros: ServiceHero[] = data.data.map((Hero: ServiceHero) => ({
+          title: Hero.titleHero,
+          texto: Hero.textHero,
+          buttonIzq: Hero.buttonIzq,
+          buttonDer: Hero.buttonDer,
         }));
         setHeros(transformedHeros);
       } catch (error) {
