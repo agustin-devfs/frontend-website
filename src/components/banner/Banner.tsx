@@ -15,11 +15,19 @@ export default function Banner() {
   const isLargeScreen = useMediaQuery(theme.breakpoints.down("xl"));
 
   const images = [
-    "/assets/banner.jpg",
-    "/assets/banner.jpg",
-    "/assets/banner.jpg",
-    "/assets/banner.jpg",
-    "/assets/banner.jpg",
+    "/assets/1.jpg",
+    "/assets/2.jpg",
+    "/assets/3.jpg",
+    "/assets/4.jpg",
+    "/assets/5.jpg",
+    "/assets/6.jpg",
+    "/assets/7.jpg",
+    "/assets/8.jpg",
+    "/assets/9.jpg",
+    "/assets/10.jpg",
+    "/assets/11.jpg",
+    "/assets/12.jpg",
+    "/assets/13.jpg",
   ];
 
   return (
@@ -34,8 +42,8 @@ export default function Banner() {
         {images.map((src, index) => (
           <SwiperSlide key={index}>
             <Image
-              width={600}
-              height={400}
+              width={480}
+              height={350}
               src={src}
               alt={`slide-${index}`}
               className="w-full h-full object-cover"
@@ -45,6 +53,7 @@ export default function Banner() {
       </Swiper>
       <Box
         sx={{
+          margin:0,
           bgcolor: "#353535",
           color: "white",
           width: "100%",
@@ -55,7 +64,7 @@ export default function Banner() {
           justifyContent: "center",
         }}
       >
-        <Grid container alignItems="center">
+        <Grid container alignItems="center" >
           <Typography
             sx={{
               fontFamily: "Raleway",
@@ -104,16 +113,6 @@ export default function Banner() {
             {"Sanar?"}
           </Typography>
 
-          {/* Icono de sonrisa */}
-          {/*    <Grid item sm={1} md={1} lg={1}>
-          <Image
-            src="/assets/sonrisa pequeña.png"
-            alt="Sonrisa"
-            width={isSmallScreen? 50 :96}
-            height={isSmallScreen?20 :38}
-            style={{ marginLeft: '10px' }}
-          />
-        </Grid> */}
         </Grid>
       </Box>
     </>

@@ -8,6 +8,7 @@ import OurServices from "@/sections/ourServices/OurServices";
 import Hero from "@/sections/hero/Hero";
 import OurProducts from "@/sections/ourProducts/OurProducts";
 import BannerSwiper from "@/components/banner/Banner";
+import OurEvents from "@/sections/events/OurEvents";
 
 export default function Home() {
   return (
@@ -23,18 +24,19 @@ export default function Home() {
 
         <section id="aboutus"></section>
 
-       
+        <section id="galery">
+          <BannerSwiper />
+        </section>
 
+        <section id="events">
+          <OurEvents />
+        </section>
         <section id="testimonials">
           <Testimonials />
         </section>
 
         <section id="products">
           <OurProducts />
-        </section>
-
-        <section id="galery">
-          <BannerSwiper />
         </section>
 
         <section id="contactForm">

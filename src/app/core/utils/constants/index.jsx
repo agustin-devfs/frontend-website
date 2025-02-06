@@ -28,6 +28,11 @@ export const service =
   button: "Conectemos"
 }
 
+//SERVICES
+export const event = 
+{
+  title: "Proximos Eventos",
+}
 //PRODUCTS
 export const product = {
   title: "Nuestros Productos",

@@ -24,7 +24,7 @@ const useHeroList = () => {
           title: Hero.titleHero,
           texto: Hero.textHero,
           buttonIzq: Hero.buttonL,
-          buttonDer: Hero.buttonL,
+          buttonDer: Hero.buttonR,
         }));
         setHeros(transformedHeros);
       } catch (error) {

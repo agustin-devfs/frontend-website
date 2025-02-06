@@ -4,8 +4,10 @@ import backgroundImage from "../../../public/assets/banner.jpg";
 import useHeroList from "./fetchHero";
 
 export default function HeroSection() {
-  const { hero } = useHeroList(); // Corrección: variable heros
+  
+  const { hero } = useHeroList(); 
 
+ /*  console.log(hero) */
   return (
     <Box
       sx={{
@@ -22,8 +24,8 @@ export default function HeroSection() {
       }}
     >
       <Container>
-        {hero.map((h) => ( // Corrección: usar heros.map
-      <>
+        {hero.map((h,index) => ( 
+      <Box key={index}>
             <Typography variant="h2" fontWeight={600} gutterBottom>
               {h.title}
             </Typography>
@@ -39,7 +41,7 @@ export default function HeroSection() {
                 {h.buttonDer}
               </Button>
             </Box>
-      </>
+      </Box>
 
         ))}
         

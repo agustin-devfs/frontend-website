@@ -13,14 +13,21 @@ import {
 } from "@mui/material";
 import { Facebook, Instagram, YouTube } from "@mui/icons-material";
 import Image from "next/image";
-import { bars, footer } from "@/app/core/utils/constants";
+import { footer } from "@/app/core/utils/constants";
+
+import useNavList from "./fetchNavs";
 
 export default function Footer() {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const isMediumScreen = useMediaQuery(theme.breakpoints.down("md"));
-  const isNormalScreen = useMediaQuery(theme.breakpoints.down("lg"));
 
+  const { isLoading, nav } = useNavList();
+
+  //console.log(nav)
+
+  if (isLoading) return <div>Loading...</div>;
+  
   return (
     <AppBar
       position="static"
@@ -40,95 +47,64 @@ export default function Footer() {
             sx={{ display: "flex", alignItems: "center" }}
           >
             <Image
-              src="/images/LogoIcon.png"
+              src="/logos/logo.png"
               alt="LogoIcon"
               loading="lazy"
-              width={isSmallScreen ? 150 : 150}
-              height={isSmallScreen ? 35 : 50}
+              width={isSmallScreen ? 50 : 55}
+              height={isSmallScreen ? 45 : 50}
               style={{ borderRadius: "10%" }}
             />
           </Link>
-
+ 
           <Stack
-            direction={
-              isSmallScreen ? "column" : isMediumScreen ? "row" : "row"
-            }
-            spacing={
-              isSmallScreen ? 1 : isMediumScreen ? 3 : isNormalScreen ? 8 : 8
-            }
+            direction={isSmallScreen ? "column" : "row"}
+            spacing={isSmallScreen ? 1 : isMediumScreen ? 3 : 8}
             sx={{
               flexDirection: { xs: "column", sm: "row", md: "row" },
               alignItems: { xs: "flex-start", sm: "center", md: "center" },
               marginLeft: { xs: "5%", md: "20%" },
             }}
           >
-            <Link
-              href="/"
-              underline="none"
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={{
-                color: "white",
-                display: "flex",
-                alignItems: "center",
-                gap: 0.5,
-              }}
-            >
-              <Image
-                src={bars.appIconB}
-                alt="AppIcon"
-                loading="lazy"
-                width={isSmallScreen ? 16 : 24}
-                height={24}
-                style={{ borderRadius: "10%" }}
-              />
-              {bars.app}
-            </Link>
-            <Link
-              href="/"
-              underline="none"
-              sx={{
-                color: "white",
-                display: "flex",
-                alignItems: "center",
-                gap: 0.5,
-              }}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                src={bars.webIconB}
-                alt="AppIcon"
-                loading="lazy"
-                width={isSmallScreen ? 16 : 24}
-                height={24}
-                style={{ borderRadius: "10%" }}
-              />
-              {bars.web}
-            </Link>
-            <Link
-              href={"/"}
-              target="_blank"
-              rel="noopener noreferrer"
-              underline="none"
-              sx={{
-                color: "white",
-                display: "flex",
-                alignItems: "center",
-                gap: 0.5,
-              }}
-            >
-              <Image
-                src={bars.hireIconB}
-                alt="AppIcon"
-                loading="lazy"
-                width={isSmallScreen ? 16 : 24}
-                height={24}
-                style={{ borderRadius: "10%" }}
-              />
-              {bars.hire}
-            </Link>
-          </Stack>
+            {nav.map((n:any, index:number) => (
+              <Link
+                key={index}
+                href={n.linkNav}
+                underline="none"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  color: "white",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 0.5,
+                }}
+              >
+                <Image
+                  src={n.iconNav}
+                  alt={n.nav}
+                  loading="lazy"
+                  width={isSmallScreen ? 16 : 24}
+                  height={24}
+                  style={{ borderRadius: "10%" }}
+                />
+                 <Typography
+                sx={{
+                  fontFamily: 'Raleway',
+                  fontWeight: 600,
+                  fontSize: { xs: '12px', md: '22px' },
+                  lineHeight: { xs: '16px', md: '25px' },
+                  letterSpacing: '1%',
+                  color: 'white',
+                }}
+                noWrap={true}
+
+              >
+                {n.nav}
+                </Typography>
+
+              </Link>
+            ))}
+          </Stack> 
         </Toolbar>
 
         <Box sx={{ py: 2, borderTop: "1px solid rgba(255,255,255,0.1)" }}>
@@ -143,7 +119,6 @@ export default function Footer() {
               spacing={1}
               justifyContent={isSmallScreen ? "center" : "flex-start"}
             >
-           
               <IconButton
                 href="https://www.facebook.com/LunaRojaCirculo/"
                 size="small"
@@ -164,16 +139,16 @@ export default function Footer() {
               >
                 <Instagram />
               </IconButton>
-                <IconButton
-                          href="https://www.instagram.com/lunarojacirculo/?igsh=c2RmbWVrZHZta3dn"
-                          size="small"
-                          sx={{ color: "white" }}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label="Cuenta de Youtube"
-                        >
-                          <YouTube/>
-                        </IconButton>
+              <IconButton
+                href="https://www.instagram.com/lunarojacirculo/?igsh=c2RmbWVrZHZta3dn"
+                size="small"
+                sx={{ color: "white" }}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Cuenta de Youtube"
+              >
+                <YouTube />
+              </IconButton>
             </Stack>
 
             <Stack

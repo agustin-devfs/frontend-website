@@ -1,15 +1,13 @@
 import {
   Grid,
-  Box,
   Typography,
   Container,
-  Button,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { product, link_whatsapp } from "@/app/core/utils/constants";
-import useProductList from "./fecthProducts";
-import CardProducts from "@/components/cards/cardProducts/CardProducts";
+import { event } from "@/app/core/utils/constants";
+import CardEvents from "@/components/cards/cardEvents/CardEvents";
+import useEventList from "./fecthEvents";
 
 const ServicesSection = () => {
   const theme = useTheme();
@@ -17,11 +15,11 @@ const ServicesSection = () => {
   const isMediumScreen = useMediaQuery(theme.breakpoints.down("md"));
   const isLargeScreen = useMediaQuery(theme.breakpoints.down("xl"));
 
-  const { isLoading, products } = useProductList(); // Obtiene los datos de la API
+  const { isLoading, events } = useEventList(); // Obtiene los datos de la API
 
   if (isLoading) return <div>Loading...</div>;
-/*  console.log("products", products);
- */  return (
+
+  return (
     <Container
       maxWidth="xl"
       sx={{
@@ -51,7 +49,7 @@ const ServicesSection = () => {
               textAlign: "center",
             }}
           >
-            {product.title}
+            {event.title}
           </Typography>
         </Grid>
       </Grid>
@@ -62,7 +60,7 @@ const ServicesSection = () => {
         spacing={isSmallScreen ? 0 : isMediumScreen ? 1 : 4}
         justifyContent="center"
       >
-        {products.map((product, index) => (
+        {events.map((event, index) => (
           <Grid
             item
             xs={10}
@@ -76,21 +74,19 @@ const ServicesSection = () => {
               alignItems: "center",
             }}
           >
-            <CardProducts
-              title={product.title}
-              description={product.description}
-              price={product.price} code={product.code} 
-              status={product.status} 
-              stock={product.stock} 
-              category={product.category} 
-              thumbnails={product.thumbnails}       
+            <CardEvents
+              title={event.title}
+              description={event.description}
+              date={event.date}
+              imageSrc={event.imageSrc}
+              imageAlt={event.imageAlt}
             />
           </Grid>
         ))}
       </Grid>
 
       {/* Botón */}
-{/*       <Box mt={isLargeScreen ? 1 : 10} textAlign="center">
+      {/*   <Box mt={isLargeScreen ? 1 : 10} textAlign="center">
         <Button
           href={link_whatsapp}
           variant="contained"
@@ -109,9 +105,9 @@ const ServicesSection = () => {
             },
           }}
         >
-          {product.button}
-        </Button>
-      </Box> */}
+          {service.button}
+        </Button> 
+      </Box>*/}
     </Container>
   );
 };
