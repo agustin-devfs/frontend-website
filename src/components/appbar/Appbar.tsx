@@ -25,8 +25,9 @@ export default function Header() {
 
   if (isLoading) return <div>Loading...</div>;
 
+  const primary = "#8E0304";
   return (
-    <AppBar position="static" sx={{ bgcolor: "#141519", boxShadow: "none" }}>
+    <AppBar position="static" sx={{ bgcolor: "#FFF5F5", boxShadow: "none" }}>
       <Container maxWidth="xl">
         <Toolbar
           sx={{ justifyContent: "space-between", py: { xs: 1, md: 1, lg: 0 } }}
@@ -95,7 +96,7 @@ export default function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{
-                  color: "white",
+                  color: primary,
                   display: "flex",
                   alignItems: "center",
                   gap: 0.5,
@@ -116,7 +117,7 @@ export default function Header() {
                     fontSize: { xs: "12px", md: "22px" },
                     lineHeight: { xs: "16px", md: "25px" },
                     letterSpacing: "1%",
-                    color: "white",
+                    color: primary,
                   }}
                   noWrap={true}
                 >

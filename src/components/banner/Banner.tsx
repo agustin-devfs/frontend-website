@@ -54,7 +54,7 @@ export default function Banner() {
       <Box
         sx={{
           margin:0,
-          bgcolor: "#353535",
+          bgcolor: "#8e0304",
           color: "white",
           width: "100%",
           height: isSmallScreen ? "25vh" : "40vh",
@@ -83,7 +83,7 @@ export default function Banner() {
               display: "inline-block",
             }}
           >
-            {"Estas lista para comenzar a"}
+            {"Estas lista para "}
           </Typography>
 
           <Typography
@@ -110,7 +110,7 @@ export default function Banner() {
               marginLeft: "8px", // Espaciado entre textos si es necesario
             }}
           >
-            {"Sanar?"}
+            {"Evolucionar?"}
           </Typography>
 
         </Grid>

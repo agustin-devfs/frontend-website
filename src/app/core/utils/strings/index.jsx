@@ -27,6 +27,6 @@ export const strings = {
     CHAT_WITH_US: "Chat with us",
     SCHEDULE_MEETING: "Schedule a Meeting",
     TEXT_LINK:
-      "Hello%20Together%2C%20I%20wanted%20to%20inquire%20about%20your%20services.%20Could%20you%20assist%20me%2C%20please%3F",
+      "Hola, me gustaría saber más sobre Luna Roja. Puedes comunicarte conmigo a través de WhatsApp o Telegram. ¡Gracias!",
   },
 };

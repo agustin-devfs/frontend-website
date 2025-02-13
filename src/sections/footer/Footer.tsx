@@ -11,7 +11,7 @@ import {
   useTheme,
   useMediaQuery,
 } from "@mui/material";
-import { Facebook, Instagram, YouTube } from "@mui/icons-material";
+import { Instagram, YouTube } from "@mui/icons-material";
 import Image from "next/image";
 import { footer } from "@/app/core/utils/constants";
 
@@ -27,11 +27,13 @@ export default function Footer() {
   //console.log(nav)
 
   if (isLoading) return <div>Loading...</div>;
+
+  
   
   return (
     <AppBar
       position="static"
-      sx={{ bgcolor: "#141519", boxShadow: "none", marginTop: "auto" }}
+      sx={{ bgcolor: "#8E0304", boxShadow: "none", marginTop: "auto" }}
     >
       <Container maxWidth="lg">
         <Toolbar
@@ -119,16 +121,7 @@ export default function Footer() {
               spacing={1}
               justifyContent={isSmallScreen ? "center" : "flex-start"}
             >
-              <IconButton
-                href="https://www.facebook.com/LunaRojaCirculo/"
-                size="small"
-                sx={{ color: "white" }}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Página de Facebook"
-              >
-                <Facebook />
-              </IconButton>
+             
               <IconButton
                 href="https://www.instagram.com/lunarojacirculo/?igsh=c2RmbWVrZHZta3dn"
                 size="small"
@@ -140,7 +133,7 @@ export default function Footer() {
                 <Instagram />
               </IconButton>
               <IconButton
-                href="https://www.instagram.com/lunarojacirculo/?igsh=c2RmbWVrZHZta3dn"
+                href="https://www.youtube.com/@Lunarojacirculo"
                 size="small"
                 sx={{ color: "white" }}
                 target="_blank"

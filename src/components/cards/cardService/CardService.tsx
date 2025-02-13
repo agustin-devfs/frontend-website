@@ -16,6 +16,8 @@ const CardService: FC<ServiceCardProps> = ({ title, description, imageSrc, image
   const isNormalScreen = useMediaQuery(theme.breakpoints.down('lg')); 
   const isLargeScreen = useMediaQuery(theme.breakpoints.down('xl')); 
 
+  const primary = "#8E0304";
+
   return (
     <Card
       elevation={0}
@@ -24,6 +26,7 @@ const CardService: FC<ServiceCardProps> = ({ title, description, imageSrc, image
         height: isMediumScreen ? '22rem' : isNormalScreen? '25rem': isLargeScreen? '26rem':'30rem',
         width: isMediumScreen ? '18rem' : isNormalScreen? '20rem': isLargeScreen? '25rem':'30rem',
         backgroundColor: "#EDEDED",
+        borderRadius: "25px",
       }}
     >
       <Box
@@ -56,6 +59,7 @@ const CardService: FC<ServiceCardProps> = ({ title, description, imageSrc, image
         sx={{
           fontFamily: 'Raleway',
           fontWeight: 700,
+          color: primary,
           fontSize:isSmallScreen? '28px': isMediumScreen ? '32px' : isNormalScreen? '38px': isLargeScreen? '42px':'46px',
           lineHeight: isMediumScreen ? '36px' : isNormalScreen? '36px': isLargeScreen? '38px':'42px',
         }}
@@ -65,7 +69,7 @@ const CardService: FC<ServiceCardProps> = ({ title, description, imageSrc, image
       <CardContent>
         <Typography
           style={{
-            color: '#353535',
+            color: primary,
             fontWeight: 500,
             fontSize: isSmallScreen? '18px':isMediumScreen ? '20px' :isLargeScreen? '24px': '26px',
             lineHeight: '40px',

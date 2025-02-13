@@ -1,19 +1,15 @@
 "use client";
 import React from "react";
+import { Button, Typography, Divider, Grid, Box, Link } from "@mui/material";
 import {
-  Button,
-  TextField,
-  Typography,
-  Divider,
-  Grid,
-  Box,
-} from "@mui/material";
-import { /* toast,  */ToastContainer } from "react-toastify";
-import { contact, link_whatsapp, /* RESPONSES */ } from "@/app/core/utils/constants";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+  contact,
+  link_telegram,
+  link_whatsapp /* RESPONSES */,
+} from "@/app/core/utils/constants";
+import Image from "next/image";
+import WhatsAppIcon from'@mui/icons-material/WhatsApp'; 
+import TelegramIcon from'@mui/icons-material/Telegram';
 import "react-toastify/dist/ReactToastify.css";
-import { useForm, Controller } from "react-hook-form";
 
 export default function Component() {
   type forms = {
@@ -24,37 +20,6 @@ export default function Component() {
     message: string;
   };
 
-  /*   const [open, setOpen] = useState(false);
-   */
-  const yupSchema = yup
-    .object({
-      firstName: yup.string().required("First name is required"),
-      lastName: yup.string().required("Last name is required"),
-      phone: yup.string(),
-      email: yup
-        .string()
-        .email("Enter a valid email")
-        .required("Email is required"),
-      message: yup.string().required("Message is required"),
-    })
-    .required();
-
-  const { control, handleSubmit, /* reset */ } = useForm({
-    resolver: yupResolver(yupSchema),
-    mode: "onBlur",
-    defaultValues: {
-      firstName: "",
-      lastName: "",
-      phone: "",
-      email: "",
-      message: "",
-    },
-  });
-
-  /*  const handleClose = () => {
-    setOpen(false);
-  }; */
-
   const onSubmit = async (data: forms) => {
     console.log(data);
   };
@@ -64,10 +29,8 @@ export default function Component() {
       container
       justifyContent="center"
       alignItems="center"
-      style={{ minHeight: "100vh", margin: "1%" }}
+      style={{ minHeight: "60vh", margin: "1%" }}
     >
-      <ToastContainer />
-
       <Grid item xs={12} sm={8} md={8} lg={6}>
         <Box
           sx={{
@@ -82,15 +45,15 @@ export default function Component() {
             component="h6"
             style={{
               maxWidth: "fit-content",
-              backgroundColor: "#162D4F",
+              backgroundColor: "#8e0304",
               color: "#F6F6F6",
-              padding: "8px 50px",
+              padding: "8px 80px",
               borderRadius: "6px",
               fontWeight: 600,
               textAlign: "center",
             }}
           >
-            CONECTEMOS
+            CONECTEMOSNOS
           </Typography>
         </Box>
         <Grid container spacing={3} direction="column" alignItems="center">
@@ -102,63 +65,12 @@ export default function Component() {
             direction="column"
             alignItems="center"
           >
-            <Button
-              variant="outlined"
-              fullWidth
-              href={"/"}
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={{
-                borderColor: "#A0730C",
-                backgroundColor: "transparent",
-                color: "black",
-                borderWidth: 3, // Ancho del borde
-                width: "100%", // Ancho completo del contenedor
-                minWidth: "300px",
-                maxWidth: { xs: "70%", sm: "300px" }, // Máximo ancho responsivo
-                height: { xs: "40px", sm: "50px" }, // Altura responsiva
-                mt: "2%",
-                "&:hover": {
-                  backgroundColor: "#A0730C",
-                  color: "black",
-                  fontWeight: "bold",
-                },
-              }}
-            >
-              {contact.buttonMeet}
-            </Button>
-
-            <Button
-              variant="outlined"
-              href={link_whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-              fullWidth
-              sx={{
-                borderColor: "#A0730C",
-                backgroundColor: "transparent",
-                color: "black",
-                borderWidth: 3,
-                width: "100%",
-                minWidth: "300px",
-                maxWidth: { xs: "70%", sm: "300px" },
-                height: { xs: "40px", sm: "50px" },
-                mt: "2%",
-
-                "&:hover": {
-                  backgroundColor: "#A0730C",
-                  color: "black",
-                  fontWeight: "bold",
-                },
-              }}
-            >
-              {contact.buttonChat}
-            </Button>
             <Typography
               variant="body2"
               style={{
                 color: "black",
-                fontWeight: 600,
+                /*                 fontSize: "15px",
+                 */ fontWeight: 600,
                 textAlign: "center",
                 marginTop: "5%",
                 textTransform: "uppercase",
@@ -176,172 +88,83 @@ export default function Component() {
                 borderBottomWidth: "inherit",
               }}
             />
+         
+            <Button
+              variant="outlined"
+              href={link_whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              fullWidth
+              sx={{
+                borderColor: "#A0730C",
+                backgroundColor: "transparent",
+                color: "black",
+                borderWidth: 3,
+                width: "100%",
+                minWidth: "300px",
+                maxWidth: { xs: "70%", sm: "300px" },
+                height: { xs: "40px", sm: "50px" },
+                mt: "2%",
+                "&:hover": {
+                  backgroundColor: "#A0730C",
+                  color: "black",
+                  fontWeight: "bold",
+                },
+              }}
+            >
+              <WhatsAppIcon sx={{ marginRight: 1 }} />
+              {contact.buttonChatMariana}
+            </Button>
+            <Button
+              variant="outlined"
+              href={link_telegram}
+              target="_blank"
+              rel="noopener noreferrer"
+              fullWidth
+              sx={{
+                borderColor: "#A0730C",
+                backgroundColor: "transparent",
+                color: "black",
+                borderWidth: 3,
+                width: "100%",
+                minWidth: "300px",
+                maxWidth: { xs: "70%", sm: "300px" },
+                height: { xs: "40px", sm: "50px" },
+                mt: "2%",
+                "&:hover": {
+                  backgroundColor: "#A0730C",
+                  color: "black",
+                  fontWeight: "bold",
+                },
+              }}
+            >
+              <TelegramIcon sx={{ marginRight: 1 }} />
+              {contact.buttonChatLau}
+            </Button>
           </Grid>
-
-          {/* Divider with Text */}
-
-          {/* Form */}
-          <Grid item spacing={3} direction="column" alignItems="center">
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <Grid
-                container
-                direction="column"
-                spacing={2}
-                sx={{
-                  width: "100vw",
-                  maxWidth: { xs: "300px", sm: "400px" },
-                }}
-              >
-                <Grid item xs={12} sm={8} md={8} lg={6}>
-                  <Controller
-                    name="firstName"
-                    control={control}
-                    render={({ field, fieldState }) => (
-                      <TextField
-                        {...field}
-                        fullWidth
-                        label="Nombre"
-                        variant="standard"
-                        error={!!fieldState.error}
-                        helperText={fieldState.error?.message}
-                        InputProps={{
-                          disableUnderline: true,
-                          style: { borderBottom: "1px solid #333" },
-                        }}
-                        InputLabelProps={{
-                          style: { color: "#333", fontFamily: "Raleway" },
-                        }}
-                      />
-                    )}
-                  />
-                </Grid>
-
-                <Grid item xs={12} sm={8} md={8} lg={6}>
-                  <Controller
-                    name="lastName"
-                    control={control}
-                    render={({ field, fieldState }) => (
-                      <TextField
-                        {...field}
-                        fullWidth
-                        label="Apellido"
-                        variant="standard"
-                        error={!!fieldState.error}
-                        helperText={fieldState.error?.message}
-                        InputProps={{
-                          disableUnderline: true,
-                          style: { borderBottom: "1px solid #333" },
-                        }}
-                        InputLabelProps={{
-                          style: { color: "#333", fontFamily: "Raleway" },
-                        }}
-                      />
-                    )}
-                  />
-                </Grid>
-
-                <Grid item xs={12} sm={8} md={8} lg={6}>
-                  <Controller
-                    name="email"
-                    control={control}
-                    render={({ field, fieldState }) => (
-                      <TextField
-                        {...field}
-                        fullWidth
-                        label="Email"
-                        variant="standard"
-                        error={!!fieldState.error}
-                        helperText={fieldState.error?.message}
-                        InputProps={{
-                          disableUnderline: true,
-                          style: { borderBottom: "1px solid #333" },
-                        }}
-                        InputLabelProps={{
-                          style: { color: "#333", fontFamily: "Raleway" },
-                        }}
-                      />
-                    )}
-                  />
-                </Grid>
-
-                <Grid item xs={12} sm={8} md={8} lg={6}>
-                  <Controller
-                    name="phone"
-                    control={control}
-                    render={({ field, fieldState }) => (
-                      <TextField
-                        {...field}
-                        fullWidth
-                        label="Telefono"
-                        variant="standard"
-                        error={!!fieldState.error}
-                        helperText={fieldState.error?.message}
-                        InputProps={{
-                          disableUnderline: true,
-                          style: { borderBottom: "1px solid #333" },
-                        }}
-                        InputLabelProps={{
-                          style: { color: "#333", fontFamily: "Raleway" },
-                        }}
-                      />
-                    )}
-                  />
-                </Grid>
-                <Grid item xs={12} sm={8} md={8} lg={6}>
-                  <Controller
-                    name="message"
-                    control={control}
-                    render={({ field, fieldState }) => (
-                      <TextField
-                        {...field}
-                        fullWidth
-                        label="Mensaje"
-                        variant="standard"
-                        multiline
-                        rows={4}
-                        error={!!fieldState.error}
-                        helperText={fieldState.error?.message}
-                        InputProps={{
-                          disableUnderline: true,
-                          style: { borderBottom: "1px solid #333" },
-                        }}
-                        InputLabelProps={{
-                          style: { color: "#333", fontFamily: "Raleway" },
-                        }}
-                      />
-                    )}
-                  />
-                </Grid>
-                <Grid
-                  item
-                  xs={12}
-                  sm={8}
-                  md={8}
-                  style={{ textAlign: "center", marginBottom: "20%" }}
-                >
-                  <Button
-                    type="submit"
-                    variant="contained"
-                    sx={{
-                      width: "100px",
-                      borderRadius: "50px",
-                      padding: "16px 80px",
-                      backgroundColor: "#333",
-                      color: "#fff",
-                      border: "1px solid black",
-                      marginTop: "10%",
-                      transition: "background-color 0.3s, color 0.3s",
-                      "&:hover": {
-                        backgroundColor: "#eee",
-                        color: "#333",
-                      },
-                    }}
-                  >
-                    {contact.buttonSubmit}
-                  </Button>
-                </Grid>
-              </Grid>
-            </form>
+          <Grid
+            item
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              marginTop: "10px",
+            }}
+          >
+            <Link
+              href="/"
+              underline="none"
+              sx={{ display: "flex", alignItems: "center" }}
+            >
+              <Image
+                src="/logos/logo.png"
+                alt="LogoIcon"
+                loading="lazy"
+                width={100}
+                height={100}
+                style={{ borderRadius: "10%" }}
+              />
+            </Link>
           </Grid>
         </Grid>
       </Grid>

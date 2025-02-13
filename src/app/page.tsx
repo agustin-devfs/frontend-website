@@ -35,10 +35,10 @@ export default function Home() {
           <Testimonials />
         </section>
 
-        <section id="products">
+     {/*    <section id="products">
           <OurProducts />
         </section>
-
+ */}
         <section id="contactForm">
           <ContactForm />
         </section>

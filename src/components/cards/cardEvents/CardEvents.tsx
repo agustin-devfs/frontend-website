@@ -41,6 +41,8 @@ const CardService: FC<ServiceCardProps> = ({
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const primary = "#8E0304";
+
   return (
     <>
       <Card
@@ -54,7 +56,7 @@ const CardService: FC<ServiceCardProps> = ({
               ? "25rem"
               : isLargeScreen
                 ? "28rem"
-                : "30rem",
+                : "32rem",
           width: isMediumScreen
             ? "18rem"
             : isNormalScreen
@@ -65,8 +67,9 @@ const CardService: FC<ServiceCardProps> = ({
           backgroundColor: "#EDEDED",
           margin: "2% auto",
           cursor: "pointer",
-          padding: 2,
+          padding: 0,
           overflow: "hidden",
+          borderRadius: "25px",
         }}
       >
         <Box
@@ -74,7 +77,7 @@ const CardService: FC<ServiceCardProps> = ({
           justifyContent="center"
           alignItems="center"
           flexGrow={1}
-          pt={isSmallScreen ? 0 : isLargeScreen ? 2 : 10}
+          pt={isSmallScreen ? 0 : isLargeScreen ? 2 : 4}
         >
           <Image
             style={{ borderRadius: 8 }}
@@ -98,6 +101,7 @@ const CardService: FC<ServiceCardProps> = ({
           sx={{
             fontFamily: "Raleway",
             fontWeight: 700,
+           /*  color: primary, */
             fontSize: isSmallScreen
               ? "28px"
               : isMediumScreen
@@ -114,7 +118,7 @@ const CardService: FC<ServiceCardProps> = ({
         <CardContent >
           <Typography
             sx={{
-              color: "#353535",
+              color: primary,
               fontWeight: 500,
               fontSize: isSmallScreen
                 ? "18px"
@@ -131,7 +135,7 @@ const CardService: FC<ServiceCardProps> = ({
           </Typography>
           <Typography
             sx={{
-              color: "#353535",
+              color: primary,
               fontWeight: 500,
               fontSize: isSmallScreen
                 ? "14px"

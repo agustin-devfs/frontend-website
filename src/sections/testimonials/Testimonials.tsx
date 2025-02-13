@@ -39,7 +39,7 @@ export default function Component() {
       position: 'relative',
       py: isSmallScreen? 10:8,
       px: isSmallScreen? 1: 4,
-      bgcolor: currentIndex % 2 === 0 ? '#353535' : '#A0730C', 
+      bgcolor: currentIndex % 2 === 0 ? '#8e0304' : "#EDEDED", 
     }}>
       <Swiper
         modules={[Navigation, Autoplay]}
@@ -70,7 +70,7 @@ export default function Component() {
                   mb: 3,
                   fontSize: { xs: '1.1rem', md: '22px' },
                   lineHeight: 1.6,
-                  color: index % 2 === 0 ? '#FFFFFF': '#162D4F',
+                  color: index % 2 === 0 ? '#FFFFFF': '#000000',
 
                 }}
               >
@@ -79,7 +79,7 @@ export default function Component() {
               <Typography 
                 variant="subtitle1" 
                 sx={{ 
-                  color: index % 2 === 0 ? '#FFFFFF': '#162D4F',
+                  color: index % 2 === 0 ? '#FFFFFF': '#000000',
                   fontWeight: 700,
                   mb: 0.5,
                   fontFamily: 'Raleway',
@@ -93,7 +93,7 @@ export default function Component() {
               <Typography 
                 variant="body2" 
                 sx={{ 
-                  color: index % 2 === 0 ? '#FFFFFF': '#162D4F',
+                  color: index % 2 === 0 ? '#FFFFFF': '#000000',
                   fontWeight: 600,
                   mb: 0.5,
                   fontFamily: 'Raleway',

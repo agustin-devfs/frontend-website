@@ -4,15 +4,13 @@ import backgroundImage from "../../../public/assets/banner.jpg";
 import useHeroList from "./fetchHero";
 
 export default function HeroSection() {
-  
-  const { hero } = useHeroList(); 
+  const { hero } = useHeroList();
 
- /*  console.log(hero) */
   return (
     <Box
       sx={{
         position: "relative",
-        height: "100vh",
+        height: "80vh",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -24,27 +22,38 @@ export default function HeroSection() {
       }}
     >
       <Container>
-        {hero.map((h,index) => ( 
-      <Box key={index}>
+        {hero.map((h, index) => (
+          <Box key={index}>
             <Typography variant="h2" fontWeight={600} gutterBottom>
               {h.title}
             </Typography>
             <Typography variant="h5" gutterBottom>
               {h.texto}
             </Typography>
-           
+
             <Box display="flex" justifyContent="center" gap={2}>
-              <Button variant="outlined" color="inherit" size="large">
+              <Button
+                variant="outlined"
+                color="inherit"
+                size="large"
+                component="a"
+                href="#services"
+              >
                 {h.buttonIzq}
               </Button>
-              <Button variant="contained" color="primary" size="large">
+              <Button
+                variant="contained"
+                color="primary"
+                size="large"
+                component="a"
+                href="#events"
+              >
                 {h.buttonDer}
               </Button>
             </Box>
-      </Box>
-
+          </Box>
         ))}
-        
+
         <Box
           sx={{
             position: "absolute",
@@ -56,16 +65,6 @@ export default function HeroSection() {
           }}
         >
           <IconButton
-            href="https://www.facebook.com/"
-            size="small"
-            sx={{ color: "white" }}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Cuenta de Facebook"
-          >
-            <Facebook sx={{ cursor: "pointer" }} />
-          </IconButton>
-          <IconButton
             href="https://www.instagram.com/lunarojacirculo/"
             size="small"
             sx={{ color: "white" }}
@@ -76,7 +75,7 @@ export default function HeroSection() {
             <Instagram />
           </IconButton>
           <IconButton
-            href="https://www.youtube.com/"
+            href="https://www.youtube.com/@Lunarojacirculo"
             size="small"
             sx={{ color: "white" }}
             target="_blank"
