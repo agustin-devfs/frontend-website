@@ -1,5 +1,14 @@
 import { useEffect, useState } from 'react';
 
+interface Thumbnail {
+  rawFile?: {
+    path: string;
+    relativePath: string;
+  };
+  src: string;
+  title: string;
+}
+
 interface Product {
   title: string;
   price: number;
@@ -8,7 +17,7 @@ interface Product {
   status: string;
   category: string;
   description: string;
-  thumbnails: string[];
+  thumbnails: Thumbnail[];
 }
 
 const useProductList = () => {
@@ -20,7 +29,8 @@ const useProductList = () => {
       try {
         const response = await fetch('/api/products');
         const data = await response.json();
-        const transformedProducts: Product[] = data.data.map((product: Product) => ({
+
+        const transformedProducts: Product[] = data.data.map((product: any) => ({
           title: product.title,
           description: product.description,
           price: product.price,
@@ -28,11 +38,18 @@ const useProductList = () => {
           code: product.code,
           status: product.status,
           category: product.category,
-          thumbnails: product.thumbnails || [], 
+          thumbnails: Array.isArray(product.thumbnails)
+            ? product.thumbnails.map((thumb: any) => ({
+                rawFile: thumb.rawFile,
+                src: thumb.src,
+                title: thumb.title,
+              }))
+            : [],
         }));
+
         setProducts(transformedProducts);
       } catch (error) {
-        console.log('Error fetching products:', error);
+        console.error('Error fetching products:', error);
       } finally {
         setIsLoading(false);
       }
