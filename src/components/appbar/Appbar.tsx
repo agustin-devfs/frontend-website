@@ -11,7 +11,8 @@ import {
 } from "@mui/material";
 import Image from "next/image";
 import { bars } from "@/app/core/utils/constants";
-import useNavList from "@/sections/footer/fetchNavs";
+import useNavList, { ServiceNav } from "@/sections/footer/fetchNavs";
+import { colors } from "@/app/core/utils/colors";
 
 export default function Header() {
   const theme = useTheme();
@@ -25,7 +26,8 @@ export default function Header() {
 
   if (isLoading) return <div>Loading...</div>;
 
-  const primary = "#8E0304";
+
+
   return (
     <AppBar position="static" sx={{ bgcolor: "#FFF5F5", boxShadow: "none" }}>
       <Container maxWidth="xl">
@@ -88,7 +90,7 @@ export default function Header() {
               marginLeft: { xs: "5%", md: "10%" },
             }}
           >
-            {nav.map((n: any, index: number) => (
+            {nav.map((n: ServiceNav, index: number) => (
               <Link
                 key={index}
                 href={n.linkNav}
@@ -96,7 +98,7 @@ export default function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{
-                  color: primary,
+                  color: colors.primary,
                   display: "flex",
                   alignItems: "center",
                   gap: 0.5,
@@ -117,7 +119,7 @@ export default function Header() {
                     fontSize: { xs: "12px", md: "22px" },
                     lineHeight: { xs: "16px", md: "25px" },
                     letterSpacing: "1%",
-                    color: primary,
+                    color: colors.primary,
                   }}
                   noWrap={true}
                 >

@@ -15,7 +15,7 @@ import { Instagram, YouTube } from "@mui/icons-material";
 import Image from "next/image";
 import { footer } from "@/app/core/utils/constants";
 
-import useNavList from "./fetchNavs";
+import useNavList, { ServiceNav } from "./fetchNavs";
 
 export default function Footer() {
   const theme = useTheme();
@@ -67,7 +67,7 @@ export default function Footer() {
               marginLeft: { xs: "5%", md: "20%" },
             }}
           >
-            {nav.map((n:any, index:number) => (
+            {nav.map((n: ServiceNav, index:number) => (
               <Link
                 key={index}
                 href={n.linkNav}

@@ -1,6 +1,15 @@
-import { FC } from 'react';
-import { Card, Box, Divider, CardContent, Typography, useTheme, useMediaQuery } from '@mui/material';
-import Image from 'next/image';
+import { FC } from "react";
+import {
+  Card,
+  Box,
+  Divider,
+  CardContent,
+  Typography,
+  useTheme,
+  useMediaQuery,
+} from "@mui/material";
+import Image from "next/image";
+import { colors } from "@/app/core/utils/colors";
 
 interface ServiceCardProps {
   title: string;
@@ -9,22 +18,38 @@ interface ServiceCardProps {
   imageAlt: string;
 }
 
-const CardService: FC<ServiceCardProps> = ({ title, description, imageSrc, imageAlt }) => {
+const CardService: FC<ServiceCardProps> = ({
+  title,
+  description,
+  imageSrc,
+  imageAlt,
+}) => {
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm')); 
-  const isMediumScreen = useMediaQuery(theme.breakpoints.down('md')); 
-  const isNormalScreen = useMediaQuery(theme.breakpoints.down('lg')); 
-  const isLargeScreen = useMediaQuery(theme.breakpoints.down('xl')); 
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMediumScreen = useMediaQuery(theme.breakpoints.down("md"));
+  const isNormalScreen = useMediaQuery(theme.breakpoints.down("lg"));
+  const isLargeScreen = useMediaQuery(theme.breakpoints.down("xl"));
 
-  const primary = "#8E0304";
 
   return (
     <Card
       elevation={0}
       style={{
-        textAlign: 'center',
-        height: isMediumScreen ? '22rem' : isNormalScreen? '25rem': isLargeScreen? '26rem':'30rem',
-        width: isMediumScreen ? '18rem' : isNormalScreen? '20rem': isLargeScreen? '25rem':'30rem',
+        textAlign: "center",
+        height: isMediumScreen
+          ? "22rem"
+          : isNormalScreen
+            ? "25rem"
+            : isLargeScreen
+              ? "26rem"
+              : "30rem",
+        width: isMediumScreen
+          ? "18rem"
+          : isNormalScreen
+            ? "20rem"
+            : isLargeScreen
+              ? "25rem"
+              : "30rem",
         backgroundColor: "#EDEDED",
         borderRadius: "25px",
       }}
@@ -35,12 +60,28 @@ const CardService: FC<ServiceCardProps> = ({ title, description, imageSrc, image
         alignItems="center"
         flexGrow={1}
         sx={{ cursor: "pointer" }}
-        pt={isSmallScreen? 0 : isLargeScreen? 2: 10}
+        pt={isSmallScreen ? 0 : isLargeScreen ? 2 : 10}
       >
         <Image
           src={imageSrc}
-          width={isSmallScreen? 80 : isMediumScreen? 100: isNormalScreen? 110: 160}
-          height={ isSmallScreen? 80 : isMediumScreen? 100: isNormalScreen? 110: 160}
+          width={
+            isSmallScreen
+              ? 80
+              : isMediumScreen
+                ? 100
+                : isNormalScreen
+                  ? 110
+                  : 160
+          }
+          height={
+            isSmallScreen
+              ? 80
+              : isMediumScreen
+                ? 100
+                : isNormalScreen
+                  ? 110
+                  : 160
+          }
           alt={imageAlt}
           loading="lazy"
         />
@@ -49,19 +90,32 @@ const CardService: FC<ServiceCardProps> = ({ title, description, imageSrc, image
         style={{
           backgroundColor: "#A0730C",
           padding: "1px",
-          margin: '5% auto', 
-          height: '2px',
-          width: isMediumScreen? '70%' : '90%',
-          
+          margin: "5% auto",
+          height: "2px",
+          width: isMediumScreen ? "70%" : "90%",
         }}
       />
       <Typography
         sx={{
-          fontFamily: 'Raleway',
+          fontFamily: "Raleway",
           fontWeight: 700,
-          color: primary,
-          fontSize:isSmallScreen? '28px': isMediumScreen ? '32px' : isNormalScreen? '38px': isLargeScreen? '42px':'46px',
-          lineHeight: isMediumScreen ? '36px' : isNormalScreen? '36px': isLargeScreen? '38px':'42px',
+          color: colors.primary,
+          fontSize: isSmallScreen
+            ? "28px"
+            : isMediumScreen
+              ? "32px"
+              : isNormalScreen
+                ? "38px"
+                : isLargeScreen
+                  ? "42px"
+                  : "46px",
+          lineHeight: isMediumScreen
+            ? "36px"
+            : isNormalScreen
+              ? "36px"
+              : isLargeScreen
+                ? "38px"
+                : "42px",
         }}
       >
         {title}
@@ -69,11 +123,17 @@ const CardService: FC<ServiceCardProps> = ({ title, description, imageSrc, image
       <CardContent>
         <Typography
           style={{
-            color: primary,
+            color: colors.primary,
             fontWeight: 500,
-            fontSize: isSmallScreen? '18px':isMediumScreen ? '20px' :isLargeScreen? '24px': '26px',
-            lineHeight: '40px',
-            textAlign: 'center',
+            fontSize: isSmallScreen
+              ? "18px"
+              : isMediumScreen
+                ? "20px"
+                : isLargeScreen
+                  ? "24px"
+                  : "26px",
+            lineHeight: "40px",
+            textAlign: "center",
           }}
         >
           {description}

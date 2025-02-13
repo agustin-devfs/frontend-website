@@ -23,7 +23,7 @@ interface ProductCardProps {
   thumbnails: Thumbnail[];
 }
 
-const ProductCard: FC<ProductCardProps> = ({ title, description, code, price, status, stock, category, thumbnails }) => {
+const ProductCard: FC<ProductCardProps> = ({ title, description, price, status, stock, category, thumbnails }) => {
   // Extraemos la URL de la imagen: si hay thumbnails, usamos el primero; de lo contrario, usamos un placeholder
   const imageSrc = thumbnails && thumbnails.length > 0 ? thumbnails[0].src : "/placeholder.png";
 

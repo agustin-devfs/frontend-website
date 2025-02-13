@@ -14,6 +14,7 @@ import {
 } from "@mui/material";
 import Image from "next/image";
 import CloseIcon from "@mui/icons-material/Close";
+import { colors } from "@/app/core/utils/colors";
 
 interface ServiceCardProps {
   title: string;
@@ -41,7 +42,7 @@ const CardService: FC<ServiceCardProps> = ({
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const primary = "#8E0304";
+ 
 
   return (
     <>
@@ -101,7 +102,7 @@ const CardService: FC<ServiceCardProps> = ({
           sx={{
             fontFamily: "Raleway",
             fontWeight: 700,
-           /*  color: primary, */
+            /*  color: colors.primary, */
             fontSize: isSmallScreen
               ? "28px"
               : isMediumScreen
@@ -115,10 +116,10 @@ const CardService: FC<ServiceCardProps> = ({
         >
           {title}
         </Typography>
-        <CardContent >
+        <CardContent>
           <Typography
             sx={{
-              color: primary,
+              color: colors.primary,
               fontWeight: 500,
               fontSize: isSmallScreen
                 ? "18px"
@@ -135,7 +136,7 @@ const CardService: FC<ServiceCardProps> = ({
           </Typography>
           <Typography
             sx={{
-              color: primary,
+              color: colors.primary,
               fontWeight: 500,
               fontSize: isSmallScreen
                 ? "14px"
@@ -159,54 +160,56 @@ const CardService: FC<ServiceCardProps> = ({
       </Card>
 
       {/* *Modal*/}
-      <Dialog open={open} onClose={handleClose} maxWidth="sm" >
-  <DialogTitle
-    sx={{
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      position: "relative",
-      textAlign: "center",
-      fontWeight: 700,
-      fontSize: "1.5rem",
-    }}
-  >
-    {title}
-    <IconButton
-      aria-label="close"
-      onClick={handleClose}
-      sx={{ position: "absolute", right: 8, top: 8 }}
-    >
-      <CloseIcon />
-    </IconButton>
-  </DialogTitle>
-  <DialogContent dividers>
-    <Box display="flex" justifyContent="center">
-      <Image
-        style={{ borderRadius: 8 }}
-        src={imageSrc}
-        width={250}
-        height={250}
-        alt={imageAlt}
-        loading="lazy"
-      />
-    </Box>
-    <Typography sx={{ marginTop: 2, fontWeight: 700, textAlign: "center" }}>
-      {date}
-    </Typography>
-    <Typography
-      sx={{
-        marginTop: 2,
-        color: "#353535",
-        textAlign: "center", // Ahora está centrado
-        fontSize: "1rem",
-        lineHeight: "1.5rem",
-      }}
-    >
-      {description}
-    </Typography>
-  </DialogContent>
-</Dialog>
+      <Dialog open={open} onClose={handleClose} maxWidth="sm">
+        <DialogTitle
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            position: "relative",
+            textAlign: "center",
+            fontWeight: 700,
+            fontSize: "1.5rem",
+          }}
+        >
+          {title}
+          <IconButton
+            aria-label="close"
+            onClick={handleClose}
+            sx={{ position: "absolute", right: 8, top: 8 }}
+          >
+            <CloseIcon />
+          </IconButton>
+        </DialogTitle>
+        <DialogContent dividers>
+          <Box display="flex" justifyContent="center">
+            <Image
+              style={{ borderRadius: 8 }}
+              src={imageSrc}
+              width={250}
+              height={250}
+              alt={imageAlt}
+              loading="lazy"
+            />
+          </Box>
+          <Typography
+            sx={{ marginTop: 2, fontWeight: 700, textAlign: "center" }}
+          >
+            {date}
+          </Typography>
+          <Typography
+            sx={{
+              marginTop: 2,
+              color: "#353535",
+              textAlign: "center", // Ahora está centrado
+              fontSize: "1rem",
+              lineHeight: "1.5rem",
+            }}
+          >
+            {description}
+          </Typography>
+        </DialogContent>
+      </Dialog>
     </>
   );
 };

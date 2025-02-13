@@ -1,5 +1,5 @@
 import { Box, Button, Container, IconButton, Typography } from "@mui/material";
-import { Facebook, Instagram, YouTube } from "@mui/icons-material";
+import {Instagram, YouTube } from "@mui/icons-material";
 import backgroundImage from "../../../public/assets/banner.jpg";
 import useHeroList from "./fetchHero";
 

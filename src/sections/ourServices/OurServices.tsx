@@ -10,6 +10,7 @@ import {
 import CardService from "@/components/cards/cardService/CardService";
 import { service, link_whatsapp } from "@/app/core/utils/constants";
 import useCardList from "./fecthCards";
+import { colors } from "@/app/core/utils/colors";
 
 const ServicesSection = () => {
   const theme = useTheme();
@@ -21,7 +22,7 @@ const ServicesSection = () => {
 
   if (isLoading) return <div>Loading...</div>;
 
-  const primary = "#8E0304";
+ 
 
   return (
     <Container
@@ -40,7 +41,7 @@ const ServicesSection = () => {
             sx={{
               mt: isLargeScreen ? 0 : 10,
               fontFamily: "Raleway",
-              color: primary,
+              color: colors.primary,
               fontWeight: 400,
               fontSize: isSmallScreen
                 ? "30px"

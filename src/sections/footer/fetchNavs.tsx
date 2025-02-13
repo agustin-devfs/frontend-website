@@ -1,10 +1,10 @@
 
-import { ReactNode, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 
-interface ServiceNav {
-  linkNav: string |ReactNode;
-  iconNav:string |ReactNode;
-  nav: string |ReactNode;
+ export interface ServiceNav {
+  linkNav: string ;
+  iconNav:string ;
+  nav: string ;
 
 }
 

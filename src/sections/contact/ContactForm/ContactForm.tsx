@@ -12,17 +12,6 @@ import TelegramIcon from'@mui/icons-material/Telegram';
 import "react-toastify/dist/ReactToastify.css";
 
 export default function Component() {
-  type forms = {
-    firstName: string;
-    lastName: string;
-    phone?: string;
-    email: string;
-    message: string;
-  };
-
-  const onSubmit = async (data: forms) => {
-    console.log(data);
-  };
 
   return (
     <Grid

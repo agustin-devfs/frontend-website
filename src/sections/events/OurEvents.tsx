@@ -8,6 +8,7 @@ import {
 import { event } from "@/app/core/utils/constants";
 import CardEvents from "@/components/cards/cardEvents/CardEvents";
 import useEventList from "./fecthEvents";
+import { colors } from "@/app/core/utils/colors";
 
 const ServicesSection = () => {
   const theme = useTheme();
@@ -18,8 +19,8 @@ const ServicesSection = () => {
   const { isLoading, events } = useEventList(); // Obtiene los datos de la API
 
   if (isLoading) return <div>Loading...</div>;
-  
-  const primary = "#8E0304";
+
+ 
 
   return (
     <Container
@@ -38,7 +39,7 @@ const ServicesSection = () => {
             sx={{
               mt: isLargeScreen ? 0 : 10,
               fontFamily: "Raleway",
-              color: primary,
+              color: colors.primary,
               fontWeight: 400,
               fontSize: isSmallScreen
                 ? "30px"

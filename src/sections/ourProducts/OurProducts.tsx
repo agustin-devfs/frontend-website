@@ -1,13 +1,13 @@
 import {
   Grid,
-  Box,
+ 
   Typography,
   Container,
-  Button,
+ 
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { product, link_whatsapp } from "@/app/core/utils/constants";
+import { product } from "@/app/core/utils/constants";
 import useProductList from "./fecthProducts";
 import CardProducts from "@/components/cards/cardProducts/CardProducts";
 
