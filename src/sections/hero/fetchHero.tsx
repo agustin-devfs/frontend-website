@@ -1,3 +1,4 @@
+import { Mockdata } from "@/app/core/utils/mockdata/Mockdata";
 import { ReactNode, useEffect, useState } from "react";
 
 interface ServiceHero {
@@ -20,12 +21,12 @@ const useHeroList = () => {
       try {
         const response = await fetch("/api/hero");
         const data = await response.json();
-        const transformedHeros: ServiceHero[] = data.data.map((Hero: ServiceHero) => ({
+        const transformedHeros: ServiceHero[] = data.data?.length ? data.data.map((Hero: ServiceHero) => ({
           title: Hero.titleHero,
           texto: Hero.textHero,
           buttonIzq: Hero.buttonL,
           buttonDer: Hero.buttonR,
-        }));
+        })) : Mockdata.hero
         setHeros(transformedHeros);
       } catch (error) {
         console.error("Error fetching hero:", error);

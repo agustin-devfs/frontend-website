@@ -1,3 +1,4 @@
+import { Mockdata } from '@/app/core/utils/mockdata/Mockdata';
 import { useEffect, useState } from 'react';
 
 // Definir la interfaz de los datos que devuelve la API
@@ -17,12 +18,13 @@ const useCardList = () => {
       try {
         const response = await fetch('/api/cards');
         const data = await response.json();
-        const transformedCards: ServiceCard[] = data.data.map((card: ServiceCard) => ({
+        const transformedCards: ServiceCard[] = data.data?.length
+        ? data.data.map((card: ServiceCard) => ({
           title: card.title,
           description: card.description,
           imageSrc: card.imageSrc,
           imageAlt: card.imageAlt,
-        }));
+        })) : Mockdata.cards;
         setCards(transformedCards);
       } catch (error) {
         console.error('Error fetching cards:', error);
