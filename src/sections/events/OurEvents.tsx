@@ -7,8 +7,9 @@ import {
 } from "@mui/material";
 import { event } from "@/app/core/utils/constants";
 import CardEvents from "@/components/cards/cardEvents/CardEvents";
-import useEventList from "./fecthEvents";
+//import useEventList from "./fecthEvents";
 import { colors } from "@/app/core/utils/colors";
+import { Mockdata } from "@/app/core/utils/mockdata/Mockdata";
 
 const ServicesSection = () => {
   const theme = useTheme();
@@ -16,11 +17,9 @@ const ServicesSection = () => {
   const isMediumScreen = useMediaQuery(theme.breakpoints.down("md"));
   const isLargeScreen = useMediaQuery(theme.breakpoints.down("xl"));
 
-  const { isLoading, events } = useEventList(); // Obtiene los datos de la API
+  //const { isLoading, events } = useEventList(); // Obtiene los datos de la API
 
-  if (isLoading) return <div>Loading...</div>;
-
- 
+  const events = Mockdata.events
 
   return (
     <Container

@@ -9,8 +9,9 @@ import {
 } from "@mui/material";
 import CardService from "@/components/cards/cardService/CardService";
 import { service, link_whatsapp } from "@/app/core/utils/constants";
-import useCardList from "./fecthCards";
+//import useCardList from "./fecthCards";
 import { colors } from "@/app/core/utils/colors";
+import { Mockdata } from "@/app/core/utils/mockdata/Mockdata";
 
 const ServicesSection = () => {
   const theme = useTheme();
@@ -18,11 +19,10 @@ const ServicesSection = () => {
   const isMediumScreen = useMediaQuery(theme.breakpoints.down("md"));
   const isLargeScreen = useMediaQuery(theme.breakpoints.down("xl"));
 
-  const { isLoading, cards } = useCardList(); // Obtiene los datos de la API
+  //const { cards } = useCardList(); // Obtiene los datos de la API
 
-  if (isLoading) return <div>Loading...</div>;
 
- 
+ const cards = Mockdata.cards
 
   return (
     <Container
