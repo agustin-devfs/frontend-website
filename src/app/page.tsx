@@ -6,7 +6,7 @@ import Testimonials from "@/sections/testimonials/Testimonials";
 import Appbar from "@/components/appbar/Appbar";
 import OurServices from "@/sections/ourServices/OurServices";
 import Hero from "@/sections/hero/Hero";
-import OurProducts from "@/sections/ourProducts/OurProducts";
+//import OurProducts from "@/sections/ourProducts/OurProducts";
 import BannerSwiper from "@/components/banner/Banner";
 import OurEvents from "@/sections/events/OurEvents";
 
