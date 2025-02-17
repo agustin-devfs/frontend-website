@@ -52,6 +52,7 @@ const CardService: FC<ServiceCardProps> = ({
               : "30rem",
         backgroundColor: "#EDEDED",
         borderRadius: "25px",
+        margin: "5%",
       }}
     >
       <Box
@@ -59,8 +60,8 @@ const CardService: FC<ServiceCardProps> = ({
         justifyContent="center"
         alignItems="center"
         flexGrow={1}
-        sx={{ cursor: "pointer" }}
-        pt={isSmallScreen ? 0 : isLargeScreen ? 2 : 10}
+        sx={{ cursor: "pointer", }}
+        pt={isSmallScreen ? 5 : isLargeScreen ? 2 : 10}
       >
         <Image
           src={imageSrc}

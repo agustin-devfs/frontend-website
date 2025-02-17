@@ -52,14 +52,14 @@ const CardService: FC<ServiceCardProps> = ({
         sx={{
           textAlign: "center",
           height: isMediumScreen
-            ? "22rem"
+            ? "30rem"
             : isNormalScreen
               ? "25rem"
               : isLargeScreen
                 ? "28rem"
                 : "32rem",
           width: isMediumScreen
-            ? "18rem"
+            ? "20rem"
             : isNormalScreen
               ? "20rem"
               : isLargeScreen
@@ -67,10 +67,10 @@ const CardService: FC<ServiceCardProps> = ({
                 : "30rem",
           backgroundColor: "#EDEDED",
           margin: "2% auto",
-          cursor: "pointer",
-          padding: 0,
+          cursor: "pointer",        
           overflow: "hidden",
           borderRadius: "25px",
+          padding:"20px",
         }}
       >
         <Box
