@@ -31,6 +31,7 @@ export default function Home() {
         <section id="events">
           <OurEvents />
         </section>
+        
         <section id="testimonials">
           <Testimonials />
         </section>
