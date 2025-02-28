@@ -3,6 +3,8 @@ export const strings = {
 
   HOME_TITLE: "Luna Roja",
 
+  BIO_TITLE: "Nosotras",
+
   TESTIMONIALS_TITLE: "Client testimonials",
 
   NAV_ITEMS: [
