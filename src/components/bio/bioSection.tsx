@@ -1,17 +1,13 @@
-import React, { useState } from "react";
-import { Box, Grid, Typography, useTheme, Dialog } from "@mui/material";
-import CardTeam from "./cardTeam";
-import CardBioDialog from "./cardBioDialog";
-import { strings } from "@/app/core/utils/strings";
+import React from "react";
+import { Grid } from "@mui/material";
+
 import "./styles.css";
 
-const TeamSection = ({ teamIds }) => {
-  const teamMembers = teamIds.map((id) => strings.TEAM[id]);
-  const theme = useTheme();
-  const [open, setOpen] = useState(false);
-  const [selectedTeamMember, setSelectedTeamMember] = useState(null);
+const TeamSection = () => {
+ // const [open, setOpen] = useState(false);
+/*   const [selectedTeamMember, setSelectedTeamMember] = useState(null);
 
-  const handleClickOpen = (teamMember) => {
+  const handleClickOpen = (teamMember: any) => {
     setSelectedTeamMember(teamMember);
     setOpen(true);
   };
@@ -19,7 +15,7 @@ const TeamSection = ({ teamIds }) => {
   const handleClose = () => {
     setOpen(false);
     setSelectedTeamMember(null);
-  };
+  }; */
 
   return (
     <Grid
@@ -35,7 +31,7 @@ const TeamSection = ({ teamIds }) => {
         flexDirection: { xs: "column", md: "row" },
       }}
     >
-      {teamIds[0] < 16 ? (
+     {/*  {teamIds[0] < 16 ? (
         <Grid
           item
           xs={12}
@@ -83,7 +79,7 @@ const TeamSection = ({ teamIds }) => {
         spacing={1}
         maxWidth="100%"
       >
-        {teamMembers.map((team, index) => (
+        {teamMembers.map((team: any, index:number) => (
           <Grid item xs={12} sm={4} key={index}>
             <CardTeam
               hashtag={team.HASHTAG}
@@ -96,9 +92,9 @@ const TeamSection = ({ teamIds }) => {
             />
           </Grid>
         ))}
-      </Grid>
+      </Grid> */}
 
-      <Dialog
+  {/*     <Dialog
         open={open}
         onClose={handleClose}
         sx={{
@@ -110,19 +106,19 @@ const TeamSection = ({ teamIds }) => {
             width: "100%",
             maxWidth: { xs: "65%", md: "45%" },
             border: "0px 1px 1px 0px solid black",
-            background: gradients.generalGradient,
+           // background: gradients.generalGradient,
             elevation: 5,
           },
         }}
-      >
-        <CardBioDialog
+      > */}
+   {/*      <CardBioDialog
           name={selectedTeamMember?.NAME}
           rol={selectedTeamMember?.ROL}
           description={selectedTeamMember?.BIO}
           avatar={selectedTeamMember?.AVATAR}
           avatarAlignment={"left"}
-        />
-      </Dialog>
+        /> 
+      </Dialog>*/}
     </Grid>
   );
 };
