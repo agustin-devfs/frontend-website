@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     switch (method) {
       case 'GET':
         // Realiza una solicitud GET al backend de Express para obtener usuarios
-        const response = await fetch('http://localhost:5000/api/events');
+        const response = await fetch(`http://${process.env.API_RAILWAY}/api/events`);
         const data = await response.json();
         return res.status(200).json(data);
   
