@@ -12,7 +12,6 @@ import { SetStateAction, useState } from 'react'
 import { useMediaQuery, useTheme } from '@mui/material'
 import useTestimonialList from './fetchTestimonials';
 import { Mockdata } from '@/app/core/utils/mockdata/Mockdata'
-import { ServiceTestimonial } from './fetchTestimonials'
 
 export default function Component() {
   const theme = useTheme(); 

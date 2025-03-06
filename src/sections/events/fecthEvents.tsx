@@ -1,4 +1,3 @@
-import { Mockdata } from '@/app/core/utils/mockdata/Mockdata';
 import { useEffect, useState } from 'react';
 // Definir la interfaz de los datos que devuelve la API
 interface ServiceEvent {

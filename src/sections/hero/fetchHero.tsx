@@ -1,4 +1,3 @@
-import { Mockdata } from "@/app/core/utils/mockdata/Mockdata";
 import { ReactNode, useEffect, useState } from "react";
 
 interface ServiceHero {
