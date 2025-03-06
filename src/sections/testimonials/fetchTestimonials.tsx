@@ -23,6 +23,7 @@ const useTestimonialList = () => {
         setTestimonials(transformedTestimonials);
       } catch (error) {
         console.error("Error fetching testimonials:", error);
+  
       } finally {
         setIsLoading(false);
       }

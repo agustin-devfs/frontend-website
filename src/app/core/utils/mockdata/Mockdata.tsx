@@ -10,6 +10,16 @@ export const Mockdata = {
         "buttonDer": "ver eventos"
     }
 ],
+
+navs: 
+[
+
+{ nav: "Sesiones Personalizadas", linkNav: "#services",iconNav: "icons/appIcon.svg"},
+ 
+{ nav: "Circulos", linkNav: "#services", iconNav: "icons/webIcon.svg"},
+
+{ nav: "Talleres", linkNav: "#services", iconNav: "icons/hireIcon.svg"},
+],
  
     cards: [
       {
