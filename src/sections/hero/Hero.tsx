@@ -1,11 +1,12 @@
 import { Box, Button, Container, IconButton, Typography } from "@mui/material";
 import {Instagram, YouTube } from "@mui/icons-material";
 import backgroundImage from "../../../public/assets/banner.jpg";
-//import useHeroList from "./fetchHero";
+import useHeroList from "./fetchHero";
 import {Mockdata} from "@/app/core/utils/mockdata/Mockdata";
 export default function HeroSection() {
-   //const { hero } = useHeroList();
-   const hero = Mockdata.hero 
+ const { hero_data } = useHeroList();
+
+   const hero = hero_data.length ? hero_data : Mockdata.hero 
 
   return (
     <Box

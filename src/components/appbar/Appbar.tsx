@@ -13,6 +13,7 @@ import Image from "next/image";
 import { bars } from "@/app/core/utils/constants";
 import useNavList, { ServiceNav } from "@/sections/footer/fetchNavs";
 import { colors } from "@/app/core/utils/colors";
+import { Mockdata } from "@/app/core/utils/mockdata/Mockdata";
 
 export default function Header() {
   const theme = useTheme();
@@ -20,13 +21,13 @@ export default function Header() {
   const isMediumScreen = useMediaQuery(theme.breakpoints.down("md"));
   const isLargeScreen = useMediaQuery(theme.breakpoints.down("xl"));
 
-  const { isLoading, nav } = useNavList();
+  const { isLoading, nav_data } = useNavList();
 
-  //console.log(nav);
+  console.log(nav_data);
 
   if (isLoading) return <div>Loading...</div>;
 
-
+const nav = nav_data.length > 0 ? nav_data : Mockdata.navs;
 
   return (
     <AppBar position="static" sx={{ bgcolor: "#FFF5F5", boxShadow: "none" }}>

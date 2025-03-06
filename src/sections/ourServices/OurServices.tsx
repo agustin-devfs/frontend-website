@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import CardService from "@/components/cards/cardService/CardService";
 import { service, link_whatsapp } from "@/app/core/utils/constants";
-//import useCardList from "./fecthCards";
+import useCardList from "./fecthCards";
 import { colors } from "@/app/core/utils/colors";
 import { Mockdata } from "@/app/core/utils/mockdata/Mockdata";
 
@@ -19,10 +19,10 @@ const ServicesSection = () => {
   const isMediumScreen = useMediaQuery(theme.breakpoints.down("md"));
   const isLargeScreen = useMediaQuery(theme.breakpoints.down("xl"));
 
-  //const { cards } = useCardList(); // Obtiene los datos de la API
+const { cards_data } = useCardList(); // Obtiene los datos de la API
 
 
- const cards = Mockdata.cards
+ const cards = cards_data.length ? cards_data : Mockdata.cards
 
   return (
     <Container

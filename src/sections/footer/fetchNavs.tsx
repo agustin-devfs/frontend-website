@@ -10,7 +10,7 @@ import {  useEffect, useState } from "react";
 
 const useNavList = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [nav, setNavs] = useState<ServiceNav[]>([]);
+  const [nav_data, setNavs] = useState<ServiceNav[]>([]);
 
   useEffect(() => {
     const fetchNavs = async () => {
@@ -35,7 +35,7 @@ const useNavList = () => {
     fetchNavs();
   }, []);
 
-  return { isLoading, nav };
+  return { isLoading, nav_data };
 };
 
 export default useNavList;

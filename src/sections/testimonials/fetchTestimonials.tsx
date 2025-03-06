@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-interface ServiceTestimonial {
+export interface ServiceTestimonial {
   author: string;
   position: string;
   quote: string;
@@ -8,7 +8,7 @@ interface ServiceTestimonial {
 
 const useTestimonialList = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [testimonials, setTestimonials] = useState<ServiceTestimonial[]>([]);
+  const [testimonials_data, setTestimonials] = useState<ServiceTestimonial[]>([]);
 
   useEffect(() => {
     const fetchTestimonials = async () => {
@@ -32,7 +32,7 @@ const useTestimonialList = () => {
     fetchTestimonials();
   }, []);
 
-  return { isLoading, testimonials };
+  return { isLoading, testimonials_data };
 };
 
 export default useTestimonialList;

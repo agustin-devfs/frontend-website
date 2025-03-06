@@ -16,19 +16,20 @@ import Image from "next/image";
 import { footer } from "@/app/core/utils/constants";
 
 import useNavList, { ServiceNav } from "./fetchNavs";
+import { Mockdata } from "@/app/core/utils/mockdata/Mockdata";
 
 export default function Footer() {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const isMediumScreen = useMediaQuery(theme.breakpoints.down("md"));
 
-  const { isLoading, nav } = useNavList();
+  const { isLoading, nav_data } = useNavList();
 
-  //console.log(nav)
+  console.log(nav_data);
 
   if (isLoading) return <div>Loading...</div>;
 
-  
+const nav = nav_data.length > 0 ? nav_data : Mockdata.navs;
   
   return (
     <AppBar

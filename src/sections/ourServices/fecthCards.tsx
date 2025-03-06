@@ -11,7 +11,7 @@ interface ServiceCard {
 
 const useCardList = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [cards, setCards] = useState<ServiceCard[]>([]); 
+  const [cards_data, setCards] = useState<ServiceCard[]>([]); 
 
   useEffect(() => {
     const fetchCards = async () => {
@@ -36,7 +36,7 @@ const useCardList = () => {
     fetchCards();
   }, []);
 
-  return { isLoading, cards };
+  return { isLoading, cards_data };
 };
 
 export default useCardList;

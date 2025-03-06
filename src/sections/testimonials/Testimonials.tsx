@@ -11,6 +11,8 @@ import { ChevronLeft, ChevronRight } from '@mui/icons-material'
 import { SetStateAction, useState } from 'react'
 import { useMediaQuery, useTheme } from '@mui/material'
 import useTestimonialList from './fetchTestimonials';
+import { Mockdata } from '@/app/core/utils/mockdata/Mockdata'
+import { ServiceTestimonial } from './fetchTestimonials'
 
 export default function Component() {
   const theme = useTheme(); 
@@ -28,9 +30,13 @@ export default function Component() {
 
 
 
-  const { isLoading, testimonials } = useTestimonialList(); // Obtiene los datos de la API
+  const { isLoading, testimonials_data } = useTestimonialList(); // Obtiene los datos de la API
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <div>Loading...</div>; 
+
+  const testimonials_mock = Mockdata.testimonials;
+
+  const testimonials = testimonials_data.length ? testimonials_data : testimonials_mock;
 
   return (
 
@@ -55,7 +61,7 @@ export default function Component() {
         spaceBetween={50}
         onSlideChange={handleSlideChange} 
       >
-        {testimonials.map((testimonial, index) => (
+      {testimonials.map((testimonial, index) => (
           <SwiperSlide key={index}>
             <Box sx={{ 
               maxWidth: isSmallScreen ? '90%' : '70%',
@@ -105,7 +111,7 @@ export default function Component() {
               </Typography>
             </Box>
           </SwiperSlide>
-        ))}
+        ))} 
       </Swiper>
       
       <IconButton 

@@ -62,5 +62,19 @@ navs:
           "imageSrc": "/assets/11.jpg",
           "imageAlt": "Taller"
       }
+  ],
+
+  testimonials:[
+        {
+            "author": "Ceci",
+            "position": null,
+            "quote": "El Círculo de Luna Roja me atraviesa y me acompaña desde antes de gestar a mi hija. Es el espacio en el que nos encontramos, me proyecto y me sano. El jardín mágico de Lau con ese fuego poderoso me reconecta con lo más profundo de mí y me da las fuerzas para cambiar lo que duele o cuidar lo que tengo. Gracias Lau y Marianita por su generosidad, por cada círculo de perfumes, sabores y danza. Gracias por esperarme siempre con tanto amor y respetar mis ciclos."
+        },
+        {
+
+            "author": "Adri Ríos",
+            "position": null,
+            "quote": "Participé en varios talleres y Círculos de Mujeres de Luna Roja:  Siempre disfruté de los encuentros;  las vivencias fueron y son importantes para mi. Cada consigna,  meditación guiada o danza en ronda, energía transformadora total: ¡funciona!     Laura y Mariana, mujeres extraordinarias, comparten su sabiduría con alegría y amor. Gracias"
+        }
   ]
   };
