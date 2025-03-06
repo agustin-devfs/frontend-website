@@ -4,7 +4,9 @@ export default async function handler(req, res) {
 
   switch (method) {
     case "GET":
-      const response = await fetch(`http://${process.env.API_RAILWAY}/api/nav`);
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_RAILWAY}/api/nav`
+      );
       const data = await response.json();
 
       return res.status(200).json(data);

@@ -30,10 +30,10 @@ export default function Header() {
 const nav = nav_data.length > 0 ? nav_data : Mockdata.navs;
 
   return (
-    <AppBar position="static" sx={{ bgcolor: "#FFF5F5", boxShadow: "none" }}>
+    <AppBar position="static" sx={{ bgcolor: "#FFF5F5", boxShadow: "none", minHeight:"60px" }} >
       <Container maxWidth="xl">
         <Toolbar
-          sx={{ justifyContent: "space-between", py: { xs: 1, md: 1, lg: 0 } }}
+          sx={{ justifyContent: "space-between", py: { xs: 1, md: 1, lg: 0 }, minHeight:"60px" }}
         >
           {/* Logo Section */}
           <Stack direction="row">
@@ -48,7 +48,6 @@ const nav = nav_data.length > 0 ? nav_data : Mockdata.navs;
               <Image
                 src={"/logos/logo.png"}
                 alt="LogoIcon"
-                loading="lazy"
                 width={
                   isSmallScreen
                     ? 60
