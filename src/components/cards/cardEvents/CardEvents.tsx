@@ -57,7 +57,7 @@ const CardService: FC<ServiceCardProps> = ({
               ? "25rem"
               : isLargeScreen
                 ? "28rem"
-                : "32rem",
+                : "35rem",
           width: isMediumScreen
             ? "20rem"
             : isNormalScreen
@@ -102,16 +102,15 @@ const CardService: FC<ServiceCardProps> = ({
           sx={{
             fontFamily: "Raleway",
             fontWeight: 700,
-            /*  color: colors.primary, */
             fontSize: isSmallScreen
-              ? "28px"
+              ? "26px"
               : isMediumScreen
-                ? "32px"
+                ? "28px"
                 : isNormalScreen
-                  ? "32px"
+                  ? "28px"
                   : isLargeScreen
-                    ? "32px"
-                    : "32px",
+                    ? "28px"
+                    : "28px",
           }}
         >
           {title}

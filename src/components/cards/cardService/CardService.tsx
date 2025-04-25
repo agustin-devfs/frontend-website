@@ -42,7 +42,7 @@ const CardService: FC<ServiceCardProps> = ({
             ? "25rem"
             : isLargeScreen
               ? "26rem"
-              : "30rem",
+              : "35rem",
         width: isMediumScreen
           ? "18rem"
           : isNormalScreen
@@ -125,7 +125,7 @@ const CardService: FC<ServiceCardProps> = ({
         <Typography
           style={{
             color: colors.primary,
-            fontWeight: 500,
+            fontWeight: 300,
             fontSize: isSmallScreen
               ? "18px"
               : isMediumScreen
@@ -133,7 +133,7 @@ const CardService: FC<ServiceCardProps> = ({
                 : isLargeScreen
                   ? "24px"
                   : "26px",
-            lineHeight: "40px",
+            lineHeight: "32px",
             textAlign: "center",
           }}
         >
